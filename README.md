@@ -4,7 +4,19 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/vue-table-component/master.svg?style=flat-square)](https://travis-ci.org/spatie/vue-table-component)
 
-Add a short description here, with some examples on how the package can be used.
+Example html:
+
+```html
+<TableView rows="{{ $rowsJson }}" sort-by="name" sort-order="desc">
+   <TableColumn name="name" field="name"></TableColumn> 
+   <TableColumn name="Publicatie" field="publishDate", datatype="date:Ymd" filterable="false"></TableColumn> 
+   <TableColumn sortable="false" filterable="false">
+      <slot scope="row"> 
+         @{{ row.deleteLink }} @{{ row.anotherLink }}
+      </slot>
+   </TableColumn>   
+</TableView>
+```
 
 ## Demo
 

@@ -4,37 +4,30 @@
 
     <style>
 
-        *,
-        *:after,
-        *:before {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #efefef;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-            font-size: 16px;
-            padding: 2em;
-        }
-
-        .page {
-            background-color: #fff;
-            max-width: 66em;
-            margin: 0 auto;
-            padding: 4em 2em;
-        }
-
     </style>
 
 </head>
 <body>
-<div id="app" class="page">
+
+<script>
+
+</script>
+
+<div id="app">
     <div>
-        <ExampleComponent></ExampleComponent>
+        <TableView :rows="[
+            {firstName: 'Jay', lastName: 'Vleugels'},
+            {firstName: 'Wesley', lastName: 'Biets'},
+
+            ]"
+                   sort-by="firstName"
+                   sort-order="desc">
+            <TableColumn name="firstName"></TableColumn>
+            <TableColumn name="lastName"></TableColumn>
+        </TableView>
     </div>
 </div>
+
 <script src="/build/app.js"></script>
 </body>
 </html>
