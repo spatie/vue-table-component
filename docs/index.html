@@ -9,17 +9,13 @@
 </head>
 <body>
 
-<script>
-
-</script>
-
 <div id="app">
     <div>
-        <TableView :rows="[
-            {firstName: 'Jay', lastName: 'Vleugels'},
-            {firstName: 'Wesley', lastName: 'Biets'},
-
-            ]"
+        <TableView :rows="
+                        [
+                            {firstName: 'Jay', lastName: 'Vleugels'},
+                            {firstName: 'Wesley', lastName: 'Biets'},
+                        ]"
                    sort-by="firstName"
                    sort-order="desc">
             <TableColumn name="firstName"></TableColumn>
