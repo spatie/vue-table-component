@@ -11,16 +11,16 @@
 
 <div id="app">
     <div>
-        <TableView :rows="
+        <table-view :rows="
                         [
                             {firstName: 'Jay', lastName: 'Vleugels'},
                             {firstName: 'Wesley', lastName: 'Biets'},
                         ]"
                    sort-by="firstName"
                    sort-order="desc">
-            <TableColumn name="firstName"></TableColumn>
-            <TableColumn name="lastName"></TableColumn>
-        </TableView>
+            <table-column name="firstName"></table-column>
+            <table-column name="lastName"></table-column>
+        </table-view>
     </div>
 </div>
 
