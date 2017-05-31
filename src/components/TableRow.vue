@@ -12,7 +12,7 @@
         methods: {
             getValue(column) {
                 const key = column.field || column.name
-                console.log(column.props);
+                console.log(column.name); // undefined :-(
                 return this.row[key];
             }
         }
