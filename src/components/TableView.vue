@@ -9,7 +9,7 @@
             </tr>
             </thead>
             <tbody>
-                <table-row v-for="row in rows" :row="row" :columns="columns" />
+                <table-row :key="row.id" v-for="row in rows" :row="row" :columns="columns" />
             </tbody>
         </table>
     </div>
@@ -37,7 +37,11 @@
             }
         },
 
-        data: () => ({}),
+        data() {
+            return {
+                columns: [],
+            }
+        },
 
         created() {
             this.columns = this.$children;

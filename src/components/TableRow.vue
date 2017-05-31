@@ -7,13 +7,13 @@
 
 <script>
     export default {
-        props: ['column', 'row'],
+        props: ['columns', 'row'],
 
         methods: {
             getValue(column) {
                 const key = column.field || column.name
-
-                return row.key;
+                console.log(column.props);
+                return this.row[key];
             }
         }
     }
