@@ -45,6 +45,7 @@
 
         created() {
             this.columns = this.$children;
+            console.log('this.columns', this.columns);
         },
 
         computed: {},
