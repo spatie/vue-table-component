@@ -3,9 +3,7 @@
         <table>
             <thead>
             <tr>
-                <th v-for="column in columns">
-                    {{ column.name }}
-                </th>
+                <slot></slot>
             </tr>
             </thead>
             <tbody>
@@ -16,39 +14,30 @@
 </template>
 
 <script>
+    import { pick } from 'lodash';
     import TableRow from './TableRow';
 
     export default {
-        components: { TableRow },
+        components: { 
+            TableRow
+        },
 
         props: {
-            rows: {
-                required: true,
-            },
-            sortBy: {
-                type: String,
-                required: false,
-                default: '',
-            },
-            sortOrder: {
-                type: String,
-                required: false,
-                default: 'desc',
-            }
+            rows: { required: true, type: Array },
+            sortBy: { default: '', type: String },
+            sortOrder: { default: 'desc', type: String },
         },
 
-        data() {
-            return {
-                columns: [],
-            }
-        },
+        data: () => ({
+            columns: [],
+        }),
 
-        created() {
-            this.columns = this.$children;
-            console.log('this.columns', this.columns);
-        },
+        mounted() {
+            this.columns = this.$slots.default
+                .filter(column => column.componentInstance)
+                .map(column => pick(column.componentInstance, ['for', 'label']));
 
-        computed: {},
+            console.log(this.columns);
+        },
     };
-
 </script>

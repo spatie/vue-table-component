@@ -12,7 +12,6 @@
         methods: {
             getValue(column) {
                 const key = column.field || column.name
-                console.log(column); // undefined :-(
                 return this.row[key];
             }
         }
