@@ -11,8 +11,7 @@
 
         methods: {
             getValue(column) {
-                const key = column.field || column.name
-                return this.row[key];
+                return this.row[column.for];
             }
         }
     }
