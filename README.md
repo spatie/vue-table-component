@@ -7,15 +7,17 @@
 Example html:
 
 ```html
-<TableView rows="{{ $rowsJson }}" sort-by="name" sort-order="desc">
-   <TableColumn name="name" field="name"></TableColumn> 
-   <TableColumn name="Publicatie" field="publishDate", datatype="date:Ymd" filterable="false"></TableColumn> 
-   <TableColumn sortable="false" filterable="false">
-      <slot scope="row"> 
-         @{{ row.deleteLink }} @{{ row.anotherLink }}
-      </slot>
-   </TableColumn>   
-</TableView>
+<table-view
+    :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
+            { id: 2, firstName: 'Wesley', lastName: 'Biets' },
+            { id: 3, firstName: 'Randy', lastName: 'Paret' },
+            { id: 4, firstName: 'Devon', lastName: 'Macharis' }]"
+    sort-by="lastName"
+    sort-order="desc"
+>
+    <table-column for="firstName" label="First name"></table-column>
+    <table-column for="lastName" label="Last name"></table-column>
+</table-view>
 ```
 
 ## Demo
