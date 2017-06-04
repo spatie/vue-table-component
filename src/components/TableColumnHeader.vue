@@ -20,7 +20,6 @@
 
         methods: {
             clicked(event) {
-            console.log('click');
                 if (this.column.isSortable()) {
                     this.$emit('click', this.column);
                 }
