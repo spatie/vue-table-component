@@ -11,7 +11,6 @@
 
         methods: {
             getValue(column) {
-                console.log(column);
                 return this.row.getValue(column.properties.for);
             }
         }
