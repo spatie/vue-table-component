@@ -1,20 +1,30 @@
 <template>
-    <th @click="clicked">
+    <th @click="clicked" :class="headerClass">
         {{ column.properties.label }}
     </th>
 </template>
 
 <script>
     export default {
-        props: ['column'],
+        props: ['column', 'sort'],
+
+        computed: {
+            headerClass() {
+                if (this.column.properties.for !== this.sort.fieldName) {
+                    return;
+                }
+
+                return `sort-${this.sort.order}`;
+            }
+        },
 
         methods: {
             clicked(event) {
+            console.log('click');
                 if (this.column.isSortable()) {
                     this.$emit('click', this.column);
                 }
-
-            }
-        }
+            },
+        },
     };
 </script>

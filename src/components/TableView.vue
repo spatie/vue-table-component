@@ -9,6 +9,7 @@
                         @click="changeSorting"
                         v-for="column in columns"
                         :key="column.properties.for"
+                        :sort="sort"
                         :column="column"
                 />
             </tr>
