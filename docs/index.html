@@ -12,15 +12,16 @@
 <div id="app">
     <div>
         <table-view
-            :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
-                    { id: 2, firstName: 'Wesley', lastName: 'Biets' },
-                    { id: 3, firstName: 'Randy', lastName: 'Paret' },
-                    { id: 4, firstName: 'Devon', lastName: 'Macharis' }]"
+            :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels', color: 'Red' },
+                    { id: 2, firstName: 'Wesley', lastName: 'Biets', color: 'Blue' },
+                    { id: 3, firstName: 'Randy', lastName: 'Paret', color: 'Green' },
+                    { id: 4, firstName: 'Devon', lastName: 'Macharis', color: 'Yellow' }]"
             sort-by="lastName"
             sort-order="asc"
         >
             <table-column for="firstName" label="First name"></table-column>
             <table-column for="lastName" label="Last name"></table-column>
+            <table-column for="color" label="Color" :sortable="false"></table-column>
         </table-view>
     </div>
 </div>

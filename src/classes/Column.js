@@ -4,10 +4,10 @@ export default class Column {
     }
 
     isFilterable() {
-        return this.properties.filterable || true;
+        return this.properties.filterable;
     }
 
     isSortable() {
-        return this.properties.sortable || true;
+        return this.properties.sortable;
     }
 }

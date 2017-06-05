@@ -9,7 +9,7 @@
         props: {
             for: { required: true, type: String },
             label: { default: '', type: String },
-            datatype: { default: 'string', type: String },
+            dataType: { default: 'string', type: String },
             filterable: { default: true, type: Boolean },
             sortable: { default: true, type: Boolean },
         },

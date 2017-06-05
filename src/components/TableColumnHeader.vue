@@ -10,6 +10,10 @@
 
         computed: {
             headerClass() {
+                if(! this.column.isSortable()) {
+                    return;
+                }
+
                 if (this.column.properties.for !== this.sort.fieldName) {
                     return;
                 }

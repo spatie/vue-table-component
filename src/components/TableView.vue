@@ -84,7 +84,9 @@
         mounted() {
             this.columns = this.$slots.default
                 .filter(column => column.componentInstance)
-                .map(column => pick(column.componentInstance, ['for', 'label']))
+                .map(column => pick(column.componentInstance, [
+                    'for', 'label', 'sortable', 'filterable', 'dataType'
+                ]))
                 .map(columnProperties => new Column(columnProperties));
 
             this.rows = this.data.map(rowData => new Row(rowData, this.columns));
@@ -108,4 +110,5 @@
             },
         },
     };
+
 </script>

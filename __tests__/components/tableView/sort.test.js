@@ -22,7 +22,7 @@ describe('TableView is sortable', () => {
     });
 
     it('can sort the data with by a specific column in a specific order', async () => {
-        setDocumentInnerHtml({ sortBy: 'firstName', sortOrder: 'desc' });
+        setDocumentInnerHtml({ sortBy: 'firstName', order: 'desc' });
 
         await createVm();
 
@@ -52,23 +52,44 @@ describe('TableView is sortable', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+    
+    it('will not sort on a column that is not sortable', async () => {
+        setDocumentInnerHtml({ sortBy: 'actions', order: 'desc' });
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
+    it('will not sort data when clicking a non-sortable column header', async () => {
+        setDocumentInnerHtml({ sortBy: 'firstName' });
+
+        await createVm();
+
+        const thirdColumnHeader = document.getElementsByTagName('th')[2];
+
+        await simulant.fire(thirdColumnHeader, 'click');
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
-function setDocumentInnerHtml({ sortBy = '', sortOrder = '' } = {}) {
+function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
 
     document.body.innerHTML = `
             <div id="app">
                 <div>
                     <table-view
-                        :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
-                                { id: 2, firstName: 'Wesley', lastName: 'Biets' },
-                                { id: 3, firstName: 'Randy', lastName: 'Paret' },
-                                { id: 4, firstName: 'Devon', lastName: 'Macharis' }]"
+                        :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels', actions: 'Red' },
+                                { id: 2, firstName: 'Wesley', lastName: 'Biets', actions: 'Blue' },
+                                { id: 3, firstName: 'Randy', lastName: 'Paret', actions: 'Green' },
+                                { id: 4, firstName: 'Devon', lastName: 'Macharis', actions: 'Yellow' }]"
                         sort-by="${sortBy}"
-                        sort-order="${sortOrder}"
+                        sort-order="${order}"
                     >
                         <table-column for="firstName" label="First name"></table-column>
                         <table-column for="lastName" label="Last name"></table-column>
+                        <table-column for="actions" label="Color" :sortable="false"></table-column>
                     </table-view>
                 </div>
             </div>

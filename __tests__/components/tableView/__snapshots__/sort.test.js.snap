@@ -6,10 +6,14 @@ exports[`TableView is sortable can sort the data with by a specific column 1`] =
     First name
 </th><th>
     Last name
-</th></tr></thead> <tbody><tr><td>Devon</td><td>Macharis</td></tr><tr><td>Jay</td><td>Vleugels</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Wesley</td><td>Biets</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+</th><th>
+    Color
+</th></tr></thead> <tbody><tr><td>Devon</td><td>Macharis</td><td>Yellow</td></tr><tr><td>Jay</td><td>Vleugels</td><td>Red</td></tr><tr><td>Randy</td><td>Paret</td><td>Green</td></tr><tr><td>Wesley</td><td>Biets</td><td>Blue</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
+</th> <th>
+    Color
 </th></div></div></div></div>
         "
 `;
@@ -20,10 +24,14 @@ exports[`TableView is sortable can sort the data with by a specific column in a 
     First name
 </th><th>
     Last name
-</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Jay</td><td>Vleugels</td></tr><tr><td>Devon</td><td>Macharis</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+</th><th>
+    Color
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td><td>Blue</td></tr><tr><td>Randy</td><td>Paret</td><td>Green</td></tr><tr><td>Jay</td><td>Vleugels</td><td>Red</td></tr><tr><td>Devon</td><td>Macharis</td><td>Yellow</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
+</th> <th>
+    Color
 </th></div></div></div></div>
         "
 `;
@@ -34,10 +42,14 @@ exports[`TableView is sortable can sort the data with by another specific column
     First name
 </th><th class=\\"sort-\\">
     Last name
-</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr><tr><td>Devon</td><td>Macharis</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Jay</td><td>Vleugels</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+</th><th>
+    Color
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td><td>Blue</td></tr><tr><td>Devon</td><td>Macharis</td><td>Yellow</td></tr><tr><td>Randy</td><td>Paret</td><td>Green</td></tr><tr><td>Jay</td><td>Vleugels</td><td>Red</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
+</th> <th>
+    Color
 </th></div></div></div></div>
         "
 `;
@@ -48,10 +60,50 @@ exports[`TableView is sortable it will change the sort order when clicking the h
     First name
 </th><th>
     Last name
-</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Jay</td><td>Vleugels</td></tr><tr><td>Devon</td><td>Macharis</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+</th><th>
+    Color
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td><td>Blue</td></tr><tr><td>Randy</td><td>Paret</td><td>Green</td></tr><tr><td>Jay</td><td>Vleugels</td><td>Red</td></tr><tr><td>Devon</td><td>Macharis</td><td>Yellow</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
+</th> <th>
+    Color
+</th></div></div></div></div>
+        "
+`;
+
+exports[`TableView is sortable will not sort data when clicking a non-sortable column header 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\"> <table><thead><tr><th class=\\"sort-\\">
+    First name
+</th><th>
+    Last name
+</th><th>
+    Color
+</th></tr></thead> <tbody><tr><td>Devon</td><td>Macharis</td><td>Yellow</td></tr><tr><td>Jay</td><td>Vleugels</td><td>Red</td></tr><tr><td>Randy</td><td>Paret</td><td>Green</td></tr><tr><td>Wesley</td><td>Biets</td><td>Blue</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th> <th>
+    Color
+</th></div></div></div></div>
+        "
+`;
+
+exports[`TableView is sortable will not sort on a column that is not sortable 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\"> <table><thead><tr><th>
+    First name
+</th><th>
+    Last name
+</th><th>
+    Color
+</th></tr></thead> <tbody><tr><td>Devon</td><td>Macharis</td><td>Yellow</td></tr><tr><td>Jay</td><td>Vleugels</td><td>Red</td></tr><tr><td>Randy</td><td>Paret</td><td>Green</td></tr><tr><td>Wesley</td><td>Biets</td><td>Blue</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th> <th>
+    Color
 </th></div></div></div></div>
         "
 `;
@@ -62,10 +114,14 @@ exports[`TableView is sortable will sort the data descendingly if the header of 
     First name
 </th><th class=\\"sort-desc\\">
     Last name
-</th></tr></thead> <tbody><tr><td>Jay</td><td>Vleugels</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Devon</td><td>Macharis</td></tr><tr><td>Wesley</td><td>Biets</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+</th><th>
+    Color
+</th></tr></thead> <tbody><tr><td>Jay</td><td>Vleugels</td><td>Red</td></tr><tr><td>Randy</td><td>Paret</td><td>Green</td></tr><tr><td>Devon</td><td>Macharis</td><td>Yellow</td></tr><tr><td>Wesley</td><td>Biets</td><td>Blue</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
+</th> <th>
+    Color
 </th></div></div></div></div>
         "
 `;
