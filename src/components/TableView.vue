@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" v-model="filter">
+        <input type="text" v-model="filter" name="table-view-filter">
 
         <table>
             <thead>
@@ -22,8 +22,11 @@
             />
             </tbody>
         </table>
+        <div v-if="displayedRows.length === 0">
+            There are no matching rows
+        </div>
 
-        <div style="display:none">
+        <div style="display:none;">
             <slot></slot>
         </div>
     </div>
@@ -110,5 +113,10 @@
             },
         },
     };
+
+
+
+
+
 
 </script>

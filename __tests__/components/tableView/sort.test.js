@@ -2,7 +2,7 @@ import TableView from '../../../src';
 import Vue from 'vue/dist/vue.js';
 import simulant from 'simulant';
 
-describe('TableView is sortable', () => {
+describe('Sortable tableView', () => {
     Vue.use(TableView);
 
     it('can sort the data with by a specific column', async () => {

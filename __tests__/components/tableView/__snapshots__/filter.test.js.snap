@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filterable tableView can filter data 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <table><thead><tr><th>
+    First name
+</th><th class=\\"sort-desc\\">
+    Last name
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr></tbody></table> <!----> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th></div></div></div></div>
+        "
+`;
+
+exports[`Filterable tableView will display a message if there are no matching rows 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <table><thead><tr><th>
+    First name
+</th><th class=\\"sort-desc\\">
+    Last name
+</th></tr></thead> <tbody></tbody></table> <div>
+        There are no matching rows
+    </div> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th></div></div></div></div>
+        "
+`;
+
+exports[`Filterable tableView will filter data in a case-insensitive way 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <table><thead><tr><th>
+    First name
+</th><th class=\\"sort-desc\\">
+    Last name
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr></tbody></table> <!----> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th></div></div></div></div>
+        "
+`;
+
+exports[`Filterable tableView will not use columns that are not filterable 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <table><thead><tr><th>
+    First name
+</th><th class=\\"sort-desc\\">
+    Last name
+</th></tr></thead> <tbody></tbody></table> <div>
+        There are no matching rows
+    </div> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th></div></div></div></div>
+        "
+`;
