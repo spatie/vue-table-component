@@ -1,4 +1,5 @@
-import { stripHtml } from '../helpers';
+import moment from 'moment';
+import stripTags from 'striptags';
 
 export default class Row {
     constructor(data, columns) {
@@ -10,17 +11,43 @@ export default class Row {
         return this.data[columnName];
     }
 
+    getColumn(columnName) {
+        return this.columns.filter(column => column.properties.for === columnName)[0];
+    }
+
     getFilterableValue(columnName) {
         const value = this.getValue(columnName);
 
-        return stripHtml(value);
+        return stripTags(value);
+    }
+
+    getSortableValue(columnName) {
+        const dataType = this.getColumn(columnName).properties.dataType;
+
+        let value = this.getValue(columnName);
+
+        if (value instanceof String) {
+            value = value.toLowerCase();
+        }
+
+        if (dataType.startsWith('date')) {
+            const [_, format]  = dataType.split(':');
+
+            return moment(value, format).format('x');
+        }
+
+        if (dataType === 'numeric') {
+            return value;
+        }
+
+        return value.toString();
     }
 
     passesFilter(filter) {
         return this.columns
             .filter(column =>  column.isFilterable())
             .map(column => this.getFilterableValue(column.properties.for))
-            .filter(columnValue => columnValue.toLowerCase().includes(filter.toLowerCase()))
+            .filter(filterableValue => filterableValue.includes(filter.toLowerCase()))
             .length;
     }
 }

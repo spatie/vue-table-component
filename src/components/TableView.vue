@@ -67,20 +67,17 @@
             },
 
             sortedRows() {
-                if (this.sortBy === '') {
+                if (this.sort.fieldName === '') {
                     return this.rows;
                 }
 
-                return this.rows.sort((row1, row2) => {
-                    let value1 = row1.getValue(this.sort.fieldName);
-                    let value2 = row2.getValue(this.sort.fieldName);
+                if (this.columns.length === 0) {
+                    return this.rows;
+                }
 
-                    if (this.sort.order === 'desc') {
-                        return value2.localeCompare(value1);
-                    }
+                const sortColumn = this.getColumn(this.sort.fieldName);
 
-                    return value1.localeCompare(value2);
-                });
+                return this.rows.sort(sortColumn.getSortPredicate(this.sort.order));
             },
         },
 
@@ -111,6 +108,10 @@
                     this.sort.order = (this.sort.order === 'desc' ? 'asc' : 'desc');
                 }
             },
+
+            getColumn(columnName) {
+                return this.columns.filter(column => column.properties.for === columnName)[0];
+            }
         },
     };
 

@@ -13,18 +13,19 @@
     <a>
         <table-view
             :data="[
-        { id: 1, firstName: 'Jay', lastName: 'Vleugels', color: 'Red', editUrl: '<a href=&quot;jay&quot;>Edit</a>', birthday: '01/01/1980' },
-    { id: 2, firstName: 'Wesley', lastName: 'Biets', color: 'Blue', editUrl: '<a href=&quot;wesley&quot;>Edit</a>', birthday: '12/06/1978' },
-    { id: 3, firstName: 'Randy', lastName: 'Paret', color: 'Green', editUrl: '<a href=&quot;randy&quot;>Edit</a>', birthday: '22/09/1979' },
-    { id: 4, firstName: 'Devon', lastName: 'Macharis', color: 'Yellow', editUrl: '<a href=&quot;devon&quot;>Edit</a>', birthday: '15/11/1984' },
+        { id: 1, firstName: 'Jay', lastName: 'Vleugels', color: 'Red', editUrl: '<a href=&quot;jay&quot;>Edit</a>', birthday: '01/01/1980', sales: 1 },
+    { id: 2, firstName: 'Wesley', lastName: 'Biets', color: 'Blue', editUrl: '<a href=&quot;wesley&quot;>Edit</a>', birthday: '12/06/1978', sales: 0 },
+    { id: 3, firstName: 'Randy', lastName: 'Paret', color: 'Green', editUrl: '<a href=&quot;randy&quot;>Edit</a>', birthday: '22/09/1979', sales: 100 },
+    { id: 4, firstName: 'Devon', lastName: 'Macharis', color: 'Yellow', editUrl: '<a href=&quot;devon&quot;>Edit</a>', birthday: '15/11/1984', sales: 50 },
     ]"
             sort-by="lastName"
             sort-order="asc"
         >
             <table-column for="firstName" label="First name"></table-column>
             <table-column for="lastName" label="Last name"></table-column>
+            <table-column for="sales" label="Sales" data-type="numeric"></table-column>
+            <table-column for="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
             <table-column for="color" label="Color" :sortable="false"></table-column>
-            <table-column for="birthday" label="Birthday" dataType="date:d/m/Y"></table-column>
             <table-column for="editUrl" label="" :sortable="false" :filterable="false"></table-column>
         </table-view>
     </div>
