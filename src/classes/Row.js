@@ -16,7 +16,7 @@ export default class Row {
     }
 
     getFilterableValue(columnName) {
-        const value = this.getValue(columnName);
+        const value = this.getValue(columnName).toString().toLowerCase();
 
         return stripTags(value);
     }
