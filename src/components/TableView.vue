@@ -41,6 +41,7 @@
     import TableRow from './TableRow';
     import Column from '../classes/Column';
     import Row from '../classes/Row';
+    import expiringStorage from '../expiringStorage';
 
     export default {
         components: {
@@ -114,6 +115,10 @@
 
             getColumn(columnName) {
                 return this.columns.filter(column => column.properties.for === columnName)[0];
+            },
+
+             getStorageKey(suffix) {
+                return `vue-table-component.cache.${window.location.host}${window.location.pathname}.${suffix}`;
             },
         },
     };

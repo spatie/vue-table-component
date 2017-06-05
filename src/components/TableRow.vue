@@ -11,7 +11,7 @@
         methods: {
             getValue(column) {
                 return this.row.getValue(column.properties.for);
-            }
-        }
-    }
+            },
+        },
+    };
 </script>

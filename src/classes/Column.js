@@ -12,7 +12,6 @@ export default class Column {
     }
 
     getSortPredicate(sortOrder) {
-
         const dataType = this.properties.dataType;
 
         if (this.properties.dataType.startsWith('date') || dataType === 'numeric') {
