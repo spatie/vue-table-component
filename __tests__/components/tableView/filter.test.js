@@ -1,6 +1,5 @@
 import TableView from '../../../src';
 import Vue from 'vue/dist/vue.js';
-import simulant from 'simulant';
 
 describe('Filterable tableView', () => {
     Vue.use(TableView);
