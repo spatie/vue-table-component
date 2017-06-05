@@ -72,7 +72,7 @@
                     let value1 = row1.getValue(this.sort.fieldName);
                     let value2 = row2.getValue(this.sort.fieldName);
 
-                    if (this.sort.order === 'asc') {
+                    if (this.sort.order === 'desc') {
                         return value2.localeCompare(value1);
                     }
 

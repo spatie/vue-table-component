@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableView is sortable can sort the data with by a specific column 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\"> <table><thead><tr><th class=\\"sort-\\">
+    First name
+</th><th>
+    Last name
+</th></tr></thead> <tbody><tr><td>Devon</td><td>Macharis</td></tr><tr><td>Jay</td><td>Vleugels</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Wesley</td><td>Biets</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th></div></div></div></div>
+        "
+`;
+
+exports[`TableView is sortable can sort the data with by a specific column in a specific order 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\"> <table><thead><tr><th class=\\"sort-desc\\">
+    First name
+</th><th>
+    Last name
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Jay</td><td>Vleugels</td></tr><tr><td>Devon</td><td>Macharis</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th></div></div></div></div>
+        "
+`;
+
+exports[`TableView is sortable can sort the data with by another specific column 1`] = `
+"
+            <div id=\\"app\\"><div><div><input type=\\"text\\"> <table><thead><tr><th>
+    First name
+</th><th class=\\"sort-\\">
+    Last name
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr><tr><td>Devon</td><td>Macharis</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Jay</td><td>Vleugels</td></tr></tbody></table> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Last name
+</th></div></div></div></div>
+        "
+`;

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ExampleComponent can mount 1`] = `
-"
-            <div id=\\"app\\"><div>
-    I am an example component
-</div></div>
-        "
-`;

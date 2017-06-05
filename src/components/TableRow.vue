@@ -1,7 +1,6 @@
 <template>
     <tr>
-    <td v-for="column in columns" v-html="getValue(column)">
-    </td>
+        <td v-for="column in columns" v-html="getValue(column)"></td>
     </tr>
 </template>
 
