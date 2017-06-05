@@ -1,5 +1,6 @@
 import TableView from '../../../src';
 import Vue from 'vue/dist/vue.js';
+import simulant from 'simulant';
 
 describe('TableView is sortable', () => {
     Vue.use(TableView);
@@ -27,9 +28,33 @@ describe('TableView is sortable', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('it will change the sort order when clicking the header of the column with the active sort', async () => {
+        setDocumentInnerHtml({ sortBy: 'firstName' });
+
+        await createVm();
+
+        const firstColumnHeader = document.getElementsByTagName('th')[0];
+
+        await simulant.fire(firstColumnHeader, 'click');
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
+    it('will sort the data descendingly if the header of of column without the active sort is clicked', async () => {
+        setDocumentInnerHtml({ sortBy: 'firstName' });
+
+        await createVm();
+
+        const secondColumnHeader = document.getElementsByTagName('th')[1];
+
+        await simulant.fire(secondColumnHeader, 'click');
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
-function setDocumentInnerHtml({ sortBy, sortOrder = '' }) {
+function setDocumentInnerHtml({ sortBy = '', sortOrder = '' } = {}) {
 
     document.body.innerHTML = `
             <div id="app">
