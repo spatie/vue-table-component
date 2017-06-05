@@ -2,7 +2,7 @@
 
 exports[`TableView can mount 1`] = `
 "
-            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <table><thead><tr><th>
+            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <!----> <table><thead><tr><th>
     First name
 </th><th class=\\"sort-desc\\">
     Last name

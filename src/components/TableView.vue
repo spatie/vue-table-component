@@ -114,14 +114,7 @@
 
             getColumn(columnName) {
                 return this.columns.filter(column => column.properties.for === columnName)[0];
-            }
+            },
         },
     };
-
-
-
-
-
-
-
 </script>
