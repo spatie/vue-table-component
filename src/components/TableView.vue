@@ -1,6 +1,9 @@
 <template>
     <div>
         <input type="text" v-model="filter" name="table-view-filter">
+        <div v-if="filter !== ''">
+            <a @click="filter = ''">X</a>
+        </div>
 
         <table>
             <thead>
@@ -114,6 +117,7 @@
             }
         },
     };
+
 
 
 
