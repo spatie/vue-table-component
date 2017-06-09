@@ -106,7 +106,7 @@ You can pass these props to `table-component`:
 - `sort-by`: the property in data on which to initially sort.
 - `sort-order`: the initial sort order.
 - `cache-lifetime`: the lifetime in minutes the component will cache the filter and sorting.
-- `cache-id`: if you use multiple instances of `table-component` you must set this to a unique value per instance.
+- `cache-id`: if you use multiple instances of `table-component` on the same page you must set this to a unique value per instance.
 
 For each `table-column` a column will be rendered. It can have these props:
 - `show`: (required) the property name in the data that needs to be shown in this column.
