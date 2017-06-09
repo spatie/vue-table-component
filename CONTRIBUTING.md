@@ -6,7 +6,7 @@ We accept contributions via Pull Requests on [Github](https://github.com/spatie/
 
 ## Pull Requests
 
-- Use the ES2015 syntax.
+- Use the ES6 syntax.
 - Your patch won't be accepted if it doesn't pass the tests and lints (`npm run test`).
 - If there's a `/demo` section, try to add an example.
 - **Document any change in behaviour:** Make sure the `README.md`, `CHANGELOG.md` and any other relevant documentation are kept up-to-date.
@@ -17,7 +17,7 @@ We accept contributions via Pull Requests on [Github](https://github.com/spatie/
 
 ## Running Tests
 
-``` bash
+```bash
 jest
 ```
 
