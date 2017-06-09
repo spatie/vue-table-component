@@ -1,31 +1,35 @@
 <template>
-    <div>
-        <input type="text" v-model="filter" name="table-view-filter">
-        <div v-if="filter !== ''">
-            <a @click="filter = ''">X</a>
+    <div class="table-component">
+
+        <div class="table-component__filter">
+            <input class="table-component__filter__field" type="text" v-model="filter" name="table-view-filter" placeholder="Filter table…">
+            <a v-if="filter !== ''" @click="filter = ''" class="table-component__filter__clear">×</a>
         </div>
 
-        <table>
-            <thead>
-            <tr>
-                <table-column-header
-                        @click="changeSorting"
-                        v-for="column in columns"
-                        :key="column.properties.for"
-                        :sort="sort"
-                        :column="column"
+        <div class="table-component__table-wrapper">
+            <table class="table-component__table">
+                <thead>
+                <tr>
+                    <table-column-header
+                            @click="changeSorting"
+                            v-for="column in columns"
+                            :key="column.properties.for"
+                            :sort="sort"
+                            :column="column"
+                    />
+                </tr>
+                </thead>
+                <tbody>
+                <table-row v-for="row in displayedRows"
+                           :key="row.id"
+                           :row="row"
+                           :columns="columns"
                 />
-            </tr>
-            </thead>
-            <tbody>
-            <table-row v-for="row in displayedRows"
-                       :key="row.id"
-                       :row="row"
-                       :columns="columns"
-            />
-            </tbody>
-        </table>
-        <div v-if="displayedRows.length === 0">
+                </tbody>
+            </table>
+        </div>
+
+        <div v-if="displayedRows.length === 0" class="table-component__message">
             There are no matching rows
         </div>
 
@@ -62,7 +66,7 @@
             sort: {
                 fieldName: '',
                 order: '',
-            }
+            },
         }),
 
         computed: {
@@ -89,7 +93,7 @@
             this.columns = this.$slots.default
                 .filter(column => column.componentInstance)
                 .map(column => pick(column.componentInstance, [
-                    'for', 'label', 'sortable', 'filterable', 'dataType'
+                    'for', 'label', 'sortable', 'filterable', 'dataType',
                 ]))
                 .map(columnProperties => new Column(columnProperties));
 
@@ -117,7 +121,7 @@
                 return this.columns.filter(column => column.properties.for === columnName)[0];
             },
 
-             getStorageKey(suffix) {
+            getStorageKey(suffix) {
                 return `vue-table-component.cache.${window.location.host}${window.location.pathname}.${suffix}`;
             },
         },

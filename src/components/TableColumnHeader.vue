@@ -10,16 +10,16 @@
 
         computed: {
             headerClass() {
-                if(! this.column.isSortable()) {
+                if (! this.column.isSortable()) {
                     return;
                 }
 
                 if (this.column.properties.for !== this.sort.fieldName) {
-                    return;
+                    return 'table-component__th--sort';
                 }
 
-                return `sort-${this.sort.order}`;
-            }
+                return `table-component__th--sort-${this.sort.order}`;
+            },
         },
 
         methods: {
