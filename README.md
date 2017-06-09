@@ -58,9 +58,7 @@ or npm:
 npm install vue-table-component --save
 ```
 
-## Usage
-
-The most common use case is to register the component globally.
+Nest you must register the component. The most common use case is to do that globally.
 
 ```js
 //in your app.js or similar file
@@ -78,6 +76,10 @@ import TableComponent from 'vue-table-component';
 
 Vue.use(TableComponent);
 ```
+
+## Usage
+
+TO DO
 
 ## Change log
 
