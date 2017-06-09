@@ -108,5 +108,5 @@ async function createVm() {
 
     const table = vm.$children[0];
 
-    return table ;
+    return table;
 }
