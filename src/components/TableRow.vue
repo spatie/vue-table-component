@@ -10,7 +10,7 @@
 
         methods: {
             getValue(column) {
-                return this.row.getValue(column.properties.for);
+                return this.row.getValue(column.properties.show);
             },
         },
     };

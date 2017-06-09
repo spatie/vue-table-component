@@ -7,7 +7,7 @@
 <script>
     export default {
         props: {
-            for: { required: true, type: String },
+            show: { required: true, type: String },
             label: { default: '', type: String },
             dataType: { default: 'string', type: String },
             filterable: { default: true, type: Boolean },

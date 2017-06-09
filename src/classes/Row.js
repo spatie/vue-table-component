@@ -12,7 +12,7 @@ export default class Row {
     }
 
     getColumn(columnName) {
-        return this.columns.filter(column => column.properties.for === columnName)[0];
+        return this.columns.filter(column => column.properties.show === columnName)[0];
     }
 
     getFilterableValue(columnName) {
@@ -46,7 +46,7 @@ export default class Row {
     passesFilter(filter) {
         return this.columns
             .filter(column =>  column.isFilterable())
-            .map(column => this.getFilterableValue(column.properties.for))
+            .map(column => this.getFilterableValue(column.properties.show))
             .filter(filterableValue => filterableValue.includes(filter.toLowerCase()))
             .length;
     }

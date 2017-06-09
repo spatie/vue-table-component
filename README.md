@@ -17,8 +17,8 @@ Example html:
     sort-by="lastName"
     sort-order="desc"
 >
-    <table-column for="firstName" label="First name"></table-column>
-    <table-column for="lastName" label="Last name"></table-column>
+    <table-column show="firstName" label="First name"></table-column>
+    <table-column show="lastName" label="Last name"></table-column>
 </table-component>
 ```
 

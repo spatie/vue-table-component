@@ -14,7 +14,7 @@
                     <table-column-header
                             @click="changeSorting"
                             v-for="column in columns"
-                            :key="column.properties.for"
+                            :key="column.properties.show"
                             :sort="sort"
                             :column="column"
                     />
@@ -113,7 +113,7 @@
             this.columns = this.$slots.default
                 .filter(column => column.componentInstance)
                 .map(column => pick(column.componentInstance, [
-                    'for', 'label', 'sortable', 'filterable', 'dataType',
+                    'show', 'label', 'sortable', 'filterable', 'dataType',
                 ]))
                 .map(columnProperties => new Column(columnProperties));
 
@@ -129,12 +129,12 @@
 
         methods: {
             changeSorting(column) {
-                if (this.sort.fieldName !== column.properties.for) {
-                    this.sort.fieldName = column.properties.for;
+                if (this.sort.fieldName !== column.properties.show) {
+                    this.sort.fieldName = column.properties.show;
                     this.sort.order = 'asc';
                 }
 
-                if (this.sort.fieldName === column.properties.for) {
+                if (this.sort.fieldName === column.properties.show) {
                     this.sort.order = (this.sort.order === 'desc' ? 'asc' : 'desc');
                 }
 
@@ -142,7 +142,7 @@
             },
 
             getColumn(columnName) {
-                return this.columns.filter(column => column.properties.for === columnName)[0];
+                return this.columns.filter(column => column.properties.show === columnName)[0];
             },
 
             saveState() {

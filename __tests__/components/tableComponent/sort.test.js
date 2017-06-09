@@ -1,9 +1,18 @@
 import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
 import simulant from 'simulant';
+import LocalStorageMock from '../../helpers/LocalStorageMock';
+
+const localStorage = new LocalStorageMock();
+
+window.localStorage = localStorage;
 
 describe('Sortable tableComponent', () => {
     Vue.use(TableComponent);
+
+    beforeEach(() => {
+        localStorage.clear();
+    });
 
     it('can sort the data with by a specific column', async () => {
         setDocumentInnerHtml({ sortBy: 'firstName' });
@@ -87,9 +96,9 @@ function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
                         sort-by="${sortBy}"
                         sort-order="${order}"
                     >
-                        <table-column for="firstName" label="First name"></table-column>
-                        <table-column for="lastName" label="Last name"></table-column>
-                        <table-column for="actions" label="Color" :sortable="false"></table-column>
+                        <table-column show="firstName" label="First name"></table-column>
+                        <table-column show="lastName" label="Last name"></table-column>
+                        <table-column show="actions" label="Color" :sortable="false"></table-column>
                     </table-component>
                 </div>
             </div>

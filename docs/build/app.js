@@ -26071,7 +26071,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     });
     exports.default = {
         props: {
-            for: { required: true, type: String },
+            show: { required: true, type: String },
             label: { default: '', type: String },
             dataType: { default: 'string', type: String },
             filterable: { default: true, type: Boolean },
@@ -26114,7 +26114,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     return;
                 }
 
-                if (this.column.properties.for !== this.sort.fieldName) {
+                if (this.column.properties.show !== this.sort.fieldName) {
                     return 'table-component__th--sort';
                 }
 
@@ -26264,12 +26264,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
         methods: {
             changeSorting: function changeSorting(column) {
-                if (this.sort.fieldName !== column.properties.for) {
-                    this.sort.fieldName = column.properties.for;
+                if (this.sort.fieldName !== column.properties.show) {
+                    this.sort.fieldName = column.properties.show;
                     this.sort.order = 'asc';
                 }
 
-                if (this.sort.fieldName === column.properties.for) {
+                if (this.sort.fieldName === column.properties.show) {
                     this.sort.order = this.sort.order === 'desc' ? 'asc' : 'desc';
                 }
 
@@ -26277,7 +26277,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             },
             getColumn: function getColumn(columnName) {
                 return this.columns.filter(function (column) {
-                    return column.properties.for === columnName;
+                    return column.properties.show === columnName;
                 })[0];
             },
             saveState: function saveState() {
@@ -26329,7 +26329,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
         methods: {
             getValue: function getValue(column) {
-                return this.row.getValue(column.properties.for);
+                return this.row.getValue(column.properties.show);
             }
         }
     };
@@ -26398,8 +26398,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 if (this.properties.dataType.startsWith('date') || dataType === 'numeric') {
 
                     return function (row1, row2) {
-                        var value1 = row1.getSortableValue(_this.properties.for);
-                        var value2 = row2.getSortableValue(_this.properties.for);
+                        var value1 = row1.getSortableValue(_this.properties.show);
+                        var value2 = row2.getSortableValue(_this.properties.show);
 
                         if (sortOrder === 'desc') {
                             return value2 < value1;
@@ -26410,8 +26410,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
 
                 return function (row1, row2) {
-                    var value1 = row1.getSortableValue(_this.properties.for);
-                    var value2 = row2.getSortableValue(_this.properties.for);
+                    var value1 = row1.getSortableValue(_this.properties.show);
+                    var value2 = row2.getSortableValue(_this.properties.show);
 
                     if (sortOrder === 'desc') {
                         return value2.localeCompare(value1);
@@ -26486,7 +26486,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             key: 'getColumn',
             value: function getColumn(columnName) {
                 return this.columns.filter(function (column) {
-                    return column.properties.for === columnName;
+                    return column.properties.show === columnName;
                 })[0];
             }
         }, {
@@ -26530,7 +26530,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 return this.columns.filter(function (column) {
                     return column.isFilterable();
                 }).map(function (column) {
-                    return _this.getFilterableValue(column.properties.for);
+                    return _this.getFilterableValue(column.properties.show);
                 }).filter(function (filterableValue) {
                     return filterableValue.includes(filter.toLowerCase());
                 }).length;
@@ -44845,7 +44845,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "table-component__table"
   }, [_c('thead', [_c('tr', _vm._l((_vm.columns), function(column) {
     return _c('table-column-header', {
-      key: column.properties.for,
+      key: column.properties.show,
       attrs: {
         "sort": _vm.sort,
         "column": column

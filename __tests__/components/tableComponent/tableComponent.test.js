@@ -1,15 +1,24 @@
 import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
+import LocalStorageMock from '../../helpers/LocalStorageMock';
+
+const localStorage = new LocalStorageMock();
+
+window.localStorage = localStorage;
 
 describe('TableComponent', () => {
     Vue.use(TableComponent);
+
+    beforeEach(() => {
+        localStorage.clear();
+    });
 
     it('can mount', async () => {
         document.body.innerHTML = `
             <div id="app">
                 <table-component
                     :data="[{ id: 1, firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
-                    <table-column for="firstName" label="First name"></table-column>
+                    <table-column show="firstName" label="First name"></table-column>
                 </table-component>
             </div>
         `;
@@ -24,7 +33,7 @@ describe('TableComponent', () => {
             <div id="app">
                 <table-component :show-filter="false"
                     :data="[{ id: 1, firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
-                    <table-column for="firstName" label="First name"></table-column>
+                    <table-column show="firstName" label="First name"></table-column>
                 </table-component>
             </div>
         `;

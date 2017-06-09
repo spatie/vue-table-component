@@ -1,10 +1,17 @@
 import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
+import LocalStorageMock from '../../helpers/LocalStorageMock';
+
+const localStorage = new LocalStorageMock();
+
+window.localStorage = localStorage;
 
 describe('Filterable tableComponent', () => {
     Vue.use(TableComponent);
 
     beforeEach(() => {
+        localStorage.clear();
+
         document.body.innerHTML = `
             <div id="app">
                 <div>
@@ -16,8 +23,8 @@ describe('Filterable tableComponent', () => {
                         sort-by="lastName"
                         sort-order="desc"
                     >
-                        <table-column for="firstName" label="First name"></table-column>
-                        <table-column for="lastName" label="Last name" :filterable="false"></table-column>
+                        <table-column show="firstName" label="First name"></table-column>
+                        <table-column show="lastName" label="Last name" :filterable="false"></table-column>
                     </table-component>
                 </div>
             </div>

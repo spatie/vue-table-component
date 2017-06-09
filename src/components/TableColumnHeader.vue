@@ -14,7 +14,7 @@
                     return;
                 }
 
-                if (this.column.properties.for !== this.sort.fieldName) {
+                if (this.column.properties.show !== this.sort.fieldName) {
                     return 'table-component__th--sort';
                 }
 
