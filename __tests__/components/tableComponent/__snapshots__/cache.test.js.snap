@@ -2,12 +2,12 @@
 
 exports[`Caching tableComponent will cache a the sort column 1`] = `
 Object {
-  "vue-table-component.blank": "{\\"value\\":{\\"filter\\":\\"\\",\\"sort\\":{\\"fieldName\\":\\"songs\\",\\"order\\":\\"desc\\"}},\\"expires\\":\\"2017-06-09T21:36:20.471Z\\"}",
+  "vue-table-component.blank": "{\\"value\\":{\\"filter\\":\\"\\",\\"sort\\":{\\"fieldName\\":\\"songs\\",\\"order\\":\\"desc\\"}},\\"expires\\":\\"2017-01-01T00:05:00.000Z\\"}",
 }
 `;
 
 exports[`Caching tableComponent will cache the filter 1`] = `
 Object {
-  "vue-table-component.blank": "{\\"value\\":{\\"filter\\":\\"cache this\\",\\"sort\\":{\\"fieldName\\":\\"\\",\\"order\\":\\"desc\\"}},\\"expires\\":\\"2017-06-09T21:34:26.718Z\\"}",
+  "vue-table-component.blank": "{\\"value\\":{\\"filter\\":\\"cache this\\",\\"sort\\":{\\"fieldName\\":\\"\\",\\"order\\":\\"desc\\"}},\\"expires\\":\\"2017-01-01T00:05:00.000Z\\"}",
 }
 `;

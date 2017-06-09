@@ -28,6 +28,13 @@ describe('Caching tableComponent', () => {
                 </div>
             </div>
         `;
+
+        const dateClass = Date;
+
+        // eslint-disable-next-line no-global-assign
+        Date = function (dateString) {
+            return new dateClass(dateString || '2017-01-01T00:00:00.000Z');
+        };
     });
 
     it('will cache the used filter and sorting', async () => {
