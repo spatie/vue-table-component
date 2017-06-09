@@ -15,14 +15,18 @@ export default class Column {
         return this.properties.sortable;
     }
 
-    getSortPredicate(sortOrder) {
-        const dataType = this.properties.dataType;
+    getSortPredicate(sortOrder, allColumns) {
+        const sortFieldName = this.getSortFieldName();
 
-        if (this.properties.dataType.startsWith('date') || dataType === 'numeric') {
+        const sortColumn = allColumns.filter(column => column.properties.show === sortFieldName)[0];
+
+        const dataType = sortColumn.properties.dataType;
+
+        if (dataType.startsWith('date') || dataType === 'numeric') {
 
             return (row1, row2) => {
-                const value1 = row1.getSortableValue(this.getSortFieldName());
-                const value2 = row2.getSortableValue(this.getSortFieldName());
+                const value1 = row1.getSortableValue(sortFieldName);
+                const value2 = row2.getSortableValue(sortFieldName);
 
                 if (sortOrder === 'desc') {
                     return value2 < value1;
@@ -33,8 +37,8 @@ export default class Column {
         }
 
         return (row1, row2) => {
-            const value1 = row1.getSortableValue(this.getSortFieldName());
-            const value2 = row2.getSortableValue(this.getSortFieldName());
+            const value1 = row1.getSortableValue(sortFieldName);
+            const value2 = row2.getSortableValue(sortFieldName);
 
             if (sortOrder === 'desc') {
                 return value2.localeCompare(value1);

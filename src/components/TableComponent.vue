@@ -95,7 +95,7 @@
                     return this.rows;
                 }
 
-                return this.rows.sort(sortColumn.getSortPredicate(this.sort.order));
+                return this.rows.sort(sortColumn.getSortPredicate(this.sort.order, this.columns));
             },
 
             storageKey() {

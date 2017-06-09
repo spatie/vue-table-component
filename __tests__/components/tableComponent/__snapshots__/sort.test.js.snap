@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Sortable tableComponent can sort on another column 1`] = `
+"
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort-desc\\">
+    First name
+</th><th class=\\"table-component__th--sort\\">
+    Songs
+</th></tr></thead> <tbody><tr><td>Paul</td><td>20</td></tr><tr><td>John</td><td>30</td></tr><tr><td>Ringo</td><td>210</td></tr><tr><td>George</td><td>420</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    First name
+</th> <th>
+    Songs
+</th></div></div></div></div>
+        "
+`;
+
 exports[`Sortable tableComponent can sort the data with by a specific column 1`] = `
 "
             <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort-\\">
