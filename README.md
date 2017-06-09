@@ -1,12 +1,12 @@
 **WORK IN PROGRESS: DO NOT USE YET**
 
-# A straightforward component to filter and sort tables
+# A straightforward Vue component to filter and sort tables
 
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-table-component.svg?style=flat-square)](https://npmjs.com/package/vue-table-component)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/vue-table-component/master.svg?style=flat-square)](https://travis-ci.org/spatie/vue-table-component)
 
-Example html:
+
 
 ```html
 <table-component

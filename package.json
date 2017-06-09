@@ -1,7 +1,7 @@
 {
   "name": "vue-table-component",
   "version": "0.0.1",
-  "description": "A straight forward component to filter and sort tables",
+  "description": "A straightforward Vue component to filter and sort tables",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
