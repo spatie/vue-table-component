@@ -106,14 +106,14 @@
         watch: {
             filter() {
                 this.saveState();
-            }
+            },
         },
 
         mounted() {
             this.columns = this.$slots.default
                 .filter(column => column.componentInstance)
                 .map(column => pick(column.componentInstance, [
-                    'show', 'label', 'dataType', 'sortable', 'sortOn', 'filterable', 'filterOn'
+                    'show', 'label', 'dataType', 'sortable', 'sortOn', 'filterable', 'filterOn',
                 ]))
                 .map(columnProperties => new Column(columnProperties));
 

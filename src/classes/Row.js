@@ -31,6 +31,7 @@ export default class Row {
         }
 
         if (dataType.startsWith('date')) {
+            // eslint-disable-next-line no-unused-vars
             const [_, format]  = dataType.split(':');
 
             return moment(value, format).format('x');

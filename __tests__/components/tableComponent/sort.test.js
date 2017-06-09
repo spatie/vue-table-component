@@ -131,7 +131,7 @@ function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
 }
 
 async function createVm() {
-    const vm = new Vue({
+    new Vue({
         el: '#app',
     });
 

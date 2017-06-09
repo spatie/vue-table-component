@@ -23,7 +23,7 @@
         },
 
         methods: {
-            clicked(event) {
+            clicked() {
                 if (this.column.isSortable()) {
                     this.$emit('click', this.column);
                 }
