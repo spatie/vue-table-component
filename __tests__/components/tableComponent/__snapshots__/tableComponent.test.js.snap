@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TableView can mount 1`] = `
+exports[`TableComponent can mount 1`] = `
 "
-            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-view-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
     First name
 </th><th class=\\"table-component__th--sort-desc\\">
     Last name

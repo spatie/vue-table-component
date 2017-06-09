@@ -1,13 +1,13 @@
-import TableView from '../../../src';
+import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
 
-describe('TableView', () => {
-    Vue.use(TableView);
+describe('TableComponent', () => {
+    Vue.use(TableComponent);
 
     beforeEach(() => {
         document.body.innerHTML = `
             <div id="app">
-                <table-view
+                <table-component
                     :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
                             { id: 2, firstName: 'Wesley', lastName: 'Biets' },
                             { id: 3, firstName: 'Randy', lastName: 'Paret' },
@@ -17,7 +17,7 @@ describe('TableView', () => {
                 >
                     <table-column for="firstName" label="First name"></table-column>
                     <table-column for="lastName" label="Last name"></table-column>
-                </table-view>
+                </table-component>
             </div>
         `;
     });

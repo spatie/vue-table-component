@@ -2,7 +2,7 @@
     <div class="table-component">
 
         <div class="table-component__filter">
-            <input class="table-component__filter__field" type="text" v-model="filter" name="table-view-filter" placeholder="Filter table…">
+            <input class="table-component__filter__field" type="text" v-model="filter" name="table-component-filter" placeholder="Filter table…">
             <a v-if="filter !== ''" @click="filter = ''" class="table-component__filter__clear">×</a>
         </div>
 

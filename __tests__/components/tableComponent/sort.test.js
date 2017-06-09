@@ -1,9 +1,9 @@
-import TableView from '../../../src';
+import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
 import simulant from 'simulant';
 
-describe('Sortable tableView', () => {
-    Vue.use(TableView);
+describe('Sortable tableComponent', () => {
+    Vue.use(TableComponent);
 
     it('can sort the data with by a specific column', async () => {
         setDocumentInnerHtml({ sortBy: 'firstName' });
@@ -79,7 +79,7 @@ function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
     document.body.innerHTML = `
             <div id="app">
                 <div>
-                    <table-view
+                    <table-component
                         :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels', actions: 'Red' },
                                 { id: 2, firstName: 'Wesley', lastName: 'Biets', actions: 'Blue' },
                                 { id: 3, firstName: 'Randy', lastName: 'Paret', actions: 'Green' },
@@ -90,7 +90,7 @@ function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
                         <table-column for="firstName" label="First name"></table-column>
                         <table-column for="lastName" label="Last name"></table-column>
                         <table-column for="actions" label="Color" :sortable="false"></table-column>
-                    </table-view>
+                    </table-component>
                 </div>
             </div>
         `;

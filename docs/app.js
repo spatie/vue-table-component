@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import { TableColumn, TableView } from '../src';
+import { TableColumn, TableComponent } from '../src';
 
 new Vue({
     el: '#app',
 
     components: {
         TableColumn,
-        TableView,
+        TableComponent,
     },
 });

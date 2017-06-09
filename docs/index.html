@@ -137,7 +137,7 @@
         <h1 class="page-title">
             <a href="https://github.com/spatie/vue-table-component">Vue-table-component</a>
         </h1>
-        <table-view
+        <table-component
             :data="[
             { id: 1, firstName: 'Jay', lastName: 'Vleugels', color: 'Red', editUrl: '<a href=&quot;jay&quot;>Edit</a>', birthday: '01/01/1980', sales: 1 },
             { id: 2, firstName: 'Wesley', lastName: 'Biets', color: 'Blue', editUrl: '<a href=&quot;wesley&quot;>Edit</a>', birthday: '12/06/1978', sales: 0 },
@@ -153,7 +153,7 @@
             <table-column for="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
             <table-column for="color" label="Color" :sortable="false"></table-column>
             <table-column for="editUrl" label="" :sortable="false" :filterable="false"></table-column>
-        </table-view>
+        </table-component>
 
     <section class="page-about">
         <h2 class="page-subtitle">About</h2>

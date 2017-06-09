@@ -1,14 +1,14 @@
-import TableView from '../../../src';
+import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
 
-describe('Filterable tableView', () => {
-    Vue.use(TableView);
+describe('Filterable tableComponent', () => {
+    Vue.use(TableComponent);
 
     beforeEach(() => {
         document.body.innerHTML = `
             <div id="app">
                 <div>
-                    <table-view
+                    <table-component
                         :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
                                 { id: 2, firstName: 'Wesley', lastName: 'Biets' },
                                 { id: 3, firstName: 'Randy', lastName: 'Paret' },
@@ -18,7 +18,7 @@ describe('Filterable tableView', () => {
                     >
                         <table-column for="firstName" label="First name"></table-column>
                         <table-column for="lastName" label="Last name" :filterable="false"></table-column>
-                    </table-view>
+                    </table-component>
                 </div>
             </div>
         `;

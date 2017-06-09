@@ -9,7 +9,7 @@
 Example html:
 
 ```html
-<table-view
+<table-component
     :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
             { id: 2, firstName: 'Wesley', lastName: 'Biets' },
             { id: 3, firstName: 'Randy', lastName: 'Paret' },
@@ -19,7 +19,7 @@ Example html:
 >
     <table-column for="firstName" label="First name"></table-column>
     <table-column for="lastName" label="Last name"></table-column>
-</table-view>
+</table-component>
 ```
 
 ## Demo

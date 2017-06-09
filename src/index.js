@@ -1,12 +1,12 @@
-import TableView from './components/TableView.vue';
+import TableComponent from './components/TableComponent.vue';
 import TableColumn from './components/TableColumn.vue';
 
 export default {
     install(Vue) {
-        Vue.component('table-view', TableView);
+        Vue.component('table-component', TableComponent);
         Vue.component('table-column', TableColumn);
     },
 };
 
-export { TableView, TableColumn };
+export { TableComponent, TableColumn };
 
