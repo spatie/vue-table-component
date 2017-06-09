@@ -7,6 +7,10 @@ export default class Column {
         return this.properties.filterable;
     }
 
+    getFilterFieldName() {
+        return this.properties.filterOn || this.properties.show;
+    }
+
     isSortable() {
         return this.properties.sortable;
     }

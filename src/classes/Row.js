@@ -46,7 +46,7 @@ export default class Row {
     passesFilter(filter) {
         return this.columns
             .filter(column =>  column.isFilterable())
-            .map(column => this.getFilterableValue(column.properties.show))
+            .map(column => this.getFilterableValue(column.getFilterFieldName()))
             .filter(filterableValue => filterableValue.includes(filter.toLowerCase()))
             .length;
     }
