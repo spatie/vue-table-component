@@ -29,12 +29,9 @@ describe('Filterable tableComponent', () => {
                 </div>
             </div>
         `;
-
-
     });
 
     it('can filter data', async () => {
-
         const table = await createVm();
 
         table.filter = 'Paul';
@@ -45,7 +42,6 @@ describe('Filterable tableComponent', () => {
     });
 
     it('will filter data in a case-insensitive way', async () => {
-
         const table = await createVm();
 
         table.filter = 'paul';
@@ -56,7 +52,6 @@ describe('Filterable tableComponent', () => {
     });
 
     it('will display a message if there are no matching rows', async () => {
-
         const table = await createVm();
 
         table.filter = 'there are no rows that match this';
@@ -67,7 +62,6 @@ describe('Filterable tableComponent', () => {
     });
 
     it('will not use columns that are not filterable', async () => {
-
         const table = await createVm();
 
         table.filter = 'Lennon';
@@ -77,10 +71,33 @@ describe('Filterable tableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
+    it('can filter on another property', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <div>
+                    <table-component
+                        :data="[{ id: 1, firstName: 'John', songs: 72 },
+                                { id: 2, firstName: 'Paul', songs: 70 },
+                                { id: 3, firstName: 'George', songs: 22 },
+                                { id: 4, firstName: 'Ringo', songs: 2 }]"
+                        sort-by="lastName"
+                        sort-order="desc"
+                    >
+                        <table-column show="firstName" label="First name" filter-on="songs"></table-column>
+                    </table-component>
+                </div>
+            </div>
+        `;
 
+        const table = await createVm();
+
+        table.filter = '70';
+
+        await Vue.nextTick(() => {});
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
-
-
 
 async function createVm() {
     const vm = new Vue({
