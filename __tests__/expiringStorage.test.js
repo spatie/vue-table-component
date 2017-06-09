@@ -44,6 +44,14 @@ describe('expiringStorage', () => {
     it('returns null for unknown keys', () => {
         expect(expiringStorage.get('unknown-key')).toBeNull();
     });
+
+    it('can determine it contains a value with the given key', () => {
+        expect(expiringStorage.has('my-key')).toEqual(false);
+
+        expiringStorage.set('my-key', 'my-value', 5);
+
+        expect(expiringStorage.has('my-key')).toEqual(true);
+    });
 });
 
 function progressTime(minutes) {

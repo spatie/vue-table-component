@@ -2,7 +2,8 @@
     <div class="table-component">
 
         <div v-if="showFilter" class="table-component__filter">
-            <input class="table-component__filter__field" type="text" v-model="filter" name="table-component-filter" placeholder="Filter table…">
+            <input class="table-component__filter__field" type="text" v-model="filter" name="table-component-filter"
+                   placeholder="Filter table…">
             <a v-if="filter !== ''" @click="filter = ''" class="table-component__filter__clear">×</a>
         </div>
 
@@ -40,12 +41,12 @@
 </template>
 
 <script>
-    import { pick } from 'lodash';
+    import Column from '../classes/Column';
+    import expiringStorage from '../expiringStorage';
+    import Row from '../classes/Row';
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
-    import Column from '../classes/Column';
-    import Row from '../classes/Row';
-    import expiringStorage from '../expiringStorage';
+    import { pick } from 'lodash';
 
     export default {
         components: {
@@ -54,16 +55,20 @@
         },
 
         props: {
-            showFilter: { default: true },
             data: { required: true, type: Array },
+
+            showFilter: { default: true },
             sortBy: { default: '', type: String },
             sortOrder: { default: 'desc', type: String },
+
+            cacheId: { default: '' },
+            cacheLifetime: { default: 5 },
         },
 
         data: () => ({
-            filter: '',
             columns: [],
             rows: [],
+            filter: '',
             sort: {
                 fieldName: '',
                 order: '',
@@ -86,8 +91,22 @@
 
                 const sortColumn = this.getColumn(this.sort.fieldName);
 
+                if (! sortColumn) {
+                    return this.rows;
+                }
+
                 return this.rows.sort(sortColumn.getSortPredicate(this.sort.order));
             },
+
+            storageKey() {
+                return `vue-table-component.${window.location.host}${window.location.pathname}${this.cacheId}`;
+            },
+        },
+
+        watch: {
+            filter() {
+                this.saveState();
+            }
         },
 
         mounted() {
@@ -104,6 +123,8 @@
         created() {
             this.sort.fieldName = this.sortBy;
             this.sort.order = this.sortOrder;
+
+            this.restoreState();
         },
 
         methods: {
@@ -116,14 +137,29 @@
                 if (this.sort.fieldName === column.properties.for) {
                     this.sort.order = (this.sort.order === 'desc' ? 'asc' : 'desc');
                 }
+
+                this.saveState();
             },
 
             getColumn(columnName) {
                 return this.columns.filter(column => column.properties.for === columnName)[0];
             },
 
-            getStorageKey(suffix) {
-                return `vue-table-component.cache.${window.location.host}${window.location.pathname}.${suffix}`;
+            saveState() {
+                expiringStorage.set(this.storageKey, pick(this.$data, ['filter', 'sort']), this.cacheLifetime);
+            },
+
+            restoreState() {
+                const previousState = expiringStorage.get(this.storageKey);
+
+                if (previousState === null) {
+                    return;
+                }
+
+                this.filter = previousState.filter;
+                this.sort = previousState.sort;
+
+                this.saveState();
             },
         },
     };

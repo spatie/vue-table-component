@@ -18,6 +18,10 @@ class ExpiringStorage {
         return cached.value;
     }
 
+    has(key) {
+        return this.get(key) !== null;
+    }
+
     set(key, value, lifeTimeInMinutes) {
         const currentTime = new Date().getTime();
 
