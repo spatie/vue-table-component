@@ -21,8 +21,8 @@ export default class Column {
         if (this.properties.dataType.startsWith('date') || dataType === 'numeric') {
 
             return (row1, row2) => {
-                const value1 = row1.getSortableValue(this.properties.show);
-                const value2 = row2.getSortableValue(this.properties.show);
+                const value1 = row1.getSortableValue(this.getSortFieldName());
+                const value2 = row2.getSortableValue(this.getSortFieldName());
 
                 if (sortOrder === 'desc') {
                     return value2 < value1;
@@ -33,8 +33,8 @@ export default class Column {
         }
 
         return (row1, row2) => {
-            const value1 = row1.getSortableValue(this.properties.show);
-            const value2 = row2.getSortableValue(this.properties.show);
+            const value1 = row1.getSortableValue(this.getSortFieldName());
+            const value2 = row2.getSortableValue(this.getSortFieldName());
 
             if (sortOrder === 'desc') {
                 return value2.localeCompare(value1);
@@ -42,5 +42,9 @@ export default class Column {
 
             return value1.localeCompare(value2);
         };
+    }
+
+    getSortFieldName() {
+        return this.properties.sortOn || this.properties.show;
     }
 }
