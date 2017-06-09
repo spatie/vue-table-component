@@ -98,7 +98,7 @@ Here's a simple example on how to use the component.
  </table-component>
 ```
 
-This wil render a table that is both filterable and sortable. A filter field will be displayed right above the table. You can sort the table by clicking on the column headers. By default it will remember that used filter and sorting for the next 15 minutes.
+This wil render a table that is both filterable and sortable. A filter field will be displayed right above the table. You can sort the table by clicking on the column headers. By default it will remember the used filter and sorting for the next 15 minutes.
 
 For each `table-column` a column will be rendered. It can have these props:
 
