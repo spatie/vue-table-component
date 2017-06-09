@@ -26074,8 +26074,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             show: { required: true, type: String },
             label: { default: '', type: String },
             dataType: { default: 'string', type: String },
+
+            sortable: { default: true, type: Boolean },
+            sortOn: { default: null },
+
             filterable: { default: true, type: Boolean },
-            sortable: { default: true, type: Boolean }
+            filterOn: { default: null }
         }
     };
 });
@@ -26123,7 +26127,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         },
 
         methods: {
-            clicked: function clicked(event) {
+            clicked: function clicked() {
                 if (this.column.isSortable()) {
                     this.$emit('click', this.column);
                 }
@@ -26226,7 +26230,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     return this.rows;
                 }
 
-                return this.rows.sort(sortColumn.getSortPredicate(this.sort.order));
+                return this.rows.sort(sortColumn.getSortPredicate(this.sort.order, this.columns));
             },
             storageKey: function storageKey() {
                 return 'vue-table-component.' + window.location.host + window.location.pathname + this.cacheId;
@@ -26245,7 +26249,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             this.columns = this.$slots.default.filter(function (column) {
                 return column.componentInstance;
             }).map(function (column) {
-                return (0, _lodash.pick)(column.componentInstance, ['for', 'label', 'sortable', 'filterable', 'dataType']);
+                return (0, _lodash.pick)(column.componentInstance, ['show', 'label', 'dataType', 'sortable', 'sortOn', 'filterable', 'filterOn']);
             }).map(function (columnProperties) {
                 return new _Column2.default(columnProperties);
             });
@@ -26384,22 +26388,31 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 return this.properties.filterable;
             }
         }, {
+            key: 'getFilterFieldName',
+            value: function getFilterFieldName() {
+                return this.properties.filterOn || this.properties.show;
+            }
+        }, {
             key: 'isSortable',
             value: function isSortable() {
                 return this.properties.sortable;
             }
         }, {
             key: 'getSortPredicate',
-            value: function getSortPredicate(sortOrder) {
-                var _this = this;
+            value: function getSortPredicate(sortOrder, allColumns) {
+                var sortFieldName = this.getSortFieldName();
 
-                var dataType = this.properties.dataType;
+                var sortColumn = allColumns.filter(function (column) {
+                    return column.properties.show === sortFieldName;
+                })[0];
 
-                if (this.properties.dataType.startsWith('date') || dataType === 'numeric') {
+                var dataType = sortColumn.properties.dataType;
+
+                if (dataType.startsWith('date') || dataType === 'numeric') {
 
                     return function (row1, row2) {
-                        var value1 = row1.getSortableValue(_this.properties.show);
-                        var value2 = row2.getSortableValue(_this.properties.show);
+                        var value1 = row1.getSortableValue(sortFieldName);
+                        var value2 = row2.getSortableValue(sortFieldName);
 
                         if (sortOrder === 'desc') {
                             return value2 < value1;
@@ -26410,8 +26423,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
 
                 return function (row1, row2) {
-                    var value1 = row1.getSortableValue(_this.properties.show);
-                    var value2 = row2.getSortableValue(_this.properties.show);
+                    var value1 = row1.getSortableValue(sortFieldName);
+                    var value2 = row2.getSortableValue(sortFieldName);
 
                     if (sortOrder === 'desc') {
                         return value2.localeCompare(value1);
@@ -26419,6 +26432,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
                     return value1.localeCompare(value2);
                 };
+            }
+        }, {
+            key: 'getSortFieldName',
+            value: function getSortFieldName() {
+                return this.properties.sortOn || this.properties.show;
             }
         }]);
         return Column;
@@ -26530,7 +26548,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 return this.columns.filter(function (column) {
                     return column.isFilterable();
                 }).map(function (column) {
-                    return _this.getFilterableValue(column.properties.show);
+                    return _this.getFilterableValue(column.getFilterFieldName());
                 }).filter(function (filterableValue) {
                     return filterableValue.includes(filter.toLowerCase());
                 }).length;
