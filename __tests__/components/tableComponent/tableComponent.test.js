@@ -17,7 +17,7 @@ describe('TableComponent', () => {
         document.body.innerHTML = `
             <div id="app">
                 <table-component
-                    :data="[{ id: 1, firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
+                    :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
                 </table-component>
             </div>
@@ -32,7 +32,7 @@ describe('TableComponent', () => {
         document.body.innerHTML = `
             <div id="app">
                 <table-component :show-filter="false"
-                    :data="[{ id: 1, firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
+                    :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
                 </table-component>
             </div>

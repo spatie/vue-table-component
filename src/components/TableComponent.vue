@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                 <table-row v-for="row in displayedRows"
-                           :key="row.id"
+                           :key="uuid"
                            :row="row"
                            :columns="columns"
                 />
@@ -47,6 +47,7 @@
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
     import { pick } from 'lodash';
+    import { v1 as uuid } from 'uuid';
 
     export default {
         components: {
@@ -128,6 +129,8 @@
         },
 
         methods: {
+            uuid,
+
             changeSorting(column) {
                 if (this.sort.fieldName !== column.properties.show) {
                     this.sort.fieldName = column.properties.show;

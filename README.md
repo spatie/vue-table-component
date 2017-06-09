@@ -58,7 +58,7 @@ or npm:
 npm install vue-table-component --save
 ```
 
-Nest you must register the component. The most common use case is to do that globally.
+Nxt you must register the component. The most common use case is to do that globally.
 
 ```js
 //in your app.js or similar file
@@ -79,7 +79,32 @@ Vue.use(TableComponent);
 
 ## Usage
 
-TO DO
+```html
+<table-component
+     :data="[
+     { firstName: 'John', lastName: 'Lennon', instrument: 'Guitar', editUrl: '<a href='#john'>Edit</a>', birthday: '04/10/1940', songs: 72 },
+     { firstName: 'Paul', lastName: 'McCartney', instrument: 'Bass', editUrl: '<a href='#paul'>Edit</a>', birthday: '18/06/1942', songs: 70 },
+     { firstName: 'George', lastName: 'Harrison', instrument: 'Guitar', editUrl: '<a href='#george'>Edit</a>', birthday: '25/02/1943', songs: 22 },
+     { firstName: 'Ringo', lastName: 'Starr', instrument: 'Drums', editUrl: '<a href='#ringo'>Edit</a>', birthday: '07/07/1940', songs: 2 },
+     ]"
+     sort-by="songs"
+     sort-order="asc"
+     >
+     <table-column show="firstName" label="First name"></table-column>
+     <table-column show="lastName" label="Last name"></table-column>
+     <table-column show="instrument" label="Instrument"></table-column>
+     <table-column show="songs" label="Songs" data-type="numeric"></table-column>
+     <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
+     <table-column show="editUrl" label="" :sortable="false" :filterable="false"></table-column>
+ </table-component>
+```
+
+
+### Sorting
+
+### Filtering
+
+### Caching
 
 ## Change log
 

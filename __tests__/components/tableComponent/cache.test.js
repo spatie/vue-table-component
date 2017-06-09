@@ -92,10 +92,10 @@ describe('Caching tableComponent', () => {
             <div id="app">
                 <div>
                     <table-component
-                        :data="[{ id: 1, firstName: 'John', songs: 30 },
-                                { id: 2, firstName: 'Paul', songs: 20 },
-                                { id: 3, firstName: 'George', songs: 420 },
-                                { id: 4, firstName: 'Ringo', songs: 210 }]"
+                        :data="[{ firstName: 'John', songs: 30 },
+                                { firstName: 'Paul', songs: 20 },
+                                { firstName: 'George', songs: 420 },
+                                { firstName: 'Ringo', songs: 210 }]"
                     >
                         <table-column show="firstName" label="First name" sort-on="songs"></table-column>
                         <table-column show="songs" data-type="numeric" label="Songs" sort-on="songs"></table-column>

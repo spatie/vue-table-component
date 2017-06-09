@@ -16,10 +16,10 @@ describe('Filterable tableComponent', () => {
             <div id="app">
                 <div>
                     <table-component
-                        :data="[{ id: 1, firstName: 'John', lastName: 'Lennon' },
-                                { id: 2, firstName: 'Paul', lastName: 'McCartney' },
-                                { id: 3, firstName: 'George', lastName: 'Harrison' },
-                                { id: 4, firstName: 'Ringo', lastName: 'Starr' }]"
+                        :data="[{ firstName: 'John', lastName: 'Lennon' },
+                                { firstName: 'Paul', lastName: 'McCartney' },
+                                { firstName: 'George', lastName: 'Harrison' },
+                                { firstName: 'Ringo', lastName: 'Starr' }]"
                         sort-by="lastName"
                         sort-order="desc"
                     >
@@ -76,10 +76,10 @@ describe('Filterable tableComponent', () => {
             <div id="app">
                 <div>
                     <table-component
-                        :data="[{ id: 1, firstName: 'John', songs: 72 },
-                                { id: 2, firstName: 'Paul', songs: 70 },
-                                { id: 3, firstName: 'George', songs: 22 },
-                                { id: 4, firstName: 'Ringo', songs: 2 }]"
+                        :data="[{ firstName: 'John', songs: 72 },
+                                { firstName: 'Paul', songs: 70 },
+                                { firstName: 'George', songs: 22 },
+                                { firstName: 'Ringo', songs: 2 }]"
                         sort-by="lastName"
                         sort-order="desc"
                     >
