@@ -1,6 +1,7 @@
 import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
 import expiringStorage from '../../../src/expiringStorage';
+import simulant from 'simulant';
 
 import LocalStorageMock from '../../helpers/LocalStorageMock';
 
@@ -67,6 +68,42 @@ describe('Caching tableComponent', () => {
         expect(table.filter).toEqual('');
         expect(table.sort.fieldName).toEqual('');
         expect(table.sort.order).toEqual('desc');
+    });
+
+    it('will cache the filter', async () => {
+        const table = await createVm();
+
+        table.filter = 'cache this';
+
+        await Vue.nextTick(() => {});
+
+        expect(localStorage.getAll()).toMatchSnapshot();
+    });
+
+    it('will cache a the sort column', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <div>
+                    <table-component
+                        :data="[{ id: 1, firstName: 'John', songs: 30 },
+                                { id: 2, firstName: 'Paul', songs: 20 },
+                                { id: 3, firstName: 'George', songs: 420 },
+                                { id: 4, firstName: 'Ringo', songs: 210 }]"
+                    >
+                        <table-column show="firstName" label="First name" sort-on="songs"></table-column>
+                        <table-column show="songs" data-type="numeric" label="Songs" sort-on="songs"></table-column>
+                    </table-component>
+                </div>
+            </div>
+        `;
+
+        await createVm();
+
+        const secondColumnHeader = document.getElementsByTagName('th')[1];
+
+        await simulant.fire(secondColumnHeader, 'click');
+
+        expect(localStorage.getAll()).toMatchSnapshot();
     });
 });
 

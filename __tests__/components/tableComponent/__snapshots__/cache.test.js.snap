@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Caching tableComponent will cache a the sort column 1`] = `
+Object {
+  "vue-table-component.blank": "{\\"value\\":{\\"filter\\":\\"\\",\\"sort\\":{\\"fieldName\\":\\"songs\\",\\"order\\":\\"desc\\"}},\\"expires\\":\\"2017-06-09T21:36:20.471Z\\"}",
+}
+`;
+
+exports[`Caching tableComponent will cache the filter 1`] = `
+Object {
+  "vue-table-component.blank": "{\\"value\\":{\\"filter\\":\\"cache this\\",\\"sort\\":{\\"fieldName\\":\\"\\",\\"order\\":\\"desc\\"}},\\"expires\\":\\"2017-06-09T21:34:26.718Z\\"}",
+}
+`;
