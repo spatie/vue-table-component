@@ -6,7 +6,9 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/vue-table-component/master.svg?style=flat-square)](https://travis-ci.org/spatie/vue-table-component)
 
+This repo contains a Vue component that can render a filterable and sortable column. It aims to be very lightweight and easy to use.
 
+Here's an example of how you can use it:
 
 ```html
 <table-component
@@ -28,9 +30,11 @@
  </table-component>
 ```
 
+You can see this code in action on [the demo page](http://vue-table-component.spatie.be).
+
 ## Demo
 
-Add a link to a site where the component is being demonstrated live.
+Want to see the component in action? No problem. [Here's a demo](http://vue-table-component.spatie.be).
 
 ## Postcardware
 
@@ -56,7 +60,24 @@ npm install vue-table-component --save
 
 ## Usage
 
-Add instruction on how the package can be used
+The most common use case is to register the component globally.
+
+```js
+//in your app.js or similar file
+import Vue from 'vue';
+import { TableComponent, TableColumn } from 'vue-tabs-component';
+
+Vue.component('table-component', TableComponent);
+Vue.component('table-column', TableColumn);
+```
+
+Alternatively you can do this to register the components:
+
+```js
+import TableComponent from 'vue-table-component';
+
+Vue.use(TableComponent);
+```
 
 ## Change log
 
