@@ -6,7 +6,7 @@ exports[`TableComponent can mount 1`] = `
     First name
 </th><th class=\\"table-component__th--sort-desc\\">
     Last name
-</th></tr></thead> <tbody><tr><td>Jay</td><td>Vleugels</td></tr><tr><td>Randy</td><td>Paret</td></tr><tr><td>Devon</td><td>Macharis</td></tr><tr><td>Wesley</td><td>Biets</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>John</td><td>Lennon</td></tr><tr><td>George</td><td>Harrison</td></tr><tr><td>Ringo</td><td>Starr</td></tr><tr><td>Paul</td><td>McCartney</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name

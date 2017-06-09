@@ -80,10 +80,10 @@ function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
             <div id="app">
                 <div>
                     <table-component
-                        :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels', actions: 'Red' },
-                                { id: 2, firstName: 'Wesley', lastName: 'Biets', actions: 'Blue' },
-                                { id: 3, firstName: 'Randy', lastName: 'Paret', actions: 'Green' },
-                                { id: 4, firstName: 'Devon', lastName: 'Macharis', actions: 'Yellow' }]"
+                        :data="[{ id: 1, firstName: 'John', lastName: 'Lennon', actions: 'Red' },
+                                { id: 2, firstName: 'Paul', lastName: 'McCartney', actions: 'Blue' },
+                                { id: 3, firstName: 'George', lastName: 'Harrison', actions: 'Green' },
+                                { id: 4, firstName: 'Ringo', lastName: 'Starr', actions: 'Yellow' }]"
                         sort-by="${sortBy}"
                         sort-order="${order}"
                     >

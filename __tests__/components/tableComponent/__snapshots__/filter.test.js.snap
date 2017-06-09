@@ -6,7 +6,7 @@ exports[`Filterable tableComponent can filter data 1`] = `
     First name
 </th><th class=\\"table-component__th--sort-desc\\">
     Last name
-</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>Paul</td><td>McCartney</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
@@ -36,7 +36,7 @@ exports[`Filterable tableComponent will filter data in a case-insensitive way 1`
     First name
 </th><th class=\\"table-component__th--sort-desc\\">
     Last name
-</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>Paul</td><td>McCartney</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name

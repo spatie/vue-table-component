@@ -9,10 +9,10 @@ describe('Filterable tableComponent', () => {
             <div id="app">
                 <div>
                     <table-component
-                        :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
-                                { id: 2, firstName: 'Wesley', lastName: 'Biets' },
-                                { id: 3, firstName: 'Randy', lastName: 'Paret' },
-                                { id: 4, firstName: 'Devon', lastName: 'Macharis' }]"
+                        :data="[{ id: 1, firstName: 'John', lastName: 'Lennon' },
+                                { id: 2, firstName: 'Paul', lastName: 'McCartney' },
+                                { id: 3, firstName: 'George', lastName: 'Harrison' },
+                                { id: 4, firstName: 'Ringo', lastName: 'Starr' }]"
                         sort-by="lastName"
                         sort-order="desc"
                     >
@@ -30,7 +30,7 @@ describe('Filterable tableComponent', () => {
 
         const table = await createVm();
 
-        table.filter = 'Wesley';
+        table.filter = 'Paul';
 
         await Vue.nextTick(() => {});
 
@@ -63,7 +63,7 @@ describe('Filterable tableComponent', () => {
 
         const table = await createVm();
 
-        table.filter = 'Vleugels';
+        table.filter = 'Lennon';
 
         await Vue.nextTick(() => {});
 
