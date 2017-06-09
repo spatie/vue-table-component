@@ -4,7 +4,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/vue-table-component/master.svg?style=flat-square)](https://travis-ci.org/spatie/vue-table-component)
 
-This repo contains a Vue component that can render a filterable and sortable column. It aims to be very lightweight and easy to use.
+This repo contains a Vue component that can render a filterable and sortable table. It aims to be very lightweight and easy to use.
 
 Here's an example of how you can use it:
 
