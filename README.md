@@ -58,7 +58,7 @@ or npm:
 npm install vue-table-component --save
 ```
 
-Nxt you must register the component. The most common use case is to do that globally.
+Next you must register the component. The most common use case is to do that globally.
 
 ```js
 //in your app.js or similar file
