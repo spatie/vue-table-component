@@ -7,13 +7,13 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
 </th><th class=\\"table-component__th--sort\\">
     Last name
 </th><th>
-    Color
-</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    Songs
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
 </th> <th>
-    Color
+    Songs
 </th></div></div></div></div>
         "
 `;
@@ -25,13 +25,13 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
 </th><th class=\\"table-component__th--sort\\">
     Last name
 </th><th>
-    Color
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    Songs
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
 </th> <th>
-    Color
+    Songs
 </th></div></div></div></div>
         "
 `;
@@ -43,13 +43,13 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
 </th><th class=\\"table-component__th--sort-\\">
     Last name
 </th><th>
-    Color
-</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    Songs
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
 </th> <th>
-    Color
+    Songs
 </th></div></div></div></div>
         "
 `;
@@ -61,13 +61,13 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
 </th><th class=\\"table-component__th--sort\\">
     Last name
 </th><th>
-    Color
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    Songs
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
 </th> <th>
-    Color
+    Songs
 </th></div></div></div></div>
         "
 `;
@@ -79,13 +79,13 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
 </th><th class=\\"table-component__th--sort\\">
     Last name
 </th><th>
-    Color
-</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    Songs
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
 </th> <th>
-    Color
+    Songs
 </th></div></div></div></div>
         "
 `;
@@ -97,13 +97,13 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
 </th><th class=\\"table-component__th--sort\\">
     Last name
 </th><th>
-    Color
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    Songs
+</th></tr></thead> <tbody><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
 </th> <th>
-    Color
+    Songs
 </th></div></div></div></div>
         "
 `;
@@ -115,13 +115,13 @@ exports[`Sortable tableComponent will sort the data descendingly if the header o
 </th><th class=\\"table-component__th--sort-desc\\">
     Last name
 </th><th>
-    Color
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    Songs
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
 </th> <th>
-    Color
+    Songs
 </th></div></div></div></div>
         "
 `;

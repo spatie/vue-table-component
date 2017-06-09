@@ -63,7 +63,7 @@ describe('Sortable tableComponent', () => {
     });
     
     it('will not sort on a column that is not sortable', async () => {
-        setDocumentInnerHtml({ sortBy: 'actions', order: 'desc' });
+        setDocumentInnerHtml({ sortBy: 'songs', order: 'desc' });
 
         await createVm();
 
@@ -89,16 +89,16 @@ function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
             <div id="app">
                 <div>
                     <table-component
-                        :data="[{ id: 1, firstName: 'John', lastName: 'Lennon', actions: 'Red' },
-                                { id: 2, firstName: 'Paul', lastName: 'McCartney', actions: 'Blue' },
-                                { id: 3, firstName: 'George', lastName: 'Harrison', actions: 'Green' },
-                                { id: 4, firstName: 'Ringo', lastName: 'Starr', actions: 'Yellow' }]"
+                        :data="[{ id: 1, firstName: 'John', lastName: 'Lennon', songs: 72 },
+                                { id: 2, firstName: 'Paul', lastName: 'McCartney', songs: 70 },
+                                { id: 3, firstName: 'George', lastName: 'Harrison', songs: 22 },
+                                { id: 4, firstName: 'Ringo', lastName: 'Starr', songs: 2 }]"
                         sort-by="${sortBy}"
                         sort-order="${order}"
                     >
                         <table-column show="firstName" label="First name"></table-column>
                         <table-column show="lastName" label="Last name"></table-column>
-                        <table-column show="actions" label="Color" :sortable="false"></table-column>
+                        <table-column show="songs" label="Songs" :sortable="false"></table-column>
                     </table-component>
                 </div>
             </div>
