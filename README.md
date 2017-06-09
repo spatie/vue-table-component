@@ -10,16 +10,22 @@ Example html:
 
 ```html
 <table-component
-    :data="[{ id: 1, firstName: 'John', lastName: 'Lennon' },
-            { id: 2, firstName: 'Paul', lastName: 'McCartney' },
-            { id: 3, firstName: 'George', lastName: 'Harrison' },
-            { id: 4, firstName: 'Ringo', lastName: 'Starr' }]"
-    sort-by="lastName"
-    sort-order="desc"
->
-    <table-column show="firstName" label="First name"></table-column>
-    <table-column show="lastName" label="Last name"></table-column>
-</table-component>
+     :data="[
+     { id: 1, firstName: 'John', lastName: 'Lennon', instrument: 'Guitar', editUrl: '<a href='#john'>Edit</a>', birthday: '04/10/1940', songs: 72 },
+     { id: 2, firstName: 'Paul', lastName: 'McCartney', instrument: 'Bass', editUrl: '<a href='#paul'>Edit</a>', birthday: '18/06/1942', songs: 70 },
+     { id: 3, firstName: 'George', lastName: 'Harrison', instrument: 'Guitar', editUrl: '<a href='#george'>Edit</a>', birthday: '25/02/1943', songs: 22 },
+     { id: 4, firstName: 'Ringo', lastName: 'Starr', instrument: 'Drums', editUrl: '<a href='#ringo'>Edit</a>', birthday: '07/07/1940', songs: 2 },
+     ]"
+     sort-by="songs"
+     sort-order="asc"
+     >
+     <table-column show="firstName" label="First name"></table-column>
+     <table-column show="lastName" label="Last name"></table-column>
+     <table-column show="instrument" label="Instrument"></table-column>
+     <tabe-column show="songs" label="Songs" data-type="numeric"></table-column>
+     <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
+     <table-column show="editUrl" label="" :sortable="false" :filterable="false"></table-column>
+ </table-component>
 ```
 
 ## Demo
