@@ -42,6 +42,21 @@ describe('TableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('will use the property name as a column heading if label is not set', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component :show-filter="false"
+                    :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
+                    <table-column show="firstName"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 async function createVm() {

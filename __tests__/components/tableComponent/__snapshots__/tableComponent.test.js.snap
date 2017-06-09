@@ -19,3 +19,13 @@ exports[`TableComponent has an prop to disable the filter 1`] = `
 </th></div></div></div>
         "
 `;
+
+exports[`TableComponent will use the property name as a column heading if label is not set 1`] = `
+"
+            <div id=\\"app\\"><div class=\\"table-component\\"><!----> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+    firstName
+</th></tr></thead> <tbody><tr><td>John</td></tr><tr><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    
+</th></div></div></div>
+        "
+`;

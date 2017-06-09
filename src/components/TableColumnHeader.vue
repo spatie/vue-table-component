@@ -1,6 +1,6 @@
 <template>
     <th @click="clicked" :class="headerClass">
-        {{ column.properties.label }}
+        {{ label }}
     </th>
 </template>
 
@@ -19,6 +19,10 @@
                 }
 
                 return `table-component__th--sort-${this.sort.order}`;
+            },
+
+            label() {
+                return this.column.properties.label || this.column.properties.show;
             },
         },
 

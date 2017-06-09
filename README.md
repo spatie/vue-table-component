@@ -103,7 +103,7 @@ This wil render a table that is both filterable and sortable. A filter field wil
 For each `table-column` a column will be rendered. It can have these props:
 
 - `show`: (required) the property name in the data that needs to be shown in this column.
-- `label`: the label that will be shown on top of the column
+- `label`: the label that will be shown on top of the column. Set this to an empty string to display nothing. If this property is not present, the string passed to `show` will be used.
 - `data-type`: if your column should be sorted numerically set this to `numeric`. If your column contains dates set it to `date:` followed by the format of your date
 - `sortable`: if you set this to `false` then the column won't be sorted when clicking the column header
 - `sort-on`: you can set this to any property present in `data`. When sorting the column that property will be used to sort on instead of the property in `show`.
