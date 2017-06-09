@@ -7,19 +7,17 @@ describe('TableView', () => {
     beforeEach(() => {
         document.body.innerHTML = `
             <div id="app">
-                <div>
-                    <table-view
-                        :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
-                                { id: 2, firstName: 'Wesley', lastName: 'Biets' },
-                                { id: 3, firstName: 'Randy', lastName: 'Paret' },
-                                { id: 4, firstName: 'Devon', lastName: 'Macharis' }]"
-                        sort-by="lastName"
-                        sort-order="desc"
-                    >
-                        <table-column for="firstName" label="First name"></table-column>
-                        <table-column for="lastName" label="Last name"></table-column>
-                    </table-view>
-                </div>
+                <table-view
+                    :data="[{ id: 1, firstName: 'Jay', lastName: 'Vleugels' },
+                            { id: 2, firstName: 'Wesley', lastName: 'Biets' },
+                            { id: 3, firstName: 'Randy', lastName: 'Paret' },
+                            { id: 4, firstName: 'Devon', lastName: 'Macharis' }]"
+                    sort-by="lastName"
+                    sort-order="desc"
+                >
+                    <table-column for="firstName" label="First name"></table-column>
+                    <table-column for="lastName" label="Last name"></table-column>
+                </table-view>
             </div>
         `;
     });

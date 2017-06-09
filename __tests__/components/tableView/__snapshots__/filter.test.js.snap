@@ -2,11 +2,11 @@
 
 exports[`Filterable tableView can filter data 1`] = `
 "
-            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <div><a>X</a></div> <table><thead><tr><th>
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-view-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"sort-desc\\">
+</th><th class=\\"table-component__th--sort-desc\\">
     Last name
-</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr></tbody></table> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
@@ -16,11 +16,11 @@ exports[`Filterable tableView can filter data 1`] = `
 
 exports[`Filterable tableView will display a message if there are no matching rows 1`] = `
 "
-            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <div><a>X</a></div> <table><thead><tr><th>
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-view-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"sort-desc\\">
+</th><th class=\\"table-component__th--sort-desc\\">
     Last name
-</th></tr></thead> <tbody></tbody></table> <div>
+</th></tr></thead> <tbody></tbody></table></div> <div class=\\"table-component__message\\">
         There are no matching rows
     </div> <div style=\\"display: none;\\"><th>
     First name
@@ -32,11 +32,11 @@ exports[`Filterable tableView will display a message if there are no matching ro
 
 exports[`Filterable tableView will filter data in a case-insensitive way 1`] = `
 "
-            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <div><a>X</a></div> <table><thead><tr><th>
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-view-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"sort-desc\\">
+</th><th class=\\"table-component__th--sort-desc\\">
     Last name
-</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr></tbody></table> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>Wesley</td><td>Biets</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
@@ -46,11 +46,11 @@ exports[`Filterable tableView will filter data in a case-insensitive way 1`] = `
 
 exports[`Filterable tableView will not use columns that are not filterable 1`] = `
 "
-            <div id=\\"app\\"><div><div><input type=\\"text\\" name=\\"table-view-filter\\"> <div><a>X</a></div> <table><thead><tr><th>
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-view-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"sort-desc\\">
+</th><th class=\\"table-component__th--sort-desc\\">
     Last name
-</th></tr></thead> <tbody></tbody></table> <div>
+</th></tr></thead> <tbody></tbody></table></div> <div class=\\"table-component__message\\">
         There are no matching rows
     </div> <div style=\\"display: none;\\"><th>
     First name
