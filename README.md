@@ -100,8 +100,15 @@ Here's a simple example on how to use the component.
 
 This wil render a table that is both filterable and sortable. A filter field will be displayed right above the table. You can sort the table by clicking on the column headers. By default it will remember the used filter and sorting for the next 15 minutes.
 
-For each `table-column` a column will be rendered. It can have these props:
+You can pass these props to `table-component`:
+- `data`: (required) the data the component will operate on.
+- `show-filter`: set this to `false` to not display the `filter` field.
+- `sort-by`: the property in data on which to initially sort.
+- `sort-order`: the initial sort order.
+- `cache-lifetime`: the lifetime in minutes the component will cache the filter and sorting.
+- `cache-id`: if you use multiple instances of `table-component` you must set this to a unique value per instance.
 
+For each `table-column` a column will be rendered. It can have these props:
 - `show`: (required) the property name in the data that needs to be shown in this column.
 - `label`: the label that will be shown on top of the column. Set this to an empty string to display nothing. If this property is not present, the string passed to `show` will be used.
 - `data-type`: if your column should be sorted numerically set this to `numeric`. If your column contains dates set it to `date:` followed by the format of your date
@@ -110,13 +117,6 @@ For each `table-column` a column will be rendered. It can have these props:
 - `filterable`: if this is set to `false` than this column won't be used when filtering
 - `filter-on`: you can set this to any property present in `data`. When filtering the column that property will be used to filter on instead of the property in `show`.
 
-You can pass these props to `table-component`:
-- `data`: (required) the data where the component will operate on.
-- `show-filter`: set this to `false` to not display the `filter` field.
-- `sort-by`: the property in data on which to initially sort.
-- `sort-order`: the initial sort order.
-- `cache-lifetime`: the lifetime in minutes the component will cache the filter and sorting.
-- `cache-id`: if you use multiple instances of `table-component` you must set this to a unique value per instance.
 
 ## Change log
 
