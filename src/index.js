@@ -9,4 +9,3 @@ export default {
 };
 
 export { TableComponent, TableColumn };
-
