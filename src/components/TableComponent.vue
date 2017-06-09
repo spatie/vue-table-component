@@ -1,7 +1,7 @@
 <template>
     <div class="table-component">
 
-        <div class="table-component__filter">
+        <div v-if="showFilter" class="table-component__filter">
             <input class="table-component__filter__field" type="text" v-model="filter" name="table-component-filter" placeholder="Filter table…">
             <a v-if="filter !== ''" @click="filter = ''" class="table-component__filter__clear">×</a>
         </div>
@@ -54,6 +54,7 @@
         },
 
         props: {
+            showFilter: { default: true },
             data: { required: true, type: Array },
             sortBy: { default: '', type: String },
             sortOrder: { default: 'desc', type: String },

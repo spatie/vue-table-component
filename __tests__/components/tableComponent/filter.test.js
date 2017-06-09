@@ -41,7 +41,7 @@ describe('Filterable tableComponent', () => {
 
         const table = await createVm();
 
-        table.filter = 'wesley';
+        table.filter = 'paul';
 
         await Vue.nextTick(() => {});
 

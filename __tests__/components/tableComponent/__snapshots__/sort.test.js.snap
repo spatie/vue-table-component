@@ -8,7 +8,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
     Last name
 </th><th>
     Color
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
@@ -26,7 +26,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
     Last name
 </th><th>
     Color
-</th></tr></thead> <tbody><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
@@ -44,7 +44,7 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
     Last name
 </th><th>
     Color
-</th></tr></thead> <tbody><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
@@ -62,7 +62,7 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
     Last name
 </th><th>
     Color
-</th></tr></thead> <tbody><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
@@ -80,7 +80,7 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
     Last name
 </th><th>
     Color
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
@@ -116,7 +116,7 @@ exports[`Sortable tableComponent will sort the data descendingly if the header o
     Last name
 </th><th>
     Color
-</th></tr></thead> <tbody><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>Yellow</td></tr><tr><td>Paul</td><td>McCartney</td><td>Blue</td></tr><tr><td>John</td><td>Lennon</td><td>Red</td></tr><tr><td>George</td><td>Harrison</td><td>Green</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th> <th>
     Last name
