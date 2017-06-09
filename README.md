@@ -22,7 +22,7 @@ Example html:
      <table-column show="firstName" label="First name"></table-column>
      <table-column show="lastName" label="Last name"></table-column>
      <table-column show="instrument" label="Instrument"></table-column>
-     <tabe-column show="songs" label="Songs" data-type="numeric"></table-column>
+     <table-column show="songs" label="Songs" data-type="numeric"></table-column>
      <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
      <table-column show="editUrl" label="" :sortable="false" :filterable="false"></table-column>
  </table-component>
