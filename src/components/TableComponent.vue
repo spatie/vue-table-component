@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                 <table-row v-for="row in displayedRows"
-                           :key="uuid"
+                           :key="row.vueTableComponentInternalRowId"
                            :row="row"
                            :columns="columns"
                 />
@@ -47,7 +47,6 @@
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
     import { pick } from 'lodash';
-    import { v1 as uuid } from 'uuid';
 
     export default {
         components: {
@@ -118,7 +117,14 @@
                 ]))
                 .map(columnProperties => new Column(columnProperties));
 
-            this.rows = this.data.map(rowData => new Row(rowData, this.columns));
+            let rowId = 0;
+
+            this.rows = this.data
+                .map(rowData => {
+                    rowData['vueTableComponentInternalRowId'] = rowId++;
+                    return rowData;
+                 })
+                .map(rowData => new Row(rowData, this.columns));
         },
 
         created() {
@@ -129,8 +135,6 @@
         },
 
         methods: {
-            uuid,
-
             changeSorting(column) {
                 if (this.sort.fieldName !== column.properties.show) {
                     this.sort.fieldName = column.properties.show;

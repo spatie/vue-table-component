@@ -61,7 +61,6 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "striptags": "^3.0.1",
-    "uuid": "^3.0.1"
+    "striptags": "^3.0.1"
   }
 }
