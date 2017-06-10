@@ -18,7 +18,7 @@ export default class Column {
     getSortPredicate(sortOrder, allColumns) {
         const sortFieldName = this.getSortFieldName();
 
-        const sortColumn = allColumns.filter(column => column.properties.show === sortFieldName)[0];
+        const sortColumn = allColumns.find(column => column.properties.show === sortFieldName);
 
         const dataType = sortColumn.properties.dataType;
 
