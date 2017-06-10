@@ -121,7 +121,7 @@
 
             this.rows = this.data
                 .map(rowData => {
-                    rowData['vueTableComponentInternalRowId'] = rowId++;
+                    rowData.vueTableComponentInternalRowId = rowId++;
                     return rowData;
                  })
                 .map(rowData => new Row(rowData, this.columns));
