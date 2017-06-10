@@ -12,7 +12,7 @@ export default class Row {
     }
 
     getColumn(columnName) {
-        return this.columns.filter(column => column.properties.show === columnName)[0];
+        return this.columns.find(column => column.properties.show === columnName);
     }
 
     getFilterableValue(columnName) {
