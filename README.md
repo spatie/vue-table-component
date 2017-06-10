@@ -18,6 +18,7 @@ Here's an example of how you can use it:
      ]"
      sort-by="songs"
      sort-order="asc"
+     styles="table table-bordered table-striped"
      >
      <table-column show="firstName" label="First name"></table-column>
      <table-column show="lastName" label="Last name"></table-column>
@@ -102,6 +103,7 @@ This wil render a table that is both filterable and sortable. A filter field wil
 
 You can pass these props to `table-component`:
 - `data`: (required) the data the component will operate on.
+- `styles`: set of classes to add to the table tag.
 - `show-filter`: set this to `false` to not display the `filter` field.
 - `sort-by`: the property in data on which to initially sort.
 - `sort-order`: the initial sort order.

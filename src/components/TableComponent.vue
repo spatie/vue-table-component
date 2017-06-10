@@ -8,7 +8,7 @@
         </div>
 
         <div class="table-component__table-wrapper">
-            <table class="table-component__table">
+            <table class="table-component__table" v-bind:class="styles">
                 <thead>
                 <tr>
                     <table-column-header
@@ -57,6 +57,7 @@
 
         props: {
             data: { required: true, type: Array },
+            styles: { default: '' },
 
             showFilter: { default: true },
             sortBy: { default: '', type: String },
