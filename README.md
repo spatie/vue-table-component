@@ -63,7 +63,7 @@ Next you must register the component. The most common use case is to do that glo
 ```js
 //in your app.js or similar file
 import Vue from 'vue';
-import { TableComponent, TableColumn } from 'vue-tabs-component';
+import { TableComponent, TableColumn } from 'vue-table-component';
 
 Vue.component('table-component', TableComponent);
 Vue.component('table-column', TableColumn);
