@@ -100,6 +100,8 @@ Here's a simple example on how to use the component.
 
 This wil render a table that is both filterable and sortable. A filter field will be displayed right above the table. If your data contains any html we will filter that out when filtering. You can sort the table by clicking on the column headers. By default it will remember the used filter and sorting for the next 15 minutes.
 
+### Props
+
 You can pass these props to `table-component`:
 - `data`: (required) the data the component will operate on.
 - `show-filter`: set this to `false` to not display the `filter` field.
