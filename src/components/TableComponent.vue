@@ -126,7 +126,7 @@
             },
 
             filterResultEmptyText() {
-                return this.texts.resultEmpty || 'There are no matching rows';
+                return this.texts.filterResultEmpty || 'There are no matching rows';
             },
         },
 

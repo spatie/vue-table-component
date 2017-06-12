@@ -1,20 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TableComponent can mount 1`] = `
+exports[`TableComponent can display a custom text as the filter placeholder 1`] = `
 "
-            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table \\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"custom placeholder\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table extra-table-class\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th></tr></thead> <tbody><tr class=\\"\\"><td>John</td></tr><tr class=\\"\\"><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody><tr class=\\"extra-row-class\\"><td>John</td></tr><tr class=\\"extra-row-class\\"><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th></div></div></div>
         "
 `;
 
-exports[`TableComponent can use a custom text as the filter placeholder 1`] = `
+exports[`TableComponent can display a custom text when the filter returns no results 1`] = `
 "
-            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"custom placeholder\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table extra-table-class\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table extra-table-class\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th></tr></thead> <tbody><tr class=\\"extra-row-class\\"><td>John</td></tr><tr class=\\"extra-row-class\\"><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+</th></tr></thead> <tbody></tbody></table></div> <div class=\\"table-component__message\\">
+        game over man, game over
+    </div> <div style=\\"display: none;\\"><th>
+    First name
+</th></div></div></div>
+        "
+`;
+
+exports[`TableComponent can mount 1`] = `
+"
+            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table \\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
+    First name
+</th></tr></thead> <tbody><tr class=\\"\\"><td>John</td></tr><tr class=\\"\\"><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
 </th></div></div></div>
         "
