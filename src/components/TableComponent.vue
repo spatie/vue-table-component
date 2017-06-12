@@ -8,7 +8,7 @@
         </div>
 
         <div class="table-component__table-wrapper">
-            <table class="table-component__table">
+            <table :class="fullClass">
                 <caption class="table-component__table__caption" role="alert" aria-live="polite">{{ this.ariaCaption }}</caption> 
                 <thead>
                 <tr>
@@ -26,6 +26,7 @@
                            :key="row.vueTableComponentInternalRowId"
                            :row="row"
                            :columns="columns"
+                           :class="rowClass"
                 />
                 </tbody>
             </table>
@@ -64,6 +65,9 @@
 
             cacheId: { default: '' },
             cacheLifetime: { default: 5 },
+
+            tableClass: { default: ''},
+            rowClass: { default: ''},
         },
 
         data: () => ({
@@ -78,13 +82,16 @@
 
         computed: {
 
+            fullClass() {
+                return `table-component__table ${this.tableClass}`;
+            },
+
             ariaCaption() {
                 if (this.sort.fieldName === '') {
                     return 'Table not sorted';
                 }
                 
                 return `Table sorted by ${this.sort.fieldName} (${this.sort.order === 'asc' ? 'ascending' : 'descending'})`;
-
             },
 
             displayedRows() {
