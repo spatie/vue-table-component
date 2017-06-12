@@ -121,11 +121,31 @@ For each `table-column` a column will be rendered. It can have these props:
 - `filterable`: if this is set to `false` than this column won't be used when filtering
 - `filter-on`: you can set this to any property present in `data`. When filtering the column that property will be used to filter on instead of the property in `show`.
 
-### Modifying the used labels and texts
+### Modifying the used texts and classes
 
-You can override the default texts by passing an object to the `texts` prop of `table-component`. This properties will be used:
-- `filterPlaceholder`
-- `filterResultEmpty`
+If you want to modify the built in text or classes you can pass some settings globally
+
+```js
+import TableComponent from 'vue-table-component';
+
+TableComponent.settings({
+    classNames: {
+        row: 'extra-row-class',
+        cell: 'extra-cell-class',
+        table: 'extra-table-class',
+    },
+    texts: {
+        filterPlaceholder: 'Only display records with…',
+        filterResultEmpty: 'Game over man, game over',
+    },
+});
+```
+
+If you only want to alter a specific instance of `TableComponent` you can pass the same values to the `extra-settings` prop
+
+```html
+<table-component extra-settings="{ texts: { filterResultEmpty: 'Sorry, found nothing' }">
+```
 
 Here's an example:
 ```html
