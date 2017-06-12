@@ -10,6 +10,16 @@ exports[`TableComponent can mount 1`] = `
         "
 `;
 
+exports[`TableComponent can use a custom text as the filter placeholder 1`] = `
+"
+            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"custom placeholder\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table extra-table-class\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
+    First name
+</th></tr></thead> <tbody><tr class=\\"extra-row-class\\"><td>John</td></tr><tr class=\\"extra-row-class\\"><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
+    First name
+</th></div></div></div>
+        "
+`;
+
 exports[`TableComponent has an prop to disable the filter 1`] = `
 "
             <div id=\\"app\\"><div class=\\"table-component\\"><!----> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table \\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
@@ -22,7 +32,7 @@ exports[`TableComponent has an prop to disable the filter 1`] = `
 
 exports[`TableComponent has props to set classes on the table and the rows 1`] = `
 "
-            <div id=\\"app\\"><div class=\\"table-component\\"><!----> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table extra-table-class\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table extra-table-class\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table not sorted</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
 </th></tr></thead> <tbody><tr class=\\"extra-row-class\\"><td>John</td></tr><tr class=\\"extra-row-class\\"><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name

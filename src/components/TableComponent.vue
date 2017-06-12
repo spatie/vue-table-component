@@ -3,13 +3,13 @@
 
         <div v-if="showFilter" class="table-component__filter">
             <input class="table-component__filter__field" type="text" v-model="filter" name="table-component-filter"
-                   placeholder="Filter table…">
+                   :placeholder="filterPlaceholder">
             <a v-if="filter !== ''" @click="filter = ''" class="table-component__filter__clear">×</a>
         </div>
 
         <div class="table-component__table-wrapper">
             <table :class="fullClass">
-                <caption class="table-component__table__caption" role="alert" aria-live="polite">{{ this.ariaCaption }}</caption> 
+                <caption class="table-component__table__caption" role="alert" aria-live="polite">{{ this.ariaCaption }}</caption>
                 <thead>
                 <tr>
                     <table-column-header
@@ -33,7 +33,7 @@
         </div>
 
         <div v-if="displayedRows.length === 0" class="table-component__message">
-            There are no matching rows
+            {{ filterResultEmptyText }}
         </div>
 
         <div style="display:none;">
@@ -66,8 +66,10 @@
             cacheId: { default: '' },
             cacheLifetime: { default: 5 },
 
-            tableClass: { default: ''},
-            rowClass: { default: ''},
+            tableClass: { default: ''} ,
+            rowClass: { default: '' },
+
+            texts: { default: function () { return {} }, type: Object }
         },
 
         data: () => ({
@@ -81,7 +83,6 @@
         }),
 
         computed: {
-
             fullClass() {
                 return `table-component__table ${this.tableClass}`;
             },
@@ -90,7 +91,7 @@
                 if (this.sort.fieldName === '') {
                     return 'Table not sorted';
                 }
-                
+
                 return `Table sorted by ${this.sort.fieldName} (${this.sort.order === 'asc' ? 'ascending' : 'descending'})`;
             },
 
@@ -118,6 +119,14 @@
 
             storageKey() {
                 return `vue-table-component.${window.location.host}${window.location.pathname}${this.cacheId}`;
+            },
+
+            filterPlaceholder() {
+                return this.texts.filterPlaceholder || 'Filter table…';
+            },
+
+            filterResultEmptyText() {
+                return this.texts.resultEmpty || 'There are no matching rows';
             },
         },
 

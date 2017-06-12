@@ -64,7 +64,24 @@ describe('TableComponent', () => {
                 <table-component
                     table-class="extra-table-class"
                     row-class="extra-row-class"
-                    :show-filter="false"
+                    :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
+                    <table-column show="firstName" label="First name"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
+    it('can use a custom text as the filter placeholder', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :texts="{filterPlaceholder: 'custom placeholder'}"
+                    table-class="extra-table-class"
+                    row-class="extra-row-class"
                     :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
                 </table-component>
