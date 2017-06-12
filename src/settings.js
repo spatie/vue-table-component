@@ -9,8 +9,8 @@ export const settings = {
 
 export function mergeSettings(newSettings) {
     merge(settings, newSettings);
-}
+};
 
 export default {
     data: () => ({ settings }),
-}
+};
