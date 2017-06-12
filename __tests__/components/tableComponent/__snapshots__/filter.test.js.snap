@@ -2,9 +2,9 @@
 
 exports[`Filterable tableComponent can filter data 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by lastName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"table-component__th--sort-desc\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-desc\\">
     Last name
 </th></tr></thead> <tbody><tr><td>Paul</td><td>McCartney</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -16,7 +16,7 @@ exports[`Filterable tableComponent can filter data 1`] = `
 
 exports[`Filterable tableComponent can filter on another property 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by lastName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
 </th></tr></thead> <tbody><tr><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -26,9 +26,9 @@ exports[`Filterable tableComponent can filter on another property 1`] = `
 
 exports[`Filterable tableComponent will display a message if there are no matching rows 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by lastName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"table-component__th--sort-desc\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-desc\\">
     Last name
 </th></tr></thead> <tbody></tbody></table></div> <div class=\\"table-component__message\\">
         There are no matching rows
@@ -42,9 +42,9 @@ exports[`Filterable tableComponent will display a message if there are no matchi
 
 exports[`Filterable tableComponent will filter data in a case-insensitive way 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by lastName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"table-component__th--sort-desc\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-desc\\">
     Last name
 </th></tr></thead> <tbody><tr><td>Paul</td><td>McCartney</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -56,9 +56,9 @@ exports[`Filterable tableComponent will filter data in a case-insensitive way 1`
 
 exports[`Filterable tableComponent will not use columns that are not filterable 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <a class=\\"table-component__filter__clear\\">×</a></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by lastName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"table-component__th--sort-desc\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-desc\\">
     Last name
 </th></tr></thead> <tbody></tbody></table></div> <div class=\\"table-component__message\\">
         There are no matching rows

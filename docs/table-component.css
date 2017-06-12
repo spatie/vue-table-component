@@ -59,6 +59,15 @@
   table-layout: fixed;
 }
 
+.table-component__table__caption {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
 .table-component__table th,
 .table-component__table td {
   padding: .75em 1.25em;

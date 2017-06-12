@@ -2,9 +2,9 @@
 
 exports[`Sortable tableComponent can sort on another column 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort-desc\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by firstName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-desc\\">
     First name
-</th><th class=\\"table-component__th--sort\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     Songs
 </th></tr></thead> <tbody><tr><td>Paul</td><td>20</td></tr><tr><td>John</td><td>30</td></tr><tr><td>Ringo</td><td>210</td></tr><tr><td>George</td><td>420</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -16,11 +16,11 @@ exports[`Sortable tableComponent can sort on another column 1`] = `
 
 exports[`Sortable tableComponent can sort the data with by a specific column 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort-\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by firstName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-\\">
     First name
-</th><th class=\\"table-component__th--sort\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     Last name
-</th><th>
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
 </th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -34,11 +34,11 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
 
 exports[`Sortable tableComponent can sort the data with by a specific column in a specific order 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort-desc\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by firstName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-desc\\">
     First name
-</th><th class=\\"table-component__th--sort\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     Last name
-</th><th>
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
 </th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -52,11 +52,11 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
 
 exports[`Sortable tableComponent can sort the data with by another specific column 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by lastName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"table-component__th--sort-\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-\\">
     Last name
-</th><th>
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
 </th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -70,11 +70,11 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
 
 exports[`Sortable tableComponent it will change the sort order when clicking the header of the column with the active sort 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort-desc\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by firstName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-desc\\">
     First name
-</th><th class=\\"table-component__th--sort\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     Last name
-</th><th>
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
 </th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -88,11 +88,11 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
 
 exports[`Sortable tableComponent will not sort data when clicking a non-sortable column header 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort-\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by firstName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-\\">
     First name
-</th><th class=\\"table-component__th--sort\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     Last name
-</th><th>
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
 </th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -106,11 +106,11 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
 
 exports[`Sortable tableComponent will not sort on a column that is not sortable 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by songs (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"table-component__th--sort\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     Last name
-</th><th>
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
 </th></tr></thead> <tbody><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name
@@ -124,11 +124,11 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
 
 exports[`Sortable tableComponent will sort the data descendingly if the header of of column without the active sort is clicked 1`] = `
 "
-            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><thead><tr><th class=\\"table-component__th--sort\\">
+            <div id=\\"app\\"><div><div class=\\"table-component\\"><div class=\\"table-component__filter\\"><input type=\\"text\\" name=\\"table-component-filter\\" placeholder=\\"Filter table…\\" class=\\"table-component__filter__field\\"> <!----></div> <div class=\\"table-component__table-wrapper\\"><table class=\\"table-component__table\\"><caption role=\\"alert\\" aria-live=\\"polite\\" class=\\"table-component__table__caption\\">Table sorted by lastName (descending)</caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th><th class=\\"table-component__th--sort-desc\\">
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"descending\\" class=\\"table-component__th--sort-desc\\">
     Last name
-</th><th>
+</th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
 </th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
     First name

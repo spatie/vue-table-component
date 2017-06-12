@@ -1,5 +1,5 @@
 <template>
-    <th @click="clicked" :class="headerClass">
+    <th @click="clicked" :class="headerClass" role="columnheader" scope="col" :aria-sort="ariaSort" :aria-disabled="ariaDisabled">
         {{ label }}
     </th>
 </template>
@@ -9,6 +9,26 @@
         props: ['column', 'sort'],
 
         computed: {
+            ariaDisabled() {
+                if (! this.column.isSortable()) {
+                    return 'true';
+                }
+
+                return false;
+            },
+
+            ariaSort() {
+                if (! this.column.isSortable()) {
+                    return false;
+                }
+
+                if (this.column.properties.show !== this.sort.fieldName) {
+                    return 'none';
+                }
+
+                return this.sort.order === 'asc' ? 'ascending' : 'descending';
+            },
+
             headerClass() {
                 if (! this.column.isSortable()) {
                     return;
