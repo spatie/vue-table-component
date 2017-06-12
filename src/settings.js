@@ -5,6 +5,10 @@ export const settings = {
         row: 'row',
         cell: 'cell',
     },
+    texts: {
+        filterPlaceholder: 'Filter table…',
+        filterEmptyResult: 'There are no matching rows',
+    },
 };
 
 export function mergeSettings(newSettings) {

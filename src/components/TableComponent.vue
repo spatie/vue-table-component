@@ -3,7 +3,7 @@
 
         <div v-if="showFilter" class="table-component__filter">
             <input class="table-component__filter__field" type="text" v-model="filter" name="table-component-filter"
-                   :placeholder="filterPlaceholder">
+                   :placeholder="settings.texts.filterPlaceholder">
             <a v-if="filter !== ''" @click="filter = ''" class="table-component__filter__clear">×</a>
         </div>
 
@@ -26,14 +26,13 @@
                            :key="row.vueTableComponentInternalRowId"
                            :row="row"
                            :columns="columns"
-                           :class="rowClass"
                 />
                 </tbody>
             </table>
         </div>
 
         <div v-if="displayedRows.length === 0" class="table-component__message">
-            {{ filterResultEmptyText }}
+            {{ this.settings.texts.filterPlaceholder }}
         </div>
 
         <div style="display:none;">
@@ -49,6 +48,8 @@
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
     import { pick } from 'lodash';
+    import settings from '../settings';
+    import { mergeSettings } from '../settings';
 
     export default {
         components: {
@@ -66,10 +67,7 @@
             cacheId: { default: '' },
             cacheLifetime: { default: 5 },
 
-            tableClass: { default: ''} ,
-            rowClass: { default: '' },
-
-            texts: { default: function () { return {} }, type: Object }
+            extraSettings: { default: function () { return {} }, type: Object }
         },
 
         data: () => ({
@@ -120,14 +118,6 @@
             storageKey() {
                 return `vue-table-component.${window.location.host}${window.location.pathname}${this.cacheId}`;
             },
-
-            filterPlaceholder() {
-                return this.texts.filterPlaceholder || 'Filter table…';
-            },
-
-            filterResultEmptyText() {
-                return this.texts.filterResultEmpty || 'There are no matching rows';
-            },
         },
 
         watch: {
@@ -155,6 +145,8 @@
         },
 
         created() {
+            mergeSettings(extraSettings);
+
             this.sort.fieldName = this.sortBy;
             this.sort.order = this.sortOrder;
 
