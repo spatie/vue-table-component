@@ -3,7 +3,7 @@
 
         <div v-if="showFilter" class="table-component__filter">
             <input class="table-component__filter__field" type="text" v-model="filter" name="table-component-filter"
-                   :placeholder="settings.texts.filterPlaceholder">
+                   :placeholder="localSettings.texts.filterPlaceholder">
             <a v-if="filter !== ''" @click="filter = ''" class="table-component__filter__clear">×</a>
         </div>
 
@@ -32,7 +32,7 @@
         </div>
 
         <div v-if="displayedRows.length === 0" class="table-component__message">
-            {{ this.settings.texts.filterPlaceholder }}
+            {{ this.localSettings.texts.filterResultEmpty }}
         </div>
 
         <div style="display:none;">
@@ -49,7 +49,7 @@
     import TableRow from './TableRow';
     import { pick } from 'lodash';
     import settings from '../settings';
-    import { mergeSettings } from '../settings';
+    import { merge } from 'lodash';
 
     export default {
         components: {
@@ -80,11 +80,12 @@
                 fieldName: '',
                 order: '',
             },
+            localSettings: {},
         }),
 
         computed: {
             fullClass() {
-                return `table-component__table ${this.tableClass}`;
+                return `table-component__table `;
             },
 
             ariaCaption() {
@@ -147,7 +148,9 @@
         },
 
         created() {
-            mergeSettings(this.extraSettings);
+            this.localSettings = merge(this.settings, this.extraSettings);
+
+
 
             this.sort.fieldName = this.sortBy;
             this.sort.order = this.sortOrder;

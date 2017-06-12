@@ -4,10 +4,11 @@ export const settings = {
     classNames: {
         row: 'row',
         cell: 'cell',
+        table: '',
     },
     texts: {
         filterPlaceholder: 'Filter table…',
-        filterEmptyResult: 'There are no matching rows',
+        filterResultEmpty: 'There are no matching rows',
     },
 };
 

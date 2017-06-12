@@ -58,48 +58,11 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
-    it('has props to set classes on the table and the rows', async () => {
+    it('can display a custom texts', async () => {
         document.body.innerHTML = `
             <div id="app">
                 <table-component
-                    table-class="extra-table-class"
-                    row-class="extra-row-class"
-                    :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
-                    <table-column show="firstName" label="First name"></table-column>
-                </table-component>
-            </div>
-        `;
-
-        await createVm();
-
-        expect(document.body.innerHTML).toMatchSnapshot();
-    });
-
-    it('can display a custom text as the filter placeholder', async () => {
-        document.body.innerHTML = `
-            <div id="app">
-                <table-component
-                    :texts="{filterPlaceholder: 'custom placeholder'}"
-                    table-class="extra-table-class"
-                    row-class="extra-row-class"
-                    :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
-                    <table-column show="firstName" label="First name"></table-column>
-                </table-component>
-            </div>
-        `;
-
-        await createVm();
-
-        expect(document.body.innerHTML).toMatchSnapshot();
-    });
-
-    it('can display a custom text when the filter returns no results', async () => {
-        document.body.innerHTML = `
-            <div id="app">
-                <table-component
-                    :texts="{ filterResultEmpty: 'game over man, game over'}"
-                    table-class="extra-table-class"
-                    row-class="extra-row-class"
+                    :extra-settings="{texts: {filterResultEmpty: 'game over man, game over', filterPlaceholder: 'custom placeholder'}}"
                     :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
                 </table-component>
