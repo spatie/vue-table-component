@@ -57,6 +57,8 @@
             TableRow,
         },
 
+        mixins: [settings],
+
         props: {
             data: { required: true, type: Array },
 
