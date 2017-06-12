@@ -147,7 +147,7 @@
         },
 
         created() {
-            mergeSettings(extraSettings);
+            mergeSettings(this.extraSettings);
 
             this.sort.fieldName = this.sortBy;
             this.sort.order = this.sortOrder;
