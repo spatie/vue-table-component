@@ -148,9 +148,7 @@
         },
 
         created() {
-            this.localSettings = merge(this.settings, this.extraSettings);
-
-
+            this.localSettings = merge({},this.settings, this.extraSettings);
 
             this.sort.fieldName = this.sortBy;
             this.sort.order = this.sortOrder;

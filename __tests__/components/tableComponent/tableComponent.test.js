@@ -58,11 +58,31 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
-    it('can display a custom texts', async () => {
+    it('can display a custom message when filtering results in no results', async () => {
         document.body.innerHTML = `
             <div id="app">
                 <table-component
-                    :extra-settings="{texts: {filterResultEmpty: 'game over man, game over', filterPlaceholder: 'custom placeholder'}}"
+                    :extra-settings="{texts: {filterResultEmpty: 'game over man, game over'}}"
+                    :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
+                    <table-column show="firstName" label="First name"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        const table = await createVm();
+
+        table.filter = 'this returns nothing';
+
+        await Vue.nextTick(() => {});
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
+    it('can display a custom placeholder in the filter field', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :extra-settings="{texts: {filterPlaceholder: 'custom placeholder'}}"
                     :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
                 </table-component>
