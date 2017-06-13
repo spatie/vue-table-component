@@ -1,5 +1,5 @@
 <template>
-    <tr :class="settings.classNames.row">
+    <tr>
         <td v-for="column in columns" v-html="getValue(column)"></td>
     </tr>
 </template>
@@ -8,8 +8,6 @@
     import settings from '../settings';
 
     export default {
-        mixins: [settings],
-
         props: ['columns', 'row'],
 
         methods: {

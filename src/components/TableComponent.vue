@@ -6,18 +6,20 @@
                 class="table-component__filter__field" 
                 type="text" 
                 v-model="filter" 
-                :placeholder="localSettings.labels.filterPlaceholder"
+                :placeholder="filterPlaceholder"
            >
             <a 
-                v-if="filter" 
-                @click="filter = ''" 
+                v-if="filter"
+                @click="filter = ''"
                 class="table-component__filter__clear"
             >×</a>
         </div>
 
         <div class="table-component__table-wrapper">
-            <table :class="fullClass">
-                <caption class="table-component__table__caption" role="alert" aria-live="polite">{{ this.ariaCaption }}</caption>
+            <table :class="tableClass">
+                <caption class="table-component__table__caption" role="alert" aria-live="polite">
+                    {{ ariaCaption }}
+                </caption>
                 <thead>
                 <tr>
                     <table-column-header
@@ -30,17 +32,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                <table-row v-for="row in displayedRows"
+                <table-row
+                    v-for="row in displayedRows"
                     :key="row.vueTableComponentInternalRowId"
                     :row="row"
                     :columns="columns"
-                />
+                /></table-row>
                 </tbody>
             </table>
         </div>
 
         <div v-if="displayedRows.length === 0" class="table-component__message">
-            {{ this.localSettings.labels.filterResultEmpty }}
+            {{ filterNoResults }}
         </div>
 
         <div style="display:none;">
@@ -57,15 +60,13 @@
     import TableRow from './TableRow';
     import { pick } from 'lodash';
     import settings from '../settings';
-    import { merge } from 'lodash';
+    import { isArray, merge } from 'lodash';
 
     export default {
         components: {
             TableColumnHeader,
             TableRow,
         },
-
-        mixins: [settings],
 
         props: {
             data: { required: true, type: Array },
@@ -77,7 +78,8 @@
             cacheId: { default: '' },
             cacheLifetime: { default: 5 },
 
-            extraSettings: { default: function () { return {} }, type: Object }
+            filterPlaceholder: { default: settings.filterPlaceholder },
+            filterNoResutls: { default: settings.filterNoResutls },
         },
 
         data: () => ({
@@ -92,8 +94,12 @@
         }),
 
         computed: {
-            fullClass() {
-                return `table-component__table `;
+            tableClass() {
+                const extraClasses = isArray(settings.tableClass) ? 
+                    settings.tableClass : 
+                    [settings.tableClass];
+
+                return ['table-component__table', ...extraClasses];
             },
 
             ariaCaption() {
@@ -157,8 +163,6 @@
         },
 
         created() {
-            this.localSettings = merge({}, this.settings, this.extraSettings);
-
             this.sort.fieldName = this.sortBy;
             this.sort.order = this.sortOrder;
 
