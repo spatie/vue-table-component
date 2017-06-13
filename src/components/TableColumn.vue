@@ -1,18 +1,16 @@
 <template>
-    <th>
-        {{ label }}
-    </th>
+    <div></div>
 </template>
 
 <script>
     export default {
         props: {
             show: { required: true, type: String },
-            label: { default: '', type: String },
+            label: { default: null, type: String },
             dataType: { default: 'string', type: String },
 
             sortable: { default: true, type: Boolean },
-            sortOn: { default: null },
+            sortBy: { default: null },
 
             filterable: { default: true, type: Boolean },
             filterOn: { default: null },

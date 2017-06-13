@@ -26145,7 +26145,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             dataType: { default: 'string', type: String },
 
             sortable: { default: true, type: Boolean },
-            sortOn: { default: null },
+            sortBy: { default: null },
 
             filterable: { default: true, type: Boolean },
             filterOn: { default: null }
@@ -26318,7 +26318,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             this.columns = this.$slots.default.filter(function (column) {
                 return column.componentInstance;
             }).map(function (column) {
-                return (0, _lodash.pick)(column.componentInstance, ['show', 'label', 'dataType', 'sortable', 'sortOn', 'filterable', 'filterOn']);
+                return (0, _lodash.pick)(column.componentInstance, ['show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn']);
             }).map(function (columnProperties) {
                 return new _Column2.default(columnProperties);
             });
@@ -26507,7 +26507,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         }, {
             key: 'getSortFieldName',
             value: function getSortFieldName() {
-                return this.properties.sortOn || this.properties.show;
+                return this.properties.sortBy || this.properties.show;
             }
         }]);
         return Column;

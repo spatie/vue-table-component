@@ -1,6 +1,6 @@
 import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
-import expiringStorage from '../../../src/expiringStorage';
+import expiringStorage from '../../../src/expiring-storage';
 import simulant from 'simulant';
 
 import LocalStorageMock from '../../helpers/LocalStorageMock';
@@ -97,8 +97,8 @@ describe('Caching tableComponent', () => {
                                 { firstName: 'George', songs: 420 },
                                 { firstName: 'Ringo', songs: 210 }]"
                     >
-                        <table-column show="firstName" label="First name" sort-on="songs"></table-column>
-                        <table-column show="songs" data-type="numeric" label="Songs" sort-on="songs"></table-column>
+                        <table-column show="firstName" label="First name" sort-by="songs"></table-column>
+                        <table-column show="songs" data-type="numeric" label="Songs" sort-by="songs"></table-column>
                     </table-component>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import expiringStorage from '../src/expiringStorage';
+import expiringStorage from '../src/expiring-storage';
 import LocalStorageMock from './helpers/LocalStorageMock';
 
 const localStorage = new LocalStorageMock();

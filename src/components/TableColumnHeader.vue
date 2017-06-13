@@ -1,5 +1,12 @@
 <template>
-    <th @click="clicked" :class="headerClass" role="columnheader" scope="col" :aria-sort="ariaSort" :aria-disabled="ariaDisabled">
+    <th
+        @click="clicked" 
+        :class="headerClass" 
+        role="columnheader" 
+        scope="col" 
+        :aria-sort="ariaSort" 
+        :aria-disabled="ariaDisabled"
+    >
         {{ label }}
     </th>
 </template>
@@ -42,7 +49,11 @@
             },
 
             label() {
-                return this.column.properties.label || this.column.properties.show;
+                if (this.column.properties.label === null) {
+                    return this.column.properties.show;
+                }
+                
+                return this.column.properties.label;
             },
         },
 
