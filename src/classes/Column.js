@@ -28,11 +28,15 @@ export default class Column {
                 const value1 = row1.getSortableValue(sortFieldName);
                 const value2 = row2.getSortableValue(sortFieldName);
 
-                if (sortOrder === 'desc') {
-                    return value2 < value1;
+                if (value1 === value2) {
+                    return 0;
                 }
 
-                return value1 < value2;
+                if (sortOrder === 'desc') {
+                    return value2 < value1 ? -1 : 1;
+                }
+
+                return value1 < value2 ? -1 : 1;
             };
         }
 
