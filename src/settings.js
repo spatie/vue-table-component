@@ -17,5 +17,7 @@ export function mergeSettings(newSettings) {
 };
 
 export default {
-    data: () => ({ settings }),
+    data: () => ({
+        settings,
+    }),
 };

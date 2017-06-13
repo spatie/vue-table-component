@@ -2,9 +2,17 @@
     <div class="table-component">
 
         <div v-if="showFilter" class="table-component__filter">
-            <input class="table-component__filter__field" type="text" v-model="filter" name="table-component-filter"
-                   :placeholder="localSettings.texts.filterPlaceholder">
-            <a v-if="filter !== ''" @click="filter = ''" class="table-component__filter__clear">×</a>
+            <input 
+                class="table-component__filter__field" 
+                type="text" 
+                v-model="filter" 
+                :placeholder="localSettings.texts.filterPlaceholder"
+           >
+            <a 
+                v-if="filter" 
+                @click="filter = ''" 
+                class="table-component__filter__clear"
+            >×</a>
         </div>
 
         <div class="table-component__table-wrapper">
@@ -13,19 +21,19 @@
                 <thead>
                 <tr>
                     <table-column-header
-                            @click="changeSorting"
-                            v-for="column in columns"
-                            :key="column.properties.show"
-                            :sort="sort"
-                            :column="column"
+                        @click="changeSorting"
+                        v-for="column in columns"
+                        :key="column.properties.show"
+                        :sort="sort"
+                        :column="column"
                     />
                 </tr>
                 </thead>
                 <tbody>
                 <table-row v-for="row in displayedRows"
-                           :key="row.vueTableComponentInternalRowId"
-                           :row="row"
-                           :columns="columns"
+                    :key="row.vueTableComponentInternalRowId"
+                    :row="row"
+                    :columns="columns"
                 />
                 </tbody>
             </table>
@@ -93,7 +101,8 @@
                     return 'Table not sorted';
                 }
 
-                return `Table sorted by ${this.sort.fieldName} (${this.sort.order === 'asc' ? 'ascending' : 'descending'})`;
+                return `Table sorted by ${this.sort.fieldName} ` +
+                    (this.sort.order === 'asc' ? '(ascending)' : '(descending)');
             },
 
             displayedRows() {
@@ -148,7 +157,7 @@
         },
 
         created() {
-            this.localSettings = merge({},this.settings, this.extraSettings);
+            this.localSettings = merge({}, this.settings, this.extraSettings);
 
             this.sort.fieldName = this.sortBy;
             this.sort.order = this.sortOrder;

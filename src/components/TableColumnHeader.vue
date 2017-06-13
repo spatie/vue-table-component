@@ -1,5 +1,12 @@
 <template>
-    <th @click="clicked" :class="headerClass" role="columnheader" scope="col" :aria-sort="ariaSort" :aria-disabled="ariaDisabled">
+    <th
+        @click="clicked" 
+        :class="headerClass" 
+        role="columnheader" 
+        scope="col" 
+        :aria-sort="ariaSort" 
+        :aria-disabled="ariaDisabled"
+    >
         {{ label }}
     </th>
 </template>
