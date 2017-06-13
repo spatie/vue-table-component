@@ -6,7 +6,7 @@
     export default {
         props: {
             show: { required: true, type: String },
-            label: { default: '', type: String },
+            label: { default: null, type: String },
             dataType: { default: 'string', type: String },
 
             sortable: { default: true, type: Boolean },

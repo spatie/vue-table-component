@@ -58,6 +58,21 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
+    it('won\'t use the property name as a column heading if label is an empty string', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component :show-filter="false"
+                    :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
+                    <table-column show="firstName" label=""></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
     it('can display a custom message when filtering results in no results', async () => {
         document.body.innerHTML = `
             <div id="app">

@@ -49,7 +49,11 @@
             },
 
             label() {
-                return this.column.properties.label || this.column.properties.show;
+                if (this.column.properties.label === null) {
+                    return this.column.properties.show;
+                }
+                
+                return this.column.properties.label;
             },
         },
 
