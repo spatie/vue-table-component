@@ -51,7 +51,7 @@
 
 <script>
     import Column from '../classes/Column';
-    import expiringStorage from '../expiringStorage';
+    import expiringStorage from '../expiring-storage';
     import Row from '../classes/Row';
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
