@@ -6,7 +6,7 @@ export const settings = {
         cell: 'cell',
         table: '',
     },
-    texts: {
+    labels: {
         filterPlaceholder: 'Filter table…',
         filterResultEmpty: 'There are no matching rows',
     },

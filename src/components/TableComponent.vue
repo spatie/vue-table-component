@@ -6,7 +6,7 @@
                 class="table-component__filter__field" 
                 type="text" 
                 v-model="filter" 
-                :placeholder="localSettings.texts.filterPlaceholder"
+                :placeholder="localSettings.labels.filterPlaceholder"
            >
             <a 
                 v-if="filter" 
@@ -40,7 +40,7 @@
         </div>
 
         <div v-if="displayedRows.length === 0" class="table-component__message">
-            {{ this.localSettings.texts.filterResultEmpty }}
+            {{ this.localSettings.labels.filterResultEmpty }}
         </div>
 
         <div style="display:none;">

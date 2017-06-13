@@ -62,7 +62,7 @@ describe('TableComponent', () => {
         document.body.innerHTML = `
             <div id="app">
                 <table-component
-                    :extra-settings="{texts: {filterResultEmpty: 'game over man, game over'}}"
+                    :extra-settings="{ labels: { filterResultEmpty: 'game over man, game over' } }"
                     :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
                 </table-component>
@@ -82,7 +82,7 @@ describe('TableComponent', () => {
         document.body.innerHTML = `
             <div id="app">
                 <table-component
-                    :extra-settings="{texts: {filterPlaceholder: 'custom placeholder'}}"
+                    :extra-settings="{ labels: { filterPlaceholder: 'custom placeholder' } }"
                     :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
                 </table-component>
