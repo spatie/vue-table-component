@@ -5,8 +5,6 @@
 </template>
 
 <script>
-    import settings from '../settings';
-
     export default {
         props: ['columns', 'row'],
 

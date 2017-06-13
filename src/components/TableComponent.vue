@@ -37,7 +37,7 @@
                     :key="row.vueTableComponentInternalRowId"
                     :row="row"
                     :columns="columns"
-                /></table-row>
+                ></table-row>
                 </tbody>
             </table>
         </div>
@@ -60,7 +60,7 @@
     import TableRow from './TableRow';
     import { pick } from 'lodash';
     import settings from '../settings';
-    import { isArray, merge } from 'lodash';
+    import { isArray } from 'lodash';
 
     export default {
         components: {
@@ -73,7 +73,7 @@
 
             showFilter: { default: true },
             sortBy: { default: '', type: String },
-            sortOrder: { default: 'desc', type: String },
+            sortOrder: { default: '', type: String },
 
             cacheId: { default: '' },
             cacheLifetime: { default: 5 },
@@ -175,10 +175,8 @@
                 if (this.sort.fieldName !== column.properties.show) {
                     this.sort.fieldName = column.properties.show;
                     this.sort.order = 'asc';
-                }
-
-                if (this.sort.fieldName === column.properties.show) {
-                    this.sort.order = (this.sort.order === 'desc' ? 'asc' : 'desc');
+                } else {
+                    this.sort.order = (this.sort.order === 'asc' ? 'desc' : 'asc');
                 }
 
                 this.saveState();

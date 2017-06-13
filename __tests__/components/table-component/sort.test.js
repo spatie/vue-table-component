@@ -50,7 +50,7 @@ describe('Sortable tableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
-    it('will sort the data descendingly if the header of of column without the active sort is clicked', async () => {
+    it('will sort the data ascendingly if the header of of column without the active sort is clicked', async () => {
         setDocumentInnerHtml({ sortBy: 'firstName' });
 
         await createVm();

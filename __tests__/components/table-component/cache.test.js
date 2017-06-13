@@ -74,7 +74,7 @@ describe('Caching tableComponent', () => {
 
         expect(table.filter).toEqual('');
         expect(table.sort.fieldName).toEqual('');
-        expect(table.sort.order).toEqual('desc');
+        expect(table.sort.order).toEqual('');
     });
 
     it('will cache the filter', async () => {

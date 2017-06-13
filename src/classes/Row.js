@@ -34,7 +34,7 @@ export default class Row {
             // eslint-disable-next-line no-unused-vars
             const [_, format]  = dataType.split(':');
 
-            return moment(value, format).format('x');
+            return moment(value, format).format('YYYYMMDDHHmmss');
         }
 
         if (dataType === 'numeric') {
