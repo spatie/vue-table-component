@@ -10,7 +10,7 @@
             dataType: { default: 'string', type: String },
 
             sortable: { default: true, type: Boolean },
-            sortOn: { default: null },
+            sortBy: { default: null },
 
             filterable: { default: true, type: Boolean },
             filterOn: { default: null },

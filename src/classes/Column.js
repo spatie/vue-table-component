@@ -49,6 +49,6 @@ export default class Column {
     }
 
     getSortFieldName() {
-        return this.properties.sortOn || this.properties.show;
+        return this.properties.sortBy || this.properties.show;
     }
 }

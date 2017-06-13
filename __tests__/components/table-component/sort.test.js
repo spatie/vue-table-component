@@ -92,8 +92,8 @@ describe('Sortable tableComponent', () => {
                                 { firstName: 'George', songs: 420 },
                                 { firstName: 'Ringo', songs: 210 }]"
                     >
-                        <table-column show="firstName" label="First name" sort-on="songs"></table-column>
-                        <table-column show="songs" data-type="numeric" label="Songs" sort-on="songs"></table-column>
+                        <table-column show="firstName" label="First name" sort-by="songs"></table-column>
+                        <table-column show="songs" data-type="numeric" label="Songs" sort-by="songs"></table-column>
                     </table-component>
                 </div>
             </div>
