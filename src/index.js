@@ -1,5 +1,5 @@
-import TableComponent from './components/TableComponent.vue';
-import TableColumn from './components/TableColumn.vue';
+import TableComponent from './components/TableComponent';
+import TableColumn from './components/TableColumn';
 import { mergeSettings } from './settings';
 
 export default {

@@ -3,6 +3,7 @@
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-table-component.svg?style=flat-square)](https://npmjs.com/package/vue-table-component)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/vue-table-component/master.svg?style=flat-square)](https://travis-ci.org/spatie/vue-table-component)
+[![npm](https://img.shields.io/npm/dt/vue-table-component.svg?style=flat-square)](https://www.npmjs.com/package/vue-table-component)
 
 This repo contains a Vue component that can render a filterable and sortable table. It aims to be very lightweight and easy to use.
 
@@ -110,46 +111,30 @@ You can pass these props to `table-component`:
 - `cache-lifetime`: the lifetime in minutes the component will cache the filter and sorting.
 - `cache-id`: if you use multiple instances of `table-component` on the same page you must set this to a unique value per instance.
 - `table-class`: the passed value will be added to the `class` attribute of the rendered table
-- `row-class`: the passed value will be added to each `td` inside the rendered table
+- `filter-placeholder`: the text used as a placeholder in the filter field
+- `filter-no-results`: the text displayed when the filtering returns no results
 
 For each `table-column` a column will be rendered. It can have these props:
 - `show`: (required) the property name in the data that needs to be shown in this column.
 - `label`: the label that will be shown on top of the column. Set this to an empty string to display nothing. If this property is not present, the string passed to `show` will be used.
 - `data-type`: if your column should be sorted numerically set this to `numeric`. If your column contains dates set it to `date:` followed by the format of your date
 - `sortable`: if you set this to `false` then the column won't be sorted when clicking the column header
-- `sort-on`: you can set this to any property present in `data`. When sorting the column that property will be used to sort on instead of the property in `show`.
+- `sort-by`: you can set this to any property present in `data`. When sorting the column that property will be used to sort on instead of the property in `show`.
 - `filterable`: if this is set to `false` than this column won't be used when filtering
 - `filter-on`: you can set this to any property present in `data`. When filtering the column that property will be used to filter on instead of the property in `show`.
 
 ### Modifying the used texts and classes
 
-If you want to modify the built in text or classes you can pass some settings globally
+If you want to modify the built in text or classes you can pass settings globally
 
 ```js
 import TableComponent from 'vue-table-component';
 
 TableComponent.settings({
-    classNames: {
-        row: 'extra-row-class',
-        cell: 'extra-cell-class',
-        table: 'extra-table-class',
-    },
-    texts: {
-        filterPlaceholder: 'Only display records with…',
-        filterResultEmpty: 'Game over man, game over',
-    },
+    tableClass: '',
+    filterPlaceholder: 'Filter table…',
+    filterNoResults: 'There are no matching rows',
 });
-```
-
-If you only want to alter a specific instance of `TableComponent` you can pass the same values to the `extra-settings` prop
-
-```html
-<table-component extra-settings="{ texts: { filterResultEmpty: 'Sorry, found nothing' }">
-```
-
-Here's an example:
-```html
-<table-component texts="{ filterResultEmpty: 'Your search returned no results, dawg' }" />
 ```
 
 ## Changelog
@@ -173,6 +158,7 @@ If you discover any security related issues, please contact freek@spatie.be inst
 ## Credits
 
 - [Freek Van der Herten](https://github.com/freekmurze)
+- [Sebastian De Deyne](https://github.com/sebdedeyne)
 - [All Contributors](../../contributors)
 
 ## About Spatie
