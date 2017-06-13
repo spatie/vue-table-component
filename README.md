@@ -110,7 +110,8 @@ You can pass these props to `table-component`:
 - `cache-lifetime`: the lifetime in minutes the component will cache the filter and sorting.
 - `cache-id`: if you use multiple instances of `table-component` on the same page you must set this to a unique value per instance.
 - `table-class`: the passed value will be added to the `class` attribute of the rendered table
-- `row-class`: the passed value will be added to each `td` inside the rendered table
+- `filter-placeholder`: the text used as a placeholder in the filter field
+- `filter-no-results`: the text displayed when the filtering returns no results
 
 For each `table-column` a column will be rendered. It can have these props:
 - `show`: (required) the property name in the data that needs to be shown in this column.
@@ -123,33 +124,16 @@ For each `table-column` a column will be rendered. It can have these props:
 
 ### Modifying the used texts and classes
 
-If you want to modify the built in text or classes you can pass some settings globally
+If you want to modify the built in text or classes you can pass settings globally
 
 ```js
 import TableComponent from 'vue-table-component';
 
 TableComponent.settings({
-    classNames: {
-        row: 'extra-row-class',
-        cell: 'extra-cell-class',
-        table: 'extra-table-class',
-    },
-    texts: {
-        filterPlaceholder: 'Only display records with…',
-        filterResultEmpty: 'Game over man, game over',
-    },
+    tableClass: '',
+    filterPlaceholder: 'Filter table…',
+    filterNoResults: 'There are no matching rows',
 });
-```
-
-If you only want to alter a specific instance of `TableComponent` you can pass the same values to the `extra-settings` prop
-
-```html
-<table-component extra-settings="{ texts: { filterResultEmpty: 'Sorry, found nothing' }">
-```
-
-Here's an example:
-```html
-<table-component texts="{ filterResultEmpty: 'Your search returned no results, dawg' }" />
 ```
 
 ## Changelog
