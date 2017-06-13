@@ -16,7 +16,7 @@
         </div>
 
         <div class="table-component__table-wrapper">
-            <table :class="tableClass">
+            <table :class="fullTableClass">
                 <caption class="table-component__table__caption" role="alert" aria-live="polite">
                     {{ ariaCaption }}
                 </caption>
@@ -78,6 +78,7 @@
             cacheId: { default: '' },
             cacheLifetime: { default: 5 },
 
+            tableClass: { default: settings.tableClass },
             filterPlaceholder: { default: settings.filterPlaceholder },
             filterNoResults: { default: settings.filterNoResutls },
         },
@@ -94,10 +95,10 @@
         }),
 
         computed: {
-            tableClass() {
-                const extraClasses = isArray(settings.tableClass) ? 
-                    settings.tableClass : 
-                    [settings.tableClass];
+            fullTableClass() {
+                const extraClasses = isArray(this.tableClass) ? 
+                    this.tableClass : 
+                    [this.tableClass];
 
                 return ['table-component__table', ...extraClasses];
             },
