@@ -8,11 +8,7 @@ exports[`Sortable tableComponent can sort on another column 1`] = `
     First name
 </th><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     Songs
-</th></tr></thead> <tbody><tr><td>Paul</td><td>20</td></tr><tr><td>John</td><td>30</td></tr><tr><td>Ringo</td><td>210</td></tr><tr><td>George</td><td>420</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th> <th>
-    Songs
-</th></div></div></div></div>
+</th></tr></thead> <tbody><tr><td>Paul</td><td>20</td></tr><tr><td>John</td><td>30</td></tr><tr><td>Ringo</td><td>210</td></tr><tr><td>George</td><td>420</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div> <div></div></div></div></div></div>
         "
 `;
 
@@ -26,13 +22,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
     Last name
 </th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
-</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th> <th>
-    Last name
-</th> <th>
-    Songs
-</th></div></div></div></div>
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div> <div></div> <div></div></div></div></div></div>
         "
 `;
 
@@ -46,13 +36,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
     Last name
 </th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th> <th>
-    Last name
-</th> <th>
-    Songs
-</th></div></div></div></div>
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div> <div></div> <div></div></div></div></div></div>
         "
 `;
 
@@ -66,13 +50,7 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
     Last name
 </th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
-</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th> <th>
-    Last name
-</th> <th>
-    Songs
-</th></div></div></div></div>
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div> <div></div> <div></div></div></div></div></div>
         "
 `;
 
@@ -86,13 +64,7 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
     Last name
 </th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th> <th>
-    Last name
-</th> <th>
-    Songs
-</th></div></div></div></div>
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div> <div></div> <div></div></div></div></div></div>
         "
 `;
 
@@ -106,13 +78,7 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
     Last name
 </th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
-</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th> <th>
-    Last name
-</th> <th>
-    Songs
-</th></div></div></div></div>
+</th></tr></thead> <tbody><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div> <div></div> <div></div></div></div></div></div>
         "
 `;
 
@@ -126,13 +92,7 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
     Last name
 </th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
-</th></tr></thead> <tbody><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th> <th>
-    Last name
-</th> <th>
-    Songs
-</th></div></div></div></div>
+</th></tr></thead> <tbody><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr><tr><td>Ringo</td><td>Starr</td><td>2</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div> <div></div> <div></div></div></div></div></div>
         "
 `;
 
@@ -146,12 +106,6 @@ exports[`Sortable tableComponent will sort the data descendingly if the header o
     Last name
 </th><th role=\\"columnheader\\" scope=\\"col\\" aria-disabled=\\"true\\">
     Songs
-</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th> <th>
-    Last name
-</th> <th>
-    Songs
-</th></div></div></div></div>
+</th></tr></thead> <tbody><tr><td>Ringo</td><td>Starr</td><td>2</td></tr><tr><td>Paul</td><td>McCartney</td><td>70</td></tr><tr><td>John</td><td>Lennon</td><td>72</td></tr><tr><td>George</td><td>Harrison</td><td>22</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div> <div></div> <div></div></div></div></div></div>
         "
 `;

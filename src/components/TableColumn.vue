@@ -1,7 +1,5 @@
 <template>
-    <th>
-        {{ label }}
-    </th>
+    <div></div>
 </template>
 
 <script>

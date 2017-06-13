@@ -79,7 +79,7 @@
             cacheLifetime: { default: 5 },
 
             filterPlaceholder: { default: settings.filterPlaceholder },
-            filterNoResutls: { default: settings.filterNoResutls },
+            filterNoResults: { default: settings.filterNoResutls },
         },
 
         data: () => ({

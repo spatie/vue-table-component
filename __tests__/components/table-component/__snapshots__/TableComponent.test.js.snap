@@ -8,9 +8,7 @@ exports[`TableComponent can display a custom message when filtering results in n
     First name
 </th></tr></thead> <tbody></tbody></table></div> <div class=\\"table-component__message\\">
         
-    </div> <div style=\\"display: none;\\"><th>
-    First name
-</th></div></div></div>
+    </div> <div style=\\"display: none;\\"><div></div></div></div></div>
         "
 `;
 
@@ -22,9 +20,7 @@ exports[`TableComponent can display a custom placeholder in the filter field 1`]
     First name
 </th></tr></thead> <tbody></tbody></table></div> <div class=\\"table-component__message\\">
         
-    </div> <div style=\\"display: none;\\"><th>
-    First name
-</th></div></div></div>
+    </div> <div style=\\"display: none;\\"><div></div></div></div></div>
         "
 `;
 
@@ -34,9 +30,7 @@ exports[`TableComponent can mount 1`] = `
                 Table not sorted
             </caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th></tr></thead> <tbody><tr><td>John</td></tr><tr><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th></div></div></div>
+</th></tr></thead> <tbody><tr><td>John</td></tr><tr><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div></div></div></div>
         "
 `;
 
@@ -46,9 +40,7 @@ exports[`TableComponent has an prop to disable the filter 1`] = `
                 Table not sorted
             </caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     First name
-</th></tr></thead> <tbody><tr><td>John</td></tr><tr><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    First name
-</th></div></div></div>
+</th></tr></thead> <tbody><tr><td>John</td></tr><tr><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div></div></div></div>
         "
 `;
 
@@ -58,8 +50,6 @@ exports[`TableComponent will use the property name as a column heading if label 
                 Table not sorted
             </caption> <thead><tr><th role=\\"columnheader\\" scope=\\"col\\" aria-sort=\\"none\\" class=\\"table-component__th--sort\\">
     firstName
-</th></tr></thead> <tbody><tr><td>John</td></tr><tr><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><th>
-    
-</th></div></div></div>
+</th></tr></thead> <tbody><tr><td>John</td></tr><tr><td>Paul</td></tr></tbody></table></div> <!----> <div style=\\"display: none;\\"><div></div></div></div></div>
         "
 `;
