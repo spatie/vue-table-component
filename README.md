@@ -106,6 +106,7 @@ This wil render a table that is both filterable and sortable. A filter field wil
 You can pass these props to `table-component`:
 - `data`: (required) the data the component will operate on.
 - `show-filter`: set this to `false` to not display the `filter` field.
+- `show-caption`: set this to `false` to not display the `caption` field which shows the current active filter.
 - `sort-by`: the property in data on which to initially sort.
 - `sort-order`: the initial sort order.
 - `cache-lifetime`: the lifetime in minutes the component will cache the filter and sorting.

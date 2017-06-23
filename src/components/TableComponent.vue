@@ -17,7 +17,7 @@
 
         <div class="table-component__table-wrapper">
             <table :class="fullTableClass">
-                <caption class="table-component__table__caption" role="alert" aria-live="polite">
+                <caption v-if="showCaption" class="table-component__table__caption" role="alert" aria-live="polite">
                     {{ ariaCaption }}
                 </caption>
                 <thead>
@@ -72,6 +72,8 @@
             data: { required: true, type: Array },
 
             showFilter: { default: true },
+            showCaption: { default: true },
+
             sortBy: { default: '', type: String },
             sortOrder: { default: '', type: String },
 

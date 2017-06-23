@@ -152,6 +152,55 @@ exports[`TableComponent can mount 1`] = `
 
 `;
 
+exports[`TableComponent has an prop to disable the caption 1`] = `
+
+<div id="app">
+  <div class="table-component">
+    <div class="table-component__filter">
+      <input type="text"
+             placeholder="Filter table…"
+             class="table-component__filter__field"
+      >
+      <!---->
+    </div>
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <!---->
+        <thead>
+          <tr>
+            <th role="columnheader"
+                scope="col"
+                aria-sort="none"
+                class="table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              John
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Paul
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!---->
+    <div style="display: none;">
+      <div>
+      </div>
+    </div>
+  </div>
+</div>
+
+`;
+
 exports[`TableComponent has an prop to disable the filter 1`] = `
 
 <div id="app">

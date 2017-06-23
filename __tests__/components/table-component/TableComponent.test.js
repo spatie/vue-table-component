@@ -43,6 +43,21 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
+    it('has an prop to disable the caption', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component :show-caption="false"
+                    :data="[{ firstName: 'John' },{ id: 2, firstName: 'Paul' }]">
+                    <table-column show="firstName" label="First name"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
     it('will use the property name as a column heading if label is not set', async () => {
         document.body.innerHTML = `
             <div id="app">
