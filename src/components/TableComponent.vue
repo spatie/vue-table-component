@@ -82,7 +82,7 @@
 
             tableClass: { default: settings.tableClass },
             filterPlaceholder: { default: settings.filterPlaceholder },
-            filterNoResults: { default: settings.filterNoResutls },
+            filterNoResults: { default: settings.filterNoResults },
         },
 
         data: () => ({
