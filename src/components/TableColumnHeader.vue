@@ -50,7 +50,7 @@
             },
 
             isVisible() {
-                return !this.column.properties.hidden;
+                return ! this.column.properties.hidden;
             },
 
             label() {
@@ -60,7 +60,6 @@
                 
                 return this.column.properties.label;
             },
-
         },
 
         methods: {
