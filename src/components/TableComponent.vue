@@ -2,13 +2,13 @@
     <div class="table-component">
 
         <div v-if="showFilter" class="table-component__filter">
-            <input 
-                class="table-component__filter__field" 
-                type="text" 
-                v-model="filter" 
+            <input
+                class="table-component__filter__field"
+                type="text"
+                v-model="filter"
                 :placeholder="filterPlaceholder"
            >
-            <a 
+            <a
                 v-if="filter"
                 @click="filter = ''"
                 class="table-component__filter__clear"
@@ -98,8 +98,8 @@
 
         computed: {
             fullTableClass() {
-                const extraClasses = isArray(this.tableClass) ? 
-                    this.tableClass : 
+                const extraClasses = isArray(this.tableClass) ?
+                    this.tableClass :
                     [this.tableClass];
 
                 return ['table-component__table', ...extraClasses];
