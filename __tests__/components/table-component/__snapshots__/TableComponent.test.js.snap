@@ -39,6 +39,7 @@ exports[`TableComponent can display a custom message when filtering results in n
       </table>
     </div>
     <div class="table-component__message">
+      There are no matching rows
     </div>
     <div style="display: none;">
       <div>
@@ -88,6 +89,7 @@ exports[`TableComponent can display a custom placeholder in the filter field 1`]
       </table>
     </div>
     <div class="table-component__message">
+      There are no matching rows
     </div>
     <div style="display: none;">
       <div>
