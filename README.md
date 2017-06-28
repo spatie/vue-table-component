@@ -123,6 +123,7 @@ For each `table-column` a column will be rendered. It can have these props:
 - `sort-by`: you can set this to any property present in `data`. When sorting the column that property will be used to sort on instead of the property in `show`.
 - `filterable`: if this is set to `false` than this column won't be used when filtering
 - `filter-on`: you can set this to any property present in `data`. When filtering the column that property will be used to filter on instead of the property in `show`.
+- `hidden`: if you set this to `true` then the column will be hidden. This is useful when you want to sort by a field but don't want it to be visible.
 
 ### Modifying the used texts and classes
 
