@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.1.1 - 2017-06-27
+- added optional `hidden` prop to table column component
+
 ## 1.1.0 - 2017-06-23
 - added `show-caption` prop
 
