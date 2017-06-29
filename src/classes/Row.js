@@ -1,5 +1,5 @@
 import moment from 'moment';
-import stripTags from 'striptags';
+import striptags from 'striptags';
 
 export default class Row {
     constructor(data, columns) {
@@ -18,7 +18,7 @@ export default class Row {
     getFilterableValue(columnName) {
         const value = this.getValue(columnName).toString().toLowerCase();
 
-        return stripTags(value);
+        return value === null ? value : striptags(value);
     }
 
     getSortableValue(columnName) {
