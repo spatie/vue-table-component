@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.1.3 - 2017-06-29
+- Fixed a filter bug caused by null values
+
 ## 1.1.2 - 2017-06-28
 - Added optional `hidden` prop to table column component
 
