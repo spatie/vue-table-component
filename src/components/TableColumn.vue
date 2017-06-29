@@ -14,6 +14,8 @@
 
             filterable: { default: true, type: Boolean },
             filterOn: { default: null },
+
+            hidden: { default: false, type: Boolean },
         },
     };
 </script>

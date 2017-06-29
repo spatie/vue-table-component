@@ -6,6 +6,7 @@
         scope="col"
         :aria-sort="ariaSort"
         :aria-disabled="ariaDisabled"
+        v-if="this.isVisible"
     >
         {{ label }}
     </th>
@@ -46,6 +47,10 @@
                 }
 
                 return `table-component__th--sort-${this.sort.order}`;
+            },
+
+            isVisible() {
+                return ! this.column.properties.hidden;
             },
 
             label() {
