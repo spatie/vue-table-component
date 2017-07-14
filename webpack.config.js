@@ -13,7 +13,10 @@ module.exports = merge(require('./webpack.base'), {
         libraryTarget: 'umd',
     },
 
-    externals: {
-        vue: 'vue',
-    },
+    externals: [
+        'vue',
+        'moment',
+        'lodash',
+        'striptags',
+    ],
 });
