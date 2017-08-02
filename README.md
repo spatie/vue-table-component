@@ -164,7 +164,7 @@ import axios from 'axios';
 
 export default {
     methods: {
-        async fetchData() {
+        async fetchData({ page, filters, sort }) {
             const response = await axios.get('/my-endpoint').data({ page, filters, sort });
             
             // an object that has a `data` and an optional `pagination` property
