@@ -87,7 +87,7 @@ describe('Caching tableComponent', () => {
         expect(localStorage.getAll()).toMatchSnapshot();
     });
 
-    it('will cache a the sort column', async () => {
+    it('will cache the sort column', async () => {
         document.body.innerHTML = `
             <div id="app">
                 <div>
