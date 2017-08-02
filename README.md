@@ -141,7 +141,7 @@ TableComponent.settings({
 
 ## Retrieving data asynchronously
 
-The component can fetch data in an asynchronous manner, eg fetching data from a server.
+The component can fetch data in an asynchronous manner. The most common use case for this is fetching data from a server.
 
 Do use the feature you should pass a function to the `data` prop. The function will receive an object with `filters`, `sort` and `page`. You can use this data to fetch the right data. The function should return an object with there properties:
 
