@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/spatie/vue-table-component/master.svg?style=flat-square)](https://travis-ci.org/spatie/vue-table-component)
 [![npm](https://img.shields.io/npm/dt/vue-table-component.svg?style=flat-square)](https://www.npmjs.com/package/vue-table-component)
 
-This repo contains a Vue component that can render a filterable and sortable table. It aims to be very lightweight and easy to use.
+This repo contains a Vue component that can render a filterable and sortable table. It aims to be very lightweight and easy to use. It has support for [retrieving data asynchounously and pagination](#retrieving-data-asynchronously).
 
 Here's an example of how you can use it:
 
@@ -104,7 +104,7 @@ This wil render a table that is both filterable and sortable. A filter field wil
 ### Props
 
 You can pass these props to `table-component`:
-- `data`: (required) the data the component will operate on.
+- `data`: (required) the data the component will operate on. This can either be an array or [a function](#retrieving-data-asynchronously)
 - `show-filter`: set this to `false` to not display the `filter` field.
 - `show-caption`: set this to `false` to not display the `caption` field which shows the current active filter.
 - `sort-by`: the property in data on which to initially sort.
@@ -138,6 +138,15 @@ TableComponent.settings({
     filterNoResults: 'There are no matching rows',
 });
 ```
+
+## Retrieving data asynchronously
+
+The component can fetch data in an asynchronous manner. The most common use case for this is fetching data from a server.
+
+Do use the feature you should pass a function to the `data` prop. The function will receive an object with `filters`, `sort` and `page`. You can use this data to fetch the right data. The function should return an object with there properties:
+
+- `data`: (required) the data that should be displayed in the table. 
+- `pagination`: (optional) this should be an object with keys `currentPage` and `totalPages`. When `totalPages` is higher than 1 pagination links will be displayed.
 
 ## Changelog
 

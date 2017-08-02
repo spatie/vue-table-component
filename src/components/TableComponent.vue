@@ -46,9 +46,12 @@
             {{ filterNoResults }}
         </div>
 
+
         <div style="display:none;">
             <slot></slot>
         </div>
+
+        <pagination v-if="pagination" :pagination="pagination" @pageChange="pageChange"></pagination>
     </div>
 </template>
 
@@ -61,15 +64,17 @@
     import { pick } from 'lodash';
     import settings from '../settings';
     import { isArray } from 'lodash';
+    import Pagination from './Pagination';
 
     export default {
         components: {
             TableColumnHeader,
             TableRow,
+            Pagination,
         },
 
         props: {
-            data: { required: true, type: Array },
+            data: { default: () => [], type: [Array, Function] },
 
             showFilter: { default: true },
             showCaption: { default: true },
@@ -93,8 +98,40 @@
                 fieldName: '',
                 order: '',
             },
+            pagination: null,
+
             localSettings: {},
         }),
+
+        created() {
+            this.sort.fieldName = this.sortBy;
+            this.sort.order = this.sortOrder;
+
+            this.restoreState();
+        },
+
+        async mounted() {
+            this.columns = this.$slots.default
+                .filter(column => column.componentInstance)
+                .map(column => pick(column.componentInstance, [
+                    'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden',
+                ]))
+                .map(columnProperties => new Column(columnProperties));
+
+            await this.mapDataToRows();
+        },
+
+        watch: {
+            filter() {
+                this.saveState();
+            },
+
+            data() {
+                if (isArray(this.data)) {
+                    this.mapDataToRows();
+                }
+            },
+        },
 
         computed: {
             fullTableClass() {
@@ -111,7 +148,7 @@
                 }
 
                 return `Table sorted by ${this.sort.fieldName} ` +
-                    (this.sort.order === 'asc' ? '(ascending)' : '(descending)');
+                        (this.sort.order === 'asc' ? '(ascending)' : '(descending)');
             },
 
             displayedRows() {
@@ -141,38 +178,49 @@
             },
         },
 
-        watch: {
-            filter() {
-                this.saveState();
-            },
-        },
-
-        mounted() {
-            this.columns = this.$slots.default
-                .filter(column => column.componentInstance)
-                .map(column => pick(column.componentInstance, [
-                    'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden'
-                ]))
-                .map(columnProperties => new Column(columnProperties));
-
-            let rowId = 0;
-
-            this.rows = this.data
-                .map(rowData => {
-                    rowData.vueTableComponentInternalRowId = rowId++;
-                    return rowData;
-                })
-                .map(rowData => new Row(rowData, this.columns));
-        },
-
-        created() {
-            this.sort.fieldName = this.sortBy;
-            this.sort.order = this.sortOrder;
-
-            this.restoreState();
-        },
-
         methods: {
+            async pageChange(page) {
+                this.pagination.currentPage = page;
+
+                await this.mapDataToRows();
+            },
+
+            async mapDataToRows() {
+                const data = isArray(this.data)
+                    ? this.prepareLocalData()
+                    : await this.prepareServerData();
+
+                let rowId = 0;
+
+                this.rows = data
+                    .map(rowData => {
+                        rowData.vueTableComponentInternalRowId = rowId++;
+                        return rowData;
+                    })
+                    .map(rowData => new Row(rowData, this.columns));
+            },
+
+            prepareLocalData() {
+                this.pagination = null;
+
+                return this.data;
+            },
+
+            async prepareServerData() {
+                const page = this.pagination && this.pagination.currentPage || 1;
+
+                const response = await this.data({
+                    filters: this.filters,
+                    sort: this.sort,
+                    page: page,
+                });
+
+
+                this.pagination = response.pagination;
+
+                return response.data;
+            },
+
             changeSorting(column) {
                 if (this.sort.fieldName !== column.properties.show) {
                     this.sort.fieldName = column.properties.show;

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination can mount without pagination data 1`] = `
+
+<div id="app">
+  <!---->
+</div>
+
+`;
+
+exports[`Pagination can set the active page 1`] = `
+
+<div id="app">
+  <nav>
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link">
+          1
+        </a>
+      </li>
+      <li class="page-item active">
+        <a class="page-link">
+          2
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link">
+          3
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+`;
+
+exports[`Pagination will not display when there is only one page 1`] = `
+
+<div id="app">
+  <!---->
+</div>
+
+`;
+
+exports[`Pagination will render links when there is more than one page 1`] = `
+
+<div id="app">
+  <nav>
+    <ul class="pagination justify-content-center">
+      <li class="page-item active">
+        <a class="page-link">
+          1
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link">
+          2
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link">
+          3
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+`;
