@@ -209,9 +209,8 @@ describe('TableComponent', () => {
 
         await simulant.fire(thirdPageLink, 'click');
 
-        await createVm();
-
-        await Vue.nextTick(() => {});
+        await Vue.nextTick();
+        await Vue.nextTick();
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
