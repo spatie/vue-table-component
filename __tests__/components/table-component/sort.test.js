@@ -61,7 +61,7 @@ describe('Sortable tableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
-    
+
     it('will not sort on a column that is not sortable', async () => {
         setDocumentInnerHtml({ sortBy: 'songs', order: 'desc' });
 
@@ -107,6 +107,45 @@ describe('Sortable tableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('will not sort rows in the footer', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <div>
+                    <table-component
+                        :data="[{ firstName: 'John', songs: 30 },
+                                { firstName: 'Paul', songs: 20 },
+                                { firstName: 'George', songs: 420 },
+                                { firstName: 'Ringo', songs: 210 },
+                                { firstName: 'Total Songs', songs: 680, isFooterRow: true }]"
+                    >
+                        <table-column show="firstName" label="First name" sort-by="songs"></table-column>
+                        <table-column show="songs" data-type="numeric" label="Songs" sort-by="songs"></table-column>
+                    </table-component>
+                </div>
+            </div>
+        `;
+
+        const table = await createVm();
+
+        const firstColumnHeader = table.$el.getElementsByTagName('th')[0];
+
+        await simulant.fire(firstColumnHeader, 'click');
+
+        const body = table.$el.getElementsByTagName('tbody')[0];
+        const footer = table.$el.getElementsByTagName('tfoot')[0];
+
+        const bodyRows = body.getElementsByTagName('tr');
+        const searchText = 'Total Songs';
+
+        for (let i = 0; i < bodyRows.length; i++) {
+            expect(findCellByText(bodyRows[i], searchText)).toBeFalsy();
+        }
+
+        expect(findCellByText(footer.children[0], searchText)).toBeTruthy();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
@@ -130,10 +169,22 @@ function setDocumentInnerHtml({ sortBy = '', order = '' } = {}) {
         `;
 }
 
+function findCellByText(tableRow, text) {
+    const tableRowArray = Array.from(tableRow.children);
+
+    return tableRowArray.find(cell => {
+        return cell.textContent === text;
+    });
+}
+
 async function createVm() {
-    new Vue({
+    const vm = new Vue({
         el: '#app',
     });
 
     await Vue.nextTick(() => {});
+
+    const table = vm.$children[0];
+
+    return table;
 }

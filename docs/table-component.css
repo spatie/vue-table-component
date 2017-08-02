@@ -91,6 +91,10 @@
   color: #007593;
 }
 
+.table-component__table tfoot tr {
+  font-weight: bold;
+}
+
 .table-component__message {
   color: #999;
   font-style: italic;

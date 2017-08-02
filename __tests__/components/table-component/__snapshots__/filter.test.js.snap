@@ -50,6 +50,7 @@ exports[`Filterable tableComponent can filter data 1`] = `
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -106,6 +107,7 @@ exports[`Filterable tableComponent can filter on another property 1`] = `
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -162,6 +164,7 @@ exports[`Filterable tableComponent will display a message if there are no matchi
           </thead>
           <tbody>
           </tbody>
+          <!---->
         </table>
       </div>
       <div class="table-component__message">
@@ -230,6 +233,7 @@ exports[`Filterable tableComponent will filter data in a case-insensitive way 1`
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -288,6 +292,7 @@ exports[`Filterable tableComponent will not use columns that are not filterable 
           </thead>
           <tbody>
           </tbody>
+          <!---->
         </table>
       </div>
       <div class="table-component__message">
