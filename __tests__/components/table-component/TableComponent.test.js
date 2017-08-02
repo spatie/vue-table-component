@@ -127,6 +127,56 @@ describe('TableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('can accept a function to fetch the data', async () => {
+        const serverResponse = () => {
+            return {
+                data: [{ firstName: 'John' },{ id: 2, firstName: 'Paul' }],
+            };
+        };
+
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="${serverResponse}">
+                    <table-column show="firstName" label="First name"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        await Vue.nextTick(() => {});
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
+    it('can render pagination when the server responds with pagination data', async () => {
+        const serverResponse = () => {
+            return {
+                data: [{ firstName: 'John' },{ id: 2, firstName: 'Paul' }],
+                pagination: {
+                    total_pages: 4,
+                    current_page: 2,
+                },
+            };
+        };
+
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="${serverResponse}">
+                    <table-column show="firstName" label="First name"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        await Vue.nextTick(() => {});
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 async function createVm() {

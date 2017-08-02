@@ -1,5 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TableComponent can accept a function to fetch the data 1`] = `
+
+<div id="app">
+  <div class="table-component">
+    <div class="table-component__filter">
+      <input type="text"
+             placeholder="Filter table…"
+             class="table-component__filter__field"
+      >
+      <!---->
+    </div>
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <caption role="alert"
+                 aria-live="polite"
+                 class="table-component__table__caption"
+        >
+          Table not sorted
+        </caption>
+        <thead>
+          <tr>
+            <th role="columnheader"
+                scope="col"
+                aria-sort="none"
+                class="table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              John
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Paul
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!---->
+    <div style="display: none;">
+      <div>
+      </div>
+    </div>
+    <!---->
+  </div>
+</div>
+
+`;
+
 exports[`TableComponent can display a custom message when filtering results in no results 1`] = `
 
 <div id="app">
@@ -45,6 +100,7 @@ exports[`TableComponent can display a custom message when filtering results in n
       <div>
       </div>
     </div>
+    <!---->
   </div>
 </div>
 
@@ -95,6 +151,7 @@ exports[`TableComponent can display a custom placeholder in the filter field 1`]
       <div>
       </div>
     </div>
+    <!---->
   </div>
 </div>
 
@@ -149,6 +206,87 @@ exports[`TableComponent can mount 1`] = `
       <div>
       </div>
     </div>
+    <!---->
+  </div>
+</div>
+
+`;
+
+exports[`TableComponent can render pagination when the server responds with pagination data 1`] = `
+
+<div id="app">
+  <div class="table-component">
+    <div class="table-component__filter">
+      <input type="text"
+             placeholder="Filter table…"
+             class="table-component__filter__field"
+      >
+      <!---->
+    </div>
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <caption role="alert"
+                 aria-live="polite"
+                 class="table-component__table__caption"
+        >
+          Table not sorted
+        </caption>
+        <thead>
+          <tr>
+            <th role="columnheader"
+                scope="col"
+                aria-sort="none"
+                class="table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              John
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Paul
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!---->
+    <div style="display: none;">
+      <div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example"
+         class="my-4"
+    >
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link">
+            1
+          </a>
+        </li>
+        <li class="page-item active">
+          <a class="page-link">
+            2
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">
+            3
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">
+            4
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>
 
@@ -198,6 +336,7 @@ exports[`TableComponent has an prop to disable the caption 1`] = `
       <div>
       </div>
     </div>
+    <!---->
   </div>
 </div>
 
@@ -246,6 +385,7 @@ exports[`TableComponent has an prop to disable the filter 1`] = `
       <div>
       </div>
     </div>
+    <!---->
   </div>
 </div>
 
@@ -294,6 +434,7 @@ exports[`TableComponent will use the property name as a column heading if label 
       <div>
       </div>
     </div>
+    <!---->
   </div>
 </div>
 
@@ -341,6 +482,7 @@ exports[`TableComponent won't use the property name as a column heading if label
       <div>
       </div>
     </div>
+    <!---->
   </div>
 </div>
 

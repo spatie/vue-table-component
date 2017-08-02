@@ -46,9 +46,12 @@
             {{ filterNoResults }}
         </div>
 
+
         <div style="display:none;">
             <slot></slot>
         </div>
+
+        <pagination v-if="pagination" :pagination="pagination" @choosePage="choosePage"></pagination>
     </div>
 </template>
 
@@ -61,15 +64,17 @@
     import { pick } from 'lodash';
     import settings from '../settings';
     import { isArray } from 'lodash';
+    import Pagination from './Pagination';
 
     export default {
         components: {
             TableColumnHeader,
             TableRow,
+            Pagination,
         },
 
         props: {
-            data: { required: true, type: Array },
+            data: { default: () => [], type: [Array, Function] },
 
             showFilter: { default: true },
             showCaption: { default: true },
@@ -93,7 +98,11 @@
                 fieldName: '',
                 order: '',
             },
+            pagination: null,
+
             localSettings: {},
+
+
         }),
 
         computed: {
@@ -145,9 +154,15 @@
             filter() {
                 this.saveState();
             },
+
+            data() {
+                if (isArray(this.data)) {
+
+                }
+            }
         },
 
-        mounted() {
+        async mounted() {
             this.columns = this.$slots.default
                 .filter(column => column.componentInstance)
                 .map(column => pick(column.componentInstance, [
@@ -155,14 +170,8 @@
                 ]))
                 .map(columnProperties => new Column(columnProperties));
 
-            let rowId = 0;
 
-            this.rows = this.data
-                .map(rowData => {
-                    rowData.vueTableComponentInternalRowId = rowId++;
-                    return rowData;
-                })
-                .map(rowData => new Row(rowData, this.columns));
+            await this.mapDataToRows();
         },
 
         created() {
@@ -173,6 +182,48 @@
         },
 
         methods: {
+            async choosePage(page) {
+                this.pagination.current_page = page;
+
+                await this.mapDataToRows();
+            },
+
+            async mapDataToRows() {
+                let data = isArray(this.data)
+                    ? this.prepareLocalData()
+                    : await this.prepareServerData();
+
+                let rowId = 0;
+
+                this.rows = data
+                    .map(rowData => {
+                        rowData.vueTableComponentInternalRowId = rowId++;
+                        return rowData;
+                    })
+                    .map(rowData => new Row(rowData, this.columns));
+            },
+
+            prepareLocalData() {
+                this.pagination = null;
+
+                return this.data;
+            },
+
+            async prepareServerData() {
+
+                const response = await this.data({
+                    filters: this.filters,
+                    sort: this.sort,
+                    page: this.pagination && this.pagination.current_page,
+                });
+
+
+
+                this.pagination = response.pagination;
+
+                return response.data;
+            },
+
             changeSorting(column) {
                 if (this.sort.fieldName !== column.properties.show) {
                     this.sort.fieldName = column.properties.show;
