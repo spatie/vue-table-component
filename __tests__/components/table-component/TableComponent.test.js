@@ -157,8 +157,8 @@ describe('TableComponent', () => {
             return {
                 data: [{ firstName: 'John' },{ id: 2, firstName: 'Paul' }],
                 pagination: {
-                    total_pages: 4,
-                    current_page: 2,
+                    totalPages: 4,
+                    currentPage: 2,
                 },
             };
         };
@@ -184,8 +184,8 @@ describe('TableComponent', () => {
             return {
                 data: [{ firstName: `John ${page}` },{ id: 2, firstName: `Paul ${page}` }],
                 pagination: {
-                    total_pages: 4,
-                    current_page: page,
+                    totalPages: 4,
+                    currentPage: page,
                 },
             };
         };

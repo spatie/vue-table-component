@@ -21,12 +21,12 @@ describe('Pagination', () => {
 
         document.body.innerHTML = `
             <div id="app">
-                <pagination 
+                <pagination
                 :pagination="{
-                    current_page: 1,
-                    total_pages: 1,
+                    currentPage: 1,
+                    totalPages: 1,
                 }">
-                
+
                 </pagination>
             </div>
         `;
@@ -40,12 +40,12 @@ describe('Pagination', () => {
 
         document.body.innerHTML = `
             <div id="app">
-                <pagination 
+                <pagination
                 :pagination="{
-                    current_page: 1,
-                    total_pages: 3,
+                    currentPage: 1,
+                    totalPages: 3,
                 }">
-                
+
                 </pagination>
             </div>
         `;
@@ -59,12 +59,12 @@ describe('Pagination', () => {
 
         document.body.innerHTML = `
             <div id="app">
-                <pagination 
+                <pagination
                 :pagination="{
-                    current_page: 2,
-                    total_pages: 3,
+                    currentPage: 2,
+                    totalPages: 3,
                 }">
-                
+
                 </pagination>
             </div>
         `;

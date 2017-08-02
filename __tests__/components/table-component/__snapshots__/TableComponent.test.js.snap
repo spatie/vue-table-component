@@ -261,9 +261,7 @@ exports[`TableComponent can render pagination when the server responds with pagi
       <div>
       </div>
     </div>
-    <nav aria-label="Page navigation"
-         class="my-4"
-    >
+    <nav>
       <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link">
@@ -341,9 +339,7 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
       <div>
       </div>
     </div>
-    <nav aria-label="Page navigation"
-         class="my-4"
-    >
+    <nav>
       <ul class="pagination justify-content-center">
         <li class="page-item active">
           <a class="page-link">
@@ -421,9 +417,7 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
       <div>
       </div>
     </div>
-    <nav aria-label="Page navigation"
-         class="my-4"
-    >
+    <nav>
       <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link">

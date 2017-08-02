@@ -181,7 +181,7 @@
 
         methods: {
             async choosePage(page) {
-                this.pagination.current_page = page;
+                this.pagination.currentPage = page;
 
                 await this.mapDataToRows();
             },
@@ -208,7 +208,7 @@
             },
 
             async prepareServerData() {
-                const page = this.pagination && this.pagination.current_page || 1;
+                const page = this.pagination && this.pagination.currentPage || 1;
 
                 const response = await this.data({
                     filters: this.filters,

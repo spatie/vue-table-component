@@ -11,9 +11,7 @@ exports[`Pagination can mount without pagination data 1`] = `
 exports[`Pagination can set the active page 1`] = `
 
 <div id="app">
-  <nav aria-label="Page navigation"
-       class="my-4"
-  >
+  <nav>
     <ul class="pagination justify-content-center">
       <li class="page-item">
         <a class="page-link">
@@ -47,9 +45,7 @@ exports[`Pagination will not display when there is only one page 1`] = `
 exports[`Pagination will render links when there is more than one page 1`] = `
 
 <div id="app">
-  <nav aria-label="Page navigation"
-       class="my-4"
-  >
+  <nav>
     <ul class="pagination justify-content-center">
       <li class="page-item active">
         <a class="page-link">
