@@ -199,6 +199,8 @@ If you discover any security related issues, please contact freek@spatie.be inst
 - [Sebastian De Deyne](https://github.com/sebdedeyne)
 - [All Contributors](../../contributors)
 
+The Pagination component was inspired by [this lesson on Laracasts.com](https://laracasts.com/series/lets-build-a-forum-with-laravel/episodes/16).
+
 ## About Spatie
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
