@@ -9,50 +9,50 @@
 </template>
 
 <script>
-import { range } from 'lodash';
+    import { range } from 'lodash';
 
-export default {
-    props: {
-        pagination: {
-            type: Object,
-            default: () => ({}),
-        },
-    },
-
-    computed: {
-        pages() {
-            return this.pagination.total_pages === undefined
-                ? []
-                : range(1, this.pagination.total_pages + 1);
+    export default {
+        props: {
+            pagination: {
+                type: Object,
+                default: () => ({}),
+            },
         },
 
-        shouldShowPagination() {
-            if (this.pagination.total_pages === undefined) {
-                return false;
-            }
+        computed: {
+            pages() {
+                return this.pagination.total_pages === undefined
+                    ? []
+                    : range(1, this.pagination.total_pages + 1);
+            },
 
-            if (this.pagination.count === 0) {
-                return false;
-            }
+            shouldShowPagination() {
+                if (this.pagination.total_pages === undefined) {
+                    return false;
+                }
 
-            return this.pagination.total_pages > 1;
+                if (this.pagination.count === 0) {
+                    return false;
+                }
+
+                return this.pagination.total_pages > 1;
+            },
         },
-    },
 
-    methods: {
-        isActive(page) {
-            const currentPage = this.pagination.current_page || 1;
+        methods: {
+            isActive(page) {
+                const currentPage = this.pagination.current_page || 1;
 
-            return currentPage === page;
+                return currentPage === page;
+            },
+
+            pageClicked(page) {
+                if (this.pagination.current_page === page) {
+                    return;
+                }
+
+                this.$emit('choosePage', page);
+            },
         },
-
-        pageClicked(page) {
-            if (this.pagination.current_page === page) {
-                return;
-            }
-
-            this.$emit('choosePage', page);
-        },
-    },
-};
+    };
 </script>

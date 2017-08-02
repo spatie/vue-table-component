@@ -5,19 +5,19 @@
 </template>
 
 <script>
-export default {
-    props: ['columns', 'row'],
+    export default {
+        props: ['columns', 'row'],
 
-    computed: {
-        visibleColumns() {
-            return this.columns.filter(column => ! column.properties.hidden);
+        computed: {
+            visibleColumns() {
+                return this.columns.filter(column => ! column.properties.hidden);
+            },
         },
-    },
 
-    methods: {
-        getValue(column) {
-            return this.row.getValue(column.properties.show);
+        methods: {
+            getValue(column) {
+                return this.row.getValue(column.properties.show);
+            },
         },
-    },
 };
 </script>
