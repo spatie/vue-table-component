@@ -118,7 +118,6 @@
                 ]))
                 .map(columnProperties => new Column(columnProperties));
 
-
             await this.mapDataToRows();
         },
 
