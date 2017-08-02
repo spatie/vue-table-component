@@ -143,10 +143,10 @@ TableComponent.settings({
 
 The component can fetch data in an asynchronous manner. The most common use case for this is fetching data from a server.
 
-To use the feature you should pass a function to the `data` prop. The function will receive an object with `filters`, `sort` and `page`. You can use this data to fetch the right data. The function should return an object with there properties:
+To use the feature you should pass a function to the `data` prop. The function will receive an object with `filters`, `sort` and `page`. You can use these parameters to fetch the right data. The function should return an object with there properties:
 
 - `data`: (required) the data that should be displayed in the table. 
-- `pagination`: (optional) this should be an object with keys `currentPage` and `totalPages`. When `totalPages` is higher than 1 pagination links will be displayed.
+- `pagination`: (optional) this should be an object with keys `currentPage` and `totalPages`. If `totalPages` is higher than 1 pagination links will be displayed.
 
 Here's an example:
 
@@ -160,18 +160,18 @@ Here's an example:
 </template>
 
 <script>
-import axios from 'axios';
+    import axios from 'axios';
 
-export default {
-    methods: {
-        async fetchData({ page, filters, sort }) {
-            const response = await axios.get('/my-endpoint').data({ page, filters, sort });
-            
-            // an object that has a `data` and an optional `pagination` property
-            return response;
+    export default {
+        methods: {
+            async fetchData({ page, filters, sort }) {
+                const response = await axios.get('/my-endpoint', { page });
+                
+                // An object that has a `data` and an optional `pagination` property
+                return response;
+            }
         }
     }
-}
 </script>
 ```
 
