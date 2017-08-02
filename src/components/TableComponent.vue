@@ -51,7 +51,7 @@
             <slot></slot>
         </div>
 
-        <pagination v-if="pagination" :pagination="pagination" @choosePage="choosePage"></pagination>
+        <pagination v-if="pagination" :pagination="pagination" @pageChange="pageChange"></pagination>
     </div>
 </template>
 
@@ -180,7 +180,7 @@
         },
 
         methods: {
-            async choosePage(page) {
+            async pageChange(page) {
                 this.pagination.currentPage = page;
 
                 await this.mapDataToRows();

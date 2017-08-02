@@ -51,7 +51,7 @@
                     return;
                 }
 
-                this.$emit('choosePage', page);
+                this.$emit('pageChange', page);
             },
         },
     };
