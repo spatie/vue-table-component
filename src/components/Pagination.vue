@@ -1,5 +1,5 @@
 <template>
-    <nav v-if="shouldShowPagination" aria-label="Page navigation" class="my-4">
+    <nav v-if="shouldShowPagination">
         <ul class="pagination justify-content-center">
             <li class="page-item" :class="{ active: isActive(page) }" v-for="page in pages">
                 <a class="page-link" @click="pageClicked(page)">{{ page }}</a>
