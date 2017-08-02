@@ -16,7 +16,6 @@ Here's an example of how you can use it:
           { firstName: 'Paul', lastName: 'McCartney', instrument: 'Bass', editUrl: '<a href='#paul'>Edit</a>', birthday: '18/06/1942', songs: 70 },
           { firstName: 'George', lastName: 'Harrison', instrument: 'Guitar', editUrl: '<a href='#george'>Edit</a>', birthday: '25/02/1943', songs: 22 },
           { firstName: 'Ringo', lastName: 'Starr', instrument: 'Drums', editUrl: '<a href='#ringo'>Edit</a>', birthday: '07/07/1940', songs: 2 },
-          { firstName: 'Summary', lastName: '', instrument: 'Total Songs', editUrl: '', birthday: '', songs: 166, isFooterRow: true },
      ]"
      sort-by="songs"
      sort-order="asc"
