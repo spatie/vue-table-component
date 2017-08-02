@@ -160,7 +160,7 @@ Here's an example:
 </template>
 
 <script>
-import axios from 'axious';
+import axios from 'axios';
 
 export default {
     methods: {
