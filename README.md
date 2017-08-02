@@ -148,6 +148,33 @@ Do use the feature you should pass a function to the `data` prop. The function w
 - `data`: (required) the data that should be displayed in the table. 
 - `pagination`: (optional) this should be an object with keys `current_page` and `total_pages`. When `total_pages` is higher than 1 pagination links will be displayed.
 
+Here's an example:
+
+```html
+<template>
+   <div id="app">
+       <table-component :data="serverResponse">
+           <table-column show="firstName" label="First name"></table-column>
+       </table-component>
+   </div>
+</template>
+
+<script>
+import axios from 'axious';
+
+export default {
+    methods: {
+        async fetchData() {
+            const response = await axios.get('/my-endpoint').data({ page, filters, sort });
+            
+            // an object that has a `data` and an optional `pagination` property
+            return response;
+        }
+    }
+}
+</script>
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
