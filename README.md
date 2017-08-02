@@ -153,7 +153,7 @@ Here's an example:
 ```html
 <template>
    <div id="app">
-       <table-component :data="serverResponse">
+       <table-component :data="fetchData">
            <table-column show="firstName" label="First name"></table-column>
        </table-component>
    </div>
