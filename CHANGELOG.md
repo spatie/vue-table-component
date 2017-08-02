@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.3.0 - 2017-08-02
+- Add ability to render a footer row `<tfoot>`
+
 ## 1.2.0 - 2017-08-02
 - Add async data retrieval and pagination
 

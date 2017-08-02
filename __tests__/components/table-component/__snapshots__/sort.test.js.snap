@@ -72,6 +72,7 @@ exports[`Sortable tableComponent can sort on another column 1`] = `
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -178,6 +179,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -286,6 +288,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -394,6 +397,7 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -502,6 +506,7 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -610,6 +615,7 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
@@ -718,12 +724,111 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->
       <div style="display: none;">
         <div>
         </div>
+        <div>
+        </div>
+        <div>
+        </div>
+      </div>
+      <!---->
+    </div>
+  </div>
+</div>
+
+`;
+
+exports[`Sortable tableComponent will not sort rows in the footer 1`] = `
+
+<div id="app">
+  <div>
+    <div class="table-component">
+      <div class="table-component__filter">
+        <input type="text"
+               placeholder="Filter table…"
+               class="table-component__filter__field"
+        >
+        <!---->
+      </div>
+      <div class="table-component__table-wrapper">
+        <table class="table-component__table">
+          <caption role="alert"
+                   aria-live="polite"
+                   class="table-component__table__caption"
+          >
+            Table sorted by firstName (ascending)
+          </caption>
+          <thead>
+            <tr>
+              <th role="columnheader"
+                  scope="col"
+                  aria-sort="ascending"
+                  class="table-component__th--sort-asc"
+              >
+                First name
+              </th>
+              <th role="columnheader"
+                  scope="col"
+                  aria-sort="none"
+                  class="table-component__th--sort"
+              >
+                Songs
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Paul
+              </td>
+              <td>
+                20
+              </td>
+            </tr>
+            <tr>
+              <td>
+                John
+              </td>
+              <td>
+                30
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Ringo
+              </td>
+              <td>
+                210
+              </td>
+            </tr>
+            <tr>
+              <td>
+                George
+              </td>
+              <td>
+                420
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                Total Songs
+              </td>
+              <td>
+                680
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <!---->
+      <div style="display: none;">
         <div>
         </div>
         <div>
@@ -826,6 +931,7 @@ exports[`Sortable tableComponent will sort the data ascendingly if the header of
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
       <!---->

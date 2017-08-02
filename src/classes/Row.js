@@ -44,6 +44,10 @@ export default class Row {
         return value.toString();
     }
 
+    isFooterRow() {
+        return this.data.isFooterRow;
+    }
+
     passesFilter(filter) {
         return this.columns
             .filter(column => column.isFilterable())

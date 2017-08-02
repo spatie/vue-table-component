@@ -214,6 +214,32 @@ describe('TableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('can render a set of footer rows', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component :show-caption="false"
+                    :data="[
+                        { firstName: 'John', numSkills: 2 },
+                        { id: 2, firstName: 'Paul', numSkills: 3 },
+                        { firstName: 'Total Skills', numSkills: 5, isFooterRow: true }]"
+                >
+                    <table-column show="firstName" label="First name"></table-column>
+                    <table-column show="numSkills" label="Number of skills" data-type="numeric"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        const table = await createVm();
+
+        const footer = table.$el.getElementsByTagName('tfoot')[0];
+
+        expect(footer).toBeTruthy();
+        expect(footer.tagName).toEqual('TFOOT');
+        expect(footer.children[0].tagName).toEqual('TR');
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 async function createVm() {

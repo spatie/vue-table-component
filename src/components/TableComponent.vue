@@ -39,6 +39,14 @@
                     :columns="columns"
                 ></table-row>
                 </tbody>
+                <tfoot v-if="hasFooterRows">
+                    <table-row
+                        v-for="row in footerRows"
+                        :key="row.vueTableComponentInternalRowId"
+                        :row="row"
+                        :columns="columns"
+                    ></table-row>
+                </tfoot>
             </table>
         </div>
 
@@ -92,6 +100,7 @@
 
         data: () => ({
             columns: [],
+            footerRows: [],
             rows: [],
             filter: '',
             sort: {
@@ -155,6 +164,10 @@
                 return this.sortedRows.filter(row => row.passesFilter(this.filter));
             },
 
+            hasFooterRows() {
+                return this.footerRows.length > 0;
+            },
+
             sortedRows() {
                 if (this.sort.fieldName === '') {
                     return this.rows;
@@ -192,12 +205,14 @@
 
                 let rowId = 0;
 
-                this.rows = data
+                let allRows = data
                     .map(rowData => {
                         rowData.vueTableComponentInternalRowId = rowId++;
-                        return rowData;
-                    })
-                    .map(rowData => new Row(rowData, this.columns));
+                        return new Row(rowData, this.columns);
+                    });
+
+                this.rows = allRows.filter(row => !row.isFooterRow());
+                this.footerRows = allRows.filter(row => row.isFooterRow());
             },
 
             prepareLocalData() {
