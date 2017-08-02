@@ -157,16 +157,16 @@
 
             data() {
                 if (isArray(this.data)) {
-
+                    this.mapDataToRows();
                 }
-            }
+            },
         },
 
         async mounted() {
             this.columns = this.$slots.default
                 .filter(column => column.componentInstance)
                 .map(column => pick(column.componentInstance, [
-                    'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden'
+                    'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden',
                 ]))
                 .map(columnProperties => new Column(columnProperties));
 
@@ -189,7 +189,7 @@
             },
 
             async mapDataToRows() {
-                let data = isArray(this.data)
+                const data = isArray(this.data)
                     ? this.prepareLocalData()
                     : await this.prepareServerData();
 
@@ -210,13 +210,13 @@
             },
 
             async prepareServerData() {
+                const page = this.pagination && this.pagination.current_page || 1;
 
                 const response = await this.data({
                     filters: this.filters,
                     sort: this.sort,
-                    page: this.pagination && this.pagination.current_page,
+                    page: page,
                 });
-
 
 
                 this.pagination = response.pagination;

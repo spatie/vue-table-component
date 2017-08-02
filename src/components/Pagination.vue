@@ -9,14 +9,14 @@
 </template>
 
 <script>
-    import {range} from 'lodash';
+    import { range } from 'lodash';
 
     export default {
         props: {
             pagination: {
                 type: Object,
                 default: () => ({}),
-            }
+            },
         },
 
         computed: {
@@ -41,7 +41,9 @@
 
         methods: {
             isActive(page) {
-                return this.pagination.current_page === page;
+                const currentPage = this.pagination.current_page || 1;
+
+                return currentPage === page;
             },
 
             pageClicked(page) {
@@ -52,5 +54,5 @@
                 this.$emit('choosePage', page);
             },
         },
-    }
+    };
 </script>

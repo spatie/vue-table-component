@@ -1,6 +1,7 @@
 import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
 import LocalStorageMock from '../../helpers/LocalStorageMock';
+import simulant from 'simulant';
 
 const localStorage = new LocalStorageMock();
 
@@ -170,6 +171,43 @@ describe('TableComponent', () => {
                 </table-component>
             </div>
         `;
+
+        await createVm();
+
+        await Vue.nextTick(() => {});
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
+    it('clicking a link in the pagination will rerender the table', async () => {
+        const serverResponse = ({ page }) => {
+            return {
+                data: [{ firstName: `John ${page}` },{ id: 2, firstName: `Paul ${page}` }],
+                pagination: {
+                    total_pages: 4,
+                    current_page: page,
+                },
+            };
+        };
+
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="${serverResponse}">
+                    <table-column show="firstName" label="First name"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        await Vue.nextTick(() => {});
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+
+        const thirdPageLink = document.getElementsByClassName('page-link')[2];
+
+        await simulant.fire(thirdPageLink, 'click');
 
         await createVm();
 

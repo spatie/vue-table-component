@@ -292,6 +292,164 @@ exports[`TableComponent can render pagination when the server responds with pagi
 
 `;
 
+exports[`TableComponent clicking a link in the pagination will rerender the table 1`] = `
+
+<div id="app">
+  <div class="table-component">
+    <div class="table-component__filter">
+      <input type="text"
+             placeholder="Filter table…"
+             class="table-component__filter__field"
+      >
+      <!---->
+    </div>
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <caption role="alert"
+                 aria-live="polite"
+                 class="table-component__table__caption"
+        >
+          Table not sorted
+        </caption>
+        <thead>
+          <tr>
+            <th role="columnheader"
+                scope="col"
+                aria-sort="none"
+                class="table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              John 1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Paul 1
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!---->
+    <div style="display: none;">
+      <div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example"
+         class="my-4"
+    >
+      <ul class="pagination justify-content-center">
+        <li class="page-item active">
+          <a class="page-link">
+            1
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">
+            2
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">
+            3
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">
+            4
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+`;
+
+exports[`TableComponent clicking a link in the pagination will rerender the table 2`] = `
+
+<div id="app">
+  <div class="table-component">
+    <div class="table-component__filter">
+      <input type="text"
+             placeholder="Filter table…"
+             class="table-component__filter__field"
+      >
+    </div>
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <caption role="alert"
+                 aria-live="polite"
+                 class="table-component__table__caption"
+        >
+          Table not sorted
+        </caption>
+        <thead>
+          <tr>
+            <th role="columnheader"
+                scope="col"
+                aria-sort="none"
+                class="table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              John 3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Paul 3
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display: none;">
+      <div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example"
+         class="my-4"
+    >
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link">
+            1
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">
+            2
+          </a>
+        </li>
+        <li class="page-item active">
+          <a class="page-link">
+            3
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">
+            4
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+`;
+
 exports[`TableComponent has an prop to disable the caption 1`] = `
 
 <div id="app">
