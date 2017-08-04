@@ -10,7 +10,7 @@
 
         computed: {
             visibleColumns() {
-                return this.columns.filter(column => !column.properties.hidden);
+                return this.columns.filter(column => ! column.properties.hidden);
             },
         },
 
