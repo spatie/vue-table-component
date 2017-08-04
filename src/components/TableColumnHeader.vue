@@ -18,7 +18,7 @@
 
         computed: {
             ariaDisabled() {
-                if (!this.column.isSortable()) {
+                if (! this.column.isSortable()) {
                     return 'true';
                 }
 
@@ -26,7 +26,7 @@
             },
 
             ariaSort() {
-                if (!this.column.isSortable()) {
+                if (! this.column.isSortable()) {
                     return false;
                 }
 
@@ -38,7 +38,7 @@
             },
 
             headerClass() {
-                if (!this.column.isSortable()) {
+                if (! this.column.isSortable()) {
                     return;
                 }
 
@@ -50,7 +50,7 @@
             },
 
             isVisible() {
-                return !this.column.properties.hidden;
+                return ! this.column.properties.hidden;
             },
 
             label() {

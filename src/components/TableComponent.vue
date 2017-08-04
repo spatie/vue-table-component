@@ -123,7 +123,7 @@
 
         watch: {
             filter() {
-                if (!this.usesLocalData()) {
+                if (! this.usesLocalData) {
                     this.mapDataToRows();
                 }
 
@@ -131,7 +131,7 @@
             },
 
             data() {
-                if (this.usesLocalData()) {
+                if (this.usesLocalData) {
                     this.mapDataToRows();
                 }
             },
@@ -155,8 +155,12 @@
                     (this.sort.order === 'asc' ? '(ascending)' : '(descending)');
             },
 
+            usesLocalData() {
+                return isArray(this.data);
+            },
+
             displayedRows() {
-                if (!this.usesLocalData()) {
+                if (! this.usesLocalData) {
                     return this.sortedRows;
                 }
 
@@ -164,7 +168,7 @@
             },
 
             sortedRows() {
-                if (!this.usesLocalData()) {
+                if (! this.usesLocalData) {
                     return this.rows;
                 }
 
@@ -178,7 +182,7 @@
 
                 const sortColumn = this.getColumn(this.sort.fieldName);
 
-                if (!sortColumn) {
+                if (! sortColumn) {
                     return this.rows;
                 }
 
@@ -197,12 +201,10 @@
                 await this.mapDataToRows();
             },
 
-            usesLocalData() {
-                return isArray(this.data);
-            },
+
 
             async mapDataToRows() {
-                const data = this.usesLocalData()
+                const data = this.usesLocalData
                     ? this.prepareLocalData()
                     : await this.fetchServerData();
 
@@ -245,7 +247,7 @@
                     this.sort.order = (this.sort.order === 'asc' ? 'desc' : 'asc');
                 }
 
-                if (!this.usesLocalData()) {
+                if (! this.usesLocalData) {
                     this.mapDataToRows();
                 }
 
