@@ -9,50 +9,50 @@
 </template>
 
 <script>
-import { range } from 'lodash';
+    import {range} from 'lodash';
 
-export default {
-    props: {
-        pagination: {
-            type: Object,
-            default: () => ({}),
-        },
-    },
-
-    computed: {
-        pages() {
-            return this.pagination.totalPages === undefined
-                ? []
-                : range(1, this.pagination.totalPages + 1);
+    export default {
+        props: {
+            pagination: {
+                type: Object,
+                default: () => ({}),
+            },
         },
 
-        shouldShowPagination() {
-            if (this.pagination.totalPages === undefined) {
-                return false;
-            }
+        computed: {
+            pages() {
+                return this.pagination.totalPages === undefined
+                    ? []
+                    : range(1, this.pagination.totalPages + 1);
+            },
 
-            if (this.pagination.count === 0) {
-                return false;
-            }
+            shouldShowPagination() {
+                if (this.pagination.totalPages === undefined) {
+                    return false;
+                }
 
-            return this.pagination.totalPages > 1;
+                if (this.pagination.count === 0) {
+                    return false;
+                }
+
+                return this.pagination.totalPages > 1;
+            },
         },
-    },
 
-    methods: {
-        isActive(page) {
-            const currentPage = this.pagination.currentPage || 1;
+        methods: {
+            isActive(page) {
+                const currentPage = this.pagination.currentPage || 1;
 
-            return currentPage === page;
+                return currentPage === page;
+            },
+
+            pageClicked(page) {
+                if (this.pagination.currentPage === page) {
+                    return;
+                }
+
+                this.$emit('pageChange', page);
+            },
         },
-
-        pageClicked(page) {
-            if (this.pagination.currentPage === page) {
-                return;
-            }
-
-            this.$emit('pageChange', page);
-        },
-    },
-};
+    };
 </script>
