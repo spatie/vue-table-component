@@ -19,5 +19,5 @@
                 return this.row.getValue(column.properties.show);
             },
         },
-};
+    };
 </script>

@@ -7,7 +7,7 @@
                 type="text"
                 v-model="filter"
                 :placeholder="filterPlaceholder"
-           >
+            >
             <a
                 v-if="filter"
                 @click="filter = ''"
@@ -123,11 +123,15 @@
 
         watch: {
             filter() {
+                if (! this.usesLocalData) {
+                    this.mapDataToRows();
+                }
+
                 this.saveState();
             },
 
             data() {
-                if (isArray(this.data)) {
+                if (this.usesLocalData) {
                     this.mapDataToRows();
                 }
             },
@@ -148,14 +152,26 @@
                 }
 
                 return `Table sorted by ${this.sort.fieldName} ` +
-                        (this.sort.order === 'asc' ? '(ascending)' : '(descending)');
+                    (this.sort.order === 'asc' ? '(ascending)' : '(descending)');
+            },
+
+            usesLocalData() {
+                return isArray(this.data);
             },
 
             displayedRows() {
+                if (! this.usesLocalData) {
+                    return this.sortedRows;
+                }
+
                 return this.sortedRows.filter(row => row.passesFilter(this.filter));
             },
 
             sortedRows() {
+                if (! this.usesLocalData) {
+                    return this.rows;
+                }
+
                 if (this.sort.fieldName === '') {
                     return this.rows;
                 }
@@ -185,10 +201,12 @@
                 await this.mapDataToRows();
             },
 
+
+
             async mapDataToRows() {
-                const data = isArray(this.data)
+                const data = this.usesLocalData
                     ? this.prepareLocalData()
-                    : await this.prepareServerData();
+                    : await this.fetchServerData();
 
                 let rowId = 0;
 
@@ -206,11 +224,11 @@
                 return this.data;
             },
 
-            async prepareServerData() {
+            async fetchServerData() {
                 const page = this.pagination && this.pagination.currentPage || 1;
 
                 const response = await this.data({
-                    filters: this.filters,
+                    filter: this.filter,
                     sort: this.sort,
                     page: page,
                 });
@@ -227,6 +245,10 @@
                     this.sort.order = 'asc';
                 } else {
                     this.sort.order = (this.sort.order === 'asc' ? 'desc' : 'asc');
+                }
+
+                if (! this.usesLocalData) {
+                    this.mapDataToRows();
                 }
 
                 this.saveState();
@@ -247,8 +269,8 @@
                     return;
                 }
 
-                this.filter = previousState.filter;
                 this.sort = previousState.sort;
+                this.filter = previousState.filter;
 
                 this.saveState();
             },
