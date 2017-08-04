@@ -61,9 +61,9 @@
     import Row from '../classes/Row';
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
-    import {pick} from 'lodash';
+    import { pick } from 'lodash';
     import settings from '../settings';
-    import {isArray} from 'lodash';
+    import { isArray } from 'lodash';
     import Pagination from './Pagination';
 
     export default {
@@ -74,20 +74,20 @@
         },
 
         props: {
-            data: {default: () => [], type: [Array, Function]},
+            data: { default: () => [], type: [Array, Function] },
 
-            showFilter: {default: true},
-            showCaption: {default: true},
+            showFilter: { default: true },
+            showCaption: { default: true },
 
-            sortBy: {default: '', type: String},
-            sortOrder: {default: '', type: String},
+            sortBy: { default: '', type: String },
+            sortOrder: { default: '', type: String },
 
-            cacheId: {default: ''},
-            cacheLifetime: {default: 5},
+            cacheId: { default: '' },
+            cacheLifetime: { default: 5 },
 
-            tableClass: {default: settings.tableClass},
-            filterPlaceholder: {default: settings.filterPlaceholder},
-            filterNoResults: {default: settings.filterNoResults},
+            tableClass: { default: settings.tableClass },
+            filterPlaceholder: { default: settings.filterPlaceholder },
+            filterNoResults: { default: settings.filterNoResults },
         },
 
         data: () => ({
