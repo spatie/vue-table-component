@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.2.1 - 2017-08-04
+- Fix async data retrieval and pagination
+
 ## 1.2.0 - 2017-08-02
 - Add async data retrieval and pagination
 
