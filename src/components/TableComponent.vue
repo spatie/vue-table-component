@@ -123,11 +123,15 @@
 
         watch: {
             filter() {
+                if (! this.usesLocalData()) {
+                    this.mapDataToRows();
+                }
+
                 this.saveState();
             },
 
             data() {
-                if (isArray(this.data)) {
+                if (this.usesLocalData()) {
                     this.mapDataToRows();
                 }
             },
@@ -152,10 +156,22 @@
             },
 
             displayedRows() {
+                if (! this.usesLocalData()) {
+                    this.mapDataToRows();
+
+                    return;
+                }
+
                 return this.sortedRows.filter(row => row.passesFilter(this.filter));
             },
 
             sortedRows() {
+                if (! this.usesLocalData()) {
+                    this.mapDataToRows();
+
+                    return;
+                }
+
                 if (this.sort.fieldName === '') {
                     return this.rows;
                 }
@@ -185,8 +201,12 @@
                 await this.mapDataToRows();
             },
 
+            usesLocalData() {
+                return isArray(this.data);
+            },
+
             async mapDataToRows() {
-                const data = isArray(this.data)
+                const data = this.usesLocalData()
                     ? this.prepareLocalData()
                     : await this.prepareServerData();
 
@@ -247,8 +267,8 @@
                     return;
                 }
 
-                this.filter = previousState.filter;
                 this.sort = previousState.sort;
+                this.filter = previousState.filter;
 
                 this.saveState();
             },
