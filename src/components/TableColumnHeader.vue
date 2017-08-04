@@ -1,12 +1,12 @@
 <template>
     <th
-            @click="clicked"
-            :class="headerClass"
-            role="columnheader"
-            scope="col"
-            :aria-sort="ariaSort"
-            :aria-disabled="ariaDisabled"
-            v-if="this.isVisible"
+        @click="clicked"
+        :class="headerClass"
+        role="columnheader"
+        scope="col"
+        :aria-sort="ariaSort"
+        :aria-disabled="ariaDisabled"
+        v-if="this.isVisible"
     >
         {{ label }}
     </th>
