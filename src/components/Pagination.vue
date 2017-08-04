@@ -9,50 +9,50 @@
 </template>
 
 <script>
-    import { range } from 'lodash';
+import { range } from 'lodash';
 
-    export default {
-        props: {
-            pagination: {
-                type: Object,
-                default: () => ({}),
-            },
+export default {
+    props: {
+        pagination: {
+            type: Object,
+            default: () => ({}),
+        },
+    },
+
+    computed: {
+        pages() {
+            return this.pagination.totalPages === undefined
+                ? []
+                : range(1, this.pagination.totalPages + 1);
         },
 
-        computed: {
-            pages() {
-                return this.pagination.totalPages === undefined
-                    ? []
-                    : range(1, this.pagination.totalPages + 1);
-            },
+        shouldShowPagination() {
+            if (this.pagination.totalPages === undefined) {
+                return false;
+            }
 
-            shouldShowPagination() {
-                if (this.pagination.totalPages === undefined) {
-                    return false;
-                }
+            if (this.pagination.count === 0) {
+                return false;
+            }
 
-                if (this.pagination.count === 0) {
-                    return false;
-                }
+            return this.pagination.totalPages > 1;
+        },
+    },
 
-                return this.pagination.totalPages > 1;
-            },
+    methods: {
+        isActive(page) {
+            const currentPage = this.pagination.currentPage || 1;
+
+            return currentPage === page;
         },
 
-        methods: {
-            isActive(page) {
-                const currentPage = this.pagination.currentPage || 1;
+        pageClicked(page) {
+            if (this.pagination.currentPage === page) {
+                return;
+            }
 
-                return currentPage === page;
-            },
-
-            pageClicked(page) {
-                if (this.pagination.currentPage === page) {
-                    return;
-                }
-
-                this.$emit('pageChange', page);
-            },
+            this.$emit('pageChange', page);
         },
-    };
+    },
+};
 </script>
