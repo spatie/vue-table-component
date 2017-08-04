@@ -3,15 +3,15 @@
 
         <div v-if="showFilter" class="table-component__filter">
             <input
-                    class="table-component__filter__field"
-                    type="text"
-                    v-model="filter"
-                    :placeholder="filterPlaceholder"
+                class="table-component__filter__field"
+                type="text"
+                v-model="filter"
+                :placeholder="filterPlaceholder"
             >
             <a
-                    v-if="filter"
-                    @click="filter = ''"
-                    class="table-component__filter__clear"
+                v-if="filter"
+                @click="filter = ''"
+                class="table-component__filter__clear"
             >×</a>
         </div>
 
@@ -23,20 +23,20 @@
                 <thead>
                 <tr>
                     <table-column-header
-                            @click="changeSorting"
-                            v-for="column in columns"
-                            :key="column.properties.show"
-                            :sort="sort"
-                            :column="column"
+                        @click="changeSorting"
+                        v-for="column in columns"
+                        :key="column.properties.show"
+                        :sort="sort"
+                        :column="column"
                     />
                 </tr>
                 </thead>
                 <tbody>
                 <table-row
-                        v-for="row in displayedRows"
-                        :key="row.vueTableComponentInternalRowId"
-                        :row="row"
-                        :columns="columns"
+                    v-for="row in displayedRows"
+                    :key="row.vueTableComponentInternalRowId"
+                    :row="row"
+                    :columns="columns"
                 ></table-row>
                 </tbody>
             </table>
