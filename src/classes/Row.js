@@ -1,5 +1,6 @@
 import moment from 'moment';
 import striptags from 'striptags';
+import get from 'lodash/get';
 
 export default class Row {
     constructor(data, columns) {
@@ -8,7 +9,7 @@ export default class Row {
     }
 
     getValue(columnName) {
-        return this.data[columnName];
+        return get(this.data, columnName);
     }
 
     getColumn(columnName) {

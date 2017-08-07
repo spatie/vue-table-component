@@ -29,6 +29,21 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
+    it('can display nested properties', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="[{nested: { firstName: 'John' } }, { nested: { firstName: 'Paul' }}]">
+                    <table-column show="nested.firstName" label="First name"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
     it('has an prop to disable the filter', async () => {
         document.body.innerHTML = `
             <div id="app">
