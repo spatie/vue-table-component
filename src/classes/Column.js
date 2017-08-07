@@ -2,12 +2,6 @@ import { pick } from 'lodash';
 
 export default class Column {
     static createFromComponent(columnComponent) {
-
-        if (columnComponent.$slots.default) {
-
-            return;
-        }
-
         const properties = pick(columnComponent, [
             'show',
             'label',
@@ -19,6 +13,8 @@ export default class Column {
             'hidden',
             'formatter',
         ]);
+
+        properties.template = columnComponent.$scopedSlots.default;
 
         return new Column(properties);
     }

@@ -1,12 +1,22 @@
 <template>
     <tr>
-        <td v-for="column in visibleColumns" v-html="getValue(column)"></td>
+        <table-cell
+            v-for="column in visibleColumns"
+            :row="row.data"
+            :column="column"
+        ></table-cell>
     </tr>
 </template>
 
 <script>
+    import TableCell from './TableCell';
+
     export default {
         props: ['columns', 'row'],
+
+        components: {
+            TableCell,
+        },
 
         computed: {
             visibleColumns() {
@@ -16,9 +26,7 @@
 
         methods: {
             getValue(column) {
-                let value = this.row.getValue(column.properties.show, column.properties);
-
-                return column.properties.formatter(value);
+                return this.row.getValue(column.properties.show, column.properties);
             },
         },
     };

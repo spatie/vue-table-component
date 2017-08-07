@@ -655,6 +655,62 @@ exports[`TableComponent has an prop to disable the filter 1`] = `
 
 `;
 
+exports[`TableComponent supports a scoped slot inside the table column 1`] = `
+
+<div id="app">
+  <div class="table-component">
+    <div class="table-component__filter">
+      <input type="text"
+             placeholder="Filter table…"
+             class="table-component__filter__field"
+      >
+      <!---->
+    </div>
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <caption role="alert"
+                 aria-live="polite"
+                 class="table-component__table__caption"
+        >
+          Table not sorted
+        </caption>
+        <thead>
+          <tr>
+            <th role="columnheader"
+                scope="col"
+                aria-sort="none"
+                class="table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              John slot
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Paul slot
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!---->
+    <div style="display: none;">
+      <div>
+        slot
+      </div>
+    </div>
+    <!---->
+  </div>
+</div>
+
+`;
+
 exports[`TableComponent will use the property name as a column heading if label is not set 1`] = `
 
 <div id="app">

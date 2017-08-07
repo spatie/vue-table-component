@@ -65,7 +65,7 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
-    it('support a scoped slot inside the table column', async () => {
+    it('supports a scoped slot inside the table column', async () => {
         document.body.innerHTML = `
             <div id="app">
                 <table-component
@@ -81,7 +81,7 @@ describe('TableComponent', () => {
 
         await createVm();
 
-        //expect(document.body.innerHTML).toMatchSnapshot();
+        expect(document.body.innerHTML).toMatchSnapshot();
     });
 
     it('has an prop to disable the filter', async () => {

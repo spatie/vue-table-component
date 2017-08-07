@@ -17,9 +17,15 @@ export default class Row {
     }
 
     getFilterableValue(columnName) {
-        const value = this.getValue(columnName).toString().toLowerCase();
+        const value = this.getValue(columnName);
 
-        return value === null ? value : striptags(value);
+        if (! value) {
+            return '';
+        }
+
+        return striptags(
+            value.toString().toLowerCase()
+        );
     }
 
     getSortableValue(columnName) {
