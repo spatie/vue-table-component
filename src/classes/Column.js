@@ -11,9 +11,14 @@ export default class Column {
         const properties = pick(columnComponent, [
             'show',
             'label',
-            'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden', 'formatter',
+            'dataType',
+            'sortable',
+            'sortBy',
+            'filterable',
+            'filterOn',
+            'hidden',
+            'formatter',
         ]);
-
 
         return new Column(properties);
     }
