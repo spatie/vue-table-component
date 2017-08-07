@@ -65,6 +65,25 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
+    it('support a scoped slot inside the table column', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
+                    <table-column label="First name">
+                        <template scope="row">
+                           {{ row.firstName }} slot
+                        </template>
+                    </table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        //expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
     it('has an prop to disable the filter', async () => {
         document.body.innerHTML = `
             <div id="app">

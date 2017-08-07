@@ -1,7 +1,27 @@
+import { pick } from 'lodash';
+
 export default class Column {
+    static createFromComponent(columnComponent) {
+
+        if (columnComponent.$slots.default) {
+
+            return;
+        }
+
+        const properties = pick(columnComponent, [
+            'show',
+            'label',
+            'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden', 'formatter',
+        ]);
+
+
+        return new Column(properties);
+    }
+
     constructor(properties) {
         this.properties = properties;
     }
+
 
     isFilterable() {
         return this.properties.filterable;
