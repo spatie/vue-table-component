@@ -3,7 +3,7 @@
 All notable changes to `vue-table-component` will be documented in this file
 
 ## 1.2.2 - 2017-08-04
-- Fix for displaying nexted properties
+- Fix for displaying nested properties
 
 ## 1.2.1 - 2017-08-04
 - Fix async data retrieval and pagination
