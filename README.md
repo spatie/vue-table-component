@@ -117,6 +117,7 @@ You can pass these props to `table-component`:
 
 For each `table-column` a column will be rendered. It can have these props:
 - `show`: (required) the property name in the data that needs to be shown in this column.
+- `formatter`: a function the will receive the value that will be displayed and all column properties. The return value of this function will be displayed. Here's [an example](#formatting-values)
 - `label`: the label that will be shown on top of the column. Set this to an empty string to display nothing. If this property is not present, the string passed to `show` will be used.
 - `data-type`: if your column should be sorted numerically set this to `numeric`. If your column contains dates set it to `date:` followed by the format of your date
 - `sortable`: if you set this to `false` then the column won't be sorted when clicking the column header
@@ -174,6 +175,31 @@ Here's an example:
     }
 </script>
 ```
+
+## Formatting values
+
+You can format the values before they get displayed by passing a function to the `formatter` prop. Here's an example Vue component that uses the feature.
+
+```vue
+<template>
+    <table-component
+        :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
+        <table-column show="firstName" label="First name" :formatter="formatter"></table-column>
+    </table-component>
+</template>
+
+<script>
+export default {
+    methods: {
+        formatter(value, columnProperties) {
+            return `Hi, I am ${value}`;    
+        },
+    },
+}
+</script>
+```
+
+This will display values `Hi, I am John` and `Hi, I am Paul`.
 
 ## Changelog
 

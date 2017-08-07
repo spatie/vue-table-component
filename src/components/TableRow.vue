@@ -16,7 +16,9 @@
 
         methods: {
             getValue(column) {
-                return this.row.getValue(column.properties.show);
+                let value = this.row.getValue(column.properties.show, column.properties);
+
+                return column.properties.formatter(value);
             },
         },
     };

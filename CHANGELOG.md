@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.3.0 - 2017-08-07
+- Added `formatter` property
+
 ## 1.2.2 - 2017-08-04
 - Fix for displaying nested properties
 

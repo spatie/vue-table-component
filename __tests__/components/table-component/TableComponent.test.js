@@ -44,6 +44,27 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
+    it('accepts a function to format values', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
+                    <table-column show="firstName" label="First name" :formatter="formatter"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm({
+            methods: {
+                formatter(value, properties) {
+                    return `Formatted: ${value}`;
+                },
+            },
+        });
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
     it('has an prop to disable the filter', async () => {
         document.body.innerHTML = `
             <div id="app">
@@ -231,9 +252,10 @@ describe('TableComponent', () => {
     });
 });
 
-async function createVm() {
+async function createVm(options = {}) {
     const vm = new Vue({
         el: '#app',
+        ...options,
     });
 
     await Vue.nextTick(() => {});

@@ -15,6 +15,8 @@
             filterable: { default: true, type: Boolean },
             filterOn: { default: null },
 
+            formatter: { default: v => v, type: Function },
+
             hidden: { default: false, type: Boolean },
         },
     };
