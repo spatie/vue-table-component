@@ -31,8 +31,6 @@ Here's an example of how you can use it:
 
 A cool feature is that the table caches the used filter and sorting for 15 minutes. So if you refresh the page, the filter and sorting will still be used.
 
-You can see this code in action on [the demo page](http://vue-table-component.spatie.be).
-
 ## Demo
 
 Want to see the component in action? No problem. [Here's a demo](http://vue-table-component.spatie.be).
