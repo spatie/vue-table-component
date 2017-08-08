@@ -2,7 +2,7 @@
     <div class="table-component">
         <div v-if="showFilter" class="table-component__filter">
             <input
-                class="table-component__filter__field"
+                :class="fullFilterInputClass"
                 type="text"
                 v-model="filter"
                 :placeholder="filterPlaceholder"
@@ -85,6 +85,7 @@
             cacheLifetime: { default: 5 },
 
             tableClass: { default: settings.tableClass },
+            filterInputClass: { default: null, type: String },
             filterPlaceholder: { default: settings.filterPlaceholder },
             filterNoResults: { default: settings.filterNoResults },
         },
@@ -140,6 +141,12 @@
                     [this.tableClass];
 
                 return ['table-component__table', ...extraClasses];
+            },
+
+            fullFilterInputClass() {
+                return this.filterInputClass ?
+                    'table-component__filter__field '+this.filterInputClass :
+                    'table-component__filter__field';
             },
 
             ariaCaption() {
