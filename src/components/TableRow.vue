@@ -2,7 +2,7 @@
     <tr>
         <table-cell
             v-for="column in visibleColumns"
-            :row="row.data"
+            :row="row"
             :column="column"
         ></table-cell>
     </tr>
@@ -21,12 +21,6 @@
         computed: {
             visibleColumns() {
                 return this.columns.filter(column => ! column.hidden);
-            },
-        },
-
-        methods: {
-            getValue(column) {
-                return this.row.getValue(column.show, column);
             },
         },
     };

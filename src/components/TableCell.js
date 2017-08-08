@@ -1,5 +1,3 @@
-import get from 'lodash/get';
-
 export default {
     functional: true,
 
@@ -7,8 +5,8 @@ export default {
 
     render(createElement, { props }) {
         const contents = props.column.template
-            ? props.column.template(props.row)
-            : props.column.formatter(get(props.row, props.column.show));
+            ? props.column.template(props.row.data)
+            : props.column.formatter(props.row.getValue(props.column.show));
 
         return createElement('td', contents);
     },
