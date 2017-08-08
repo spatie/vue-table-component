@@ -114,7 +114,7 @@
             this.columns = this.$slots.default
                 .filter(column => column.componentInstance)
                 .map(column => pick(column.componentInstance, [
-                    'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden',  'formatter',
+                    'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden',  'formatter', 'cellClass', 'headerClass'
                 ]))
                 .map(columnProperties => new Column(columnProperties));
 

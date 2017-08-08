@@ -1,6 +1,6 @@
 <template>
     <tr>
-        <td v-for="column in visibleColumns" v-html="getValue(column)"></td>
+        <td v-for="column in visibleColumns" v-html="getValue(column)" :class="column.properties.cellClass"></td>
     </tr>
 </template>
 

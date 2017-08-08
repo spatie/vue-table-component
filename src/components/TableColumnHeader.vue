@@ -39,14 +39,16 @@
 
             headerClass() {
                 if (! this.column.isSortable()) {
-                    return;
+                    return this.column.properties.headerClass;
                 }
+
+                let userHeaderClass = this.column.properties.headerClass ? ' '+this.column.properties.headerClass : '';
 
                 if (this.column.properties.show !== this.sort.fieldName) {
-                    return 'table-component__th--sort';
+                    return 'table-component__th--sort'+userHeaderClass;
                 }
 
-                return `table-component__th--sort-${this.sort.order}`;
+                return `table-component__th--sort-${this.sort.order}`+userHeaderClass;
             },
 
             isVisible() {
