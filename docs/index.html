@@ -146,7 +146,11 @@
             <table-column show="instrument" label="Instrument"></table-column>
             <table-column show="songs" label="Songs" data-type="numeric"></table-column>
             <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
-            <table-column show="editUrl" label="" :sortable="false" :filterable="false"></table-column>
+            <table-column :sortable="false" :filterable="false" scope="artist">
+                <a :href="'#' + artist.firstName.toLowerCase()">
+                    Edit
+                </a>
+            </table-column>
         </table-component>
 
     <section class="page-about">

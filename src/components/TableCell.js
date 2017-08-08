@@ -4,16 +4,10 @@ export default {
     props: ['column', 'row'],
 
     render(createElement, { props }) {
-        const data = props.column.cellClass
-            ? { class: props.column.cellClass }
-            : {};
+        const contents = props.column.template
+            ? props.column.template(props.row.data)
+            : props.column.formatter(props.row.getValue(props.column.show));
 
-        if (props.column.template) {
-            return createElement('td', data, props.column.template(props.row.data));
-        }
-
-        const innerHTML = props.column.formatter(props.row.getValue(props.column.show));
-
-        return createElement('td', { ...data, domProps: { innerHTML } });
+        return createElement('td', props.column.cellClass ? { class: props.column.cellClass } : {}, contents);
     },
 };
