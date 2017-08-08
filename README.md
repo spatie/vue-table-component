@@ -111,6 +111,7 @@ You can pass these props to `table-component`:
 - `cache-id`: if you use multiple instances of `table-component` on the same page you must set this to a unique value per instance.
 - `table-class`: the passed value will be added to the `class` attribute of the rendered table
 - `filter-placeholder`: the text used as a placeholder in the filter field
+- `filter-input-class`: additional classes that you will be applied to the filter text input
 - `filter-no-results`: the text displayed when the filtering returns no results
 
 For each `table-column` a column will be rendered. It can have these props:
