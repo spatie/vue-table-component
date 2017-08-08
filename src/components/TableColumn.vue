@@ -20,6 +20,9 @@
             formatter: { default: v => v, type: Function },
 
             hidden: { default: false, type: Boolean },
+
+            cellClass: { default: null, type: String },
+            headerClass: { default: null, type: String },
         },
     };
 </script>
