@@ -13,17 +13,23 @@ export default class Row {
     }
 
     getColumn(columnName) {
-        return this.columns.find(column => column.properties.show === columnName);
+        return this.columns.find(column => column.show === columnName);
     }
 
     getFilterableValue(columnName) {
-        const value = this.getValue(columnName).toString().toLowerCase();
+        const value = this.getValue(columnName);
 
-        return value === null ? value : striptags(value);
+        if (! value) {
+            return '';
+        }
+
+        return striptags(
+            value.toString().toLowerCase()
+        );
     }
 
     getSortableValue(columnName) {
-        const dataType = this.getColumn(columnName).properties.dataType;
+        const dataType = this.getColumn(columnName).dataType;
 
         let value = this.getValue(columnName);
 

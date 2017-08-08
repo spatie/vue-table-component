@@ -1,6 +1,5 @@
 <template>
     <div class="table-component">
-
         <div v-if="showFilter" class="table-component__filter">
             <input
                 class="table-component__filter__field"
@@ -25,7 +24,7 @@
                     <table-column-header
                         @click="changeSorting"
                         v-for="column in columns"
-                        :key="column.properties.show"
+                        :key="column.show"
                         :sort="sort"
                         :column="column"
                     />
@@ -61,9 +60,9 @@
     import Row from '../classes/Row';
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
-    import { pick } from 'lodash';
     import settings from '../settings';
-    import { isArray } from 'lodash';
+    import isArray from 'lodash/isArray';
+    import pick from 'lodash/pick';
     import Pagination from './Pagination';
 
     export default {
@@ -113,10 +112,7 @@
         async mounted() {
             this.columns = this.$slots.default
                 .filter(column => column.componentInstance)
-                .map(column => pick(column.componentInstance, [
-                    'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable', 'filterOn', 'hidden',  'formatter',
-                ]))
-                .map(columnProperties => new Column(columnProperties));
+                .map(column => new Column(column.componentInstance));
 
             await this.mapDataToRows();
         },
@@ -240,8 +236,8 @@
             },
 
             changeSorting(column) {
-                if (this.sort.fieldName !== column.properties.show) {
-                    this.sort.fieldName = column.properties.show;
+                if (this.sort.fieldName !== column.show) {
+                    this.sort.fieldName = column.show;
                     this.sort.order = 'asc';
                 } else {
                     this.sort.order = (this.sort.order === 'asc' ? 'desc' : 'asc');
@@ -255,7 +251,7 @@
             },
 
             getColumn(columnName) {
-                return this.columns.find(column => column.properties.show === columnName);
+                return this.columns.find(column => column.show === columnName);
             },
 
             saveState() {
