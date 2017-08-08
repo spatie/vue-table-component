@@ -6,9 +6,9 @@ export default {
     props: ['column', 'row'],
 
     render(createElement, { props }) {
-        const contents = props.column.properties.template
-            ? props.column.properties.template(props.row)
-            : props.column.properties.formatter(get(props.row, props.column.properties.show));
+        const contents = props.column.template
+            ? props.column.template(props.row)
+            : props.column.formatter(get(props.row, props.column.show));
 
         return createElement('td', contents);
     },

@@ -30,7 +30,7 @@
                     return false;
                 }
 
-                if (this.column.properties.show !== this.sort.fieldName) {
+                if (this.column.show !== this.sort.fieldName) {
                     return 'none';
                 }
 
@@ -42,7 +42,7 @@
                     return;
                 }
 
-                if (this.column.properties.show !== this.sort.fieldName) {
+                if (this.column.show !== this.sort.fieldName) {
                     return 'table-component__th--sort';
                 }
 
@@ -50,15 +50,15 @@
             },
 
             isVisible() {
-                return ! this.column.properties.hidden;
+                return ! this.column.hidden;
             },
 
             label() {
-                if (this.column.properties.label === null) {
-                    return this.column.properties.show;
+                if (this.column.label === null) {
+                    return this.column.show;
                 }
 
-                return this.column.properties.label;
+                return this.column.label;
             },
         },
 

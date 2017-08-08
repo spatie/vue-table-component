@@ -20,13 +20,13 @@
 
         computed: {
             visibleColumns() {
-                return this.columns.filter(column => ! column.properties.hidden);
+                return this.columns.filter(column => ! column.hidden);
             },
         },
 
         methods: {
             getValue(column) {
-                return this.row.getValue(column.properties.show, column.properties);
+                return this.row.getValue(column.show, column);
             },
         },
     };

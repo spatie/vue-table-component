@@ -1,47 +1,38 @@
 import pick from 'lodash/pick';
 
 export default class Column {
-    static createFromComponent(columnComponent) {
+    constructor(columnComponent) {
         const properties = pick(columnComponent, [
-            'show',
-            'label',
-            'dataType',
-            'sortable',
-            'sortBy',
-            'filterable',
-            'filterOn',
-            'hidden',
-            'formatter',
+            'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable',
+            'filterOn', 'hidden', 'formatter',
         ]);
 
-        properties.template = columnComponent.$scopedSlots.default;
+        for (const property in properties) {
+            this[property] = columnComponent[property];
+        }
 
-        return new Column(properties);
-    }
-
-    constructor(properties) {
-        this.properties = properties;
+        this.template = columnComponent.$scopedSlots.default;
     }
 
 
     isFilterable() {
-        return this.properties.filterable;
+        return this.filterable;
     }
 
     getFilterFieldName() {
-        return this.properties.filterOn || this.properties.show;
+        return this.filterOn || this.show;
     }
 
     isSortable() {
-        return this.properties.sortable;
+        return this.sortable;
     }
 
     getSortPredicate(sortOrder, allColumns) {
         const sortFieldName = this.getSortFieldName();
 
-        const sortColumn = allColumns.find(column => column.properties.show === sortFieldName);
+        const sortColumn = allColumns.find(column => column.show === sortFieldName);
 
-        const dataType = sortColumn.properties.dataType;
+        const dataType = sortColumn.dataType;
 
         if (dataType.startsWith('date') || dataType === 'numeric') {
 
@@ -70,6 +61,6 @@ export default class Column {
     }
 
     getSortFieldName() {
-        return this.properties.sortBy || this.properties.show;
+        return this.sortBy || this.show;
     }
 }

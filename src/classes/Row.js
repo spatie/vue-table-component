@@ -13,7 +13,7 @@ export default class Row {
     }
 
     getColumn(columnName) {
-        return this.columns.find(column => column.properties.show === columnName);
+        return this.columns.find(column => column.show === columnName);
     }
 
     getFilterableValue(columnName) {
@@ -29,7 +29,7 @@ export default class Row {
     }
 
     getSortableValue(columnName) {
-        const dataType = this.getColumn(columnName).properties.dataType;
+        const dataType = this.getColumn(columnName).dataType;
 
         let value = this.getValue(columnName);
 
