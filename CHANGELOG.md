@@ -3,6 +3,7 @@
 All notable changes to `vue-table-component` will be documented in this file
 
 ## 1.4.0 - 2017-08-08
+- Fixed cell rendering: HTML is now escaped by default. If you want raw html, use the new scoped slots feature
 - Added scoped slot support to `table-columns` for custom column contents
 - Added the `filter-input-class` prop to the `table-component` component (`filterInputClass` in settings)
 - Added the `header-class` and `cell-class` props to the `table-column` component (`headerClass` and `cellClass` in settings)
