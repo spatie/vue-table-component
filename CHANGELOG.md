@@ -2,6 +2,11 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.4.0 - 2017-08-08
+- Added scoped slot support to `table-columns` for custom column contents
+- Added the `filter-input-class` prop to the `table-component` component (`filterInputClass` in settings)
+- Added the `header-class` and `cell-class` props to the `table-column` component (`headerClass` and `cellClass` in settings)
+
 ## 1.3.0 - 2017-08-07
 - Added `formatter` property
 
