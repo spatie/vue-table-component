@@ -1,6 +1,5 @@
 <template>
     <div class="table-component">
-
         <div v-if="showFilter" class="table-component__filter">
             <input
                 class="table-component__filter__field"
@@ -61,9 +60,9 @@
     import Row from '../classes/Row';
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
-    import { pick } from 'lodash';
     import settings from '../settings';
-    import { isArray } from 'lodash';
+    import isArray from 'lodash/isArray';
+    import pick from 'lodash/pick';
     import Pagination from './Pagination';
 
     export default {
