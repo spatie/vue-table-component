@@ -8,6 +8,6 @@ export default {
             ? props.column.template(props.row.data)
             : props.column.formatter(props.row.getValue(props.column.show));
 
-        return createElement('td', contents);
+        return createElement('td', props.column.cellClass ? { class: props.column.cellClass } : {}, contents);
     },
 };

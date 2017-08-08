@@ -27,7 +27,7 @@
                         :key="column.show"
                         :sort="sort"
                         :column="column"
-                    />
+                    ></table-column-header>
                 </tr>
                 </thead>
                 <tbody>
@@ -64,6 +64,7 @@
     import isArray from 'lodash/isArray';
     import pick from 'lodash/pick';
     import Pagination from './Pagination';
+    import { classList } from '../helpers';
 
     export default {
         components: {
@@ -85,7 +86,7 @@
             cacheLifetime: { default: 5 },
 
             tableClass: { default: settings.tableClass },
-            filterInputClass: { default: null, type: String },
+            filterInputClass: { default: settings.filterInputClass },
             filterPlaceholder: { default: settings.filterPlaceholder },
             filterNoResults: { default: settings.filterNoResults },
         },
@@ -136,17 +137,11 @@
 
         computed: {
             fullTableClass() {
-                const extraClasses = isArray(this.tableClass) ?
-                    this.tableClass :
-                    [this.tableClass];
-
-                return ['table-component__table', ...extraClasses];
+                return classList('table-component__table', this.tableClass);
             },
 
             fullFilterInputClass() {
-                return this.filterInputClass ?
-                    'table-component__filter__field '+this.filterInputClass :
-                    'table-component__filter__field';
+                return classList('table-component__filter__field', this.filterInputClass);
             },
 
             ariaCaption() {

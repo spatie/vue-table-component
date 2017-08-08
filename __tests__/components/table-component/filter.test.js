@@ -97,6 +97,30 @@ describe('Filterable tableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('can add a custom html class on the filter input', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <div>
+                    <table-component
+                        :data="[{ firstName: 'John', songs: 72 },
+                                { firstName: 'Paul', songs: 70 },
+                                { firstName: 'George', songs: 22 },
+                                { firstName: 'Ringo', songs: 2 }]"
+                        sort-by="lastName"
+                        sort-order="desc"
+                        filter-input-class="my-filter-class"
+                    >
+                        <table-column show="firstName" label="First name" filter-on="songs"></table-column>
+                    </table-component>
+                </div>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 async function createVm() {

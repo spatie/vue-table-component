@@ -13,6 +13,8 @@
 </template>
 
 <script>
+    import { classList } from '../helpers';
+
     export default {
         props: ['column', 'sort'],
 
@@ -39,18 +41,14 @@
 
             headerClass() {
                 if (! this.column.isSortable()) {
-                    return this.column.properties.headerClass;
+                    return classList('table-component__th', this.column.headerClass);
                 }
 
-                let userHeaderClass = this.column.properties.headerClass ?
-                    ' '+this.column.properties.headerClass :
-                    '';
-
-                if (this.column.properties.show !== this.sort.fieldName) {
-                    return 'table-component__th--sort'+userHeaderClass;
+                if (this.column.show !== this.sort.fieldName) {
+                    return classList('table-component__th table-component__th--sort', this.column.headerClass);
                 }
 
-                return `table-component__th--sort-${this.sort.order}`+userHeaderClass;
+                return classList(`table-component__th table-component__th--sort-${this.sort.order}`, this.column.headerClass);
             },
 
             isVisible() {

@@ -269,6 +269,28 @@ describe('TableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('can add extra classes to the table, the cells and the headers', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="[{ firstName: 'John' },{ firstName: 'Paul' }]"
+                    table-class="my-table"
+                >
+                    <table-column
+                        show="firstName"
+                        label="First name"
+                        header-class="my-header"
+                        cell-class="my-cell"
+                    ></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 async function createVm(options = {}) {

@@ -5,6 +5,8 @@
 </template>
 
 <script>
+    import settings from '../settings';
+
     export default {
         props: {
             show: { required: false, type: String },
@@ -21,8 +23,8 @@
 
             hidden: { default: false, type: Boolean },
 
-            cellClass: { default: null, type: String },
-            headerClass: { default: null, type: String },
+            cellClass: { default: settings.cellClass },
+            headerClass: { default: settings.headerClass },
         },
     };
 </script>

@@ -25,14 +25,14 @@ exports[`Sortable tableComponent can sort on another column 1`] = `
               <th role="columnheader"
                   scope="col"
                   aria-sort="ascending"
-                  class="table-component__th--sort-asc"
+                  class="table-component__th table-component__th--sort-asc"
               >
                 First name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 Songs
               </th>
@@ -113,20 +113,21 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
               <th role="columnheader"
                   scope="col"
                   aria-sort="descending"
-                  class="table-component__th--sort-"
+                  class="table-component__th table-component__th--sort-"
               >
                 First name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 Last name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-disabled="true"
+                  class="table-component__th"
               >
                 Songs
               </th>
@@ -221,20 +222,21 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
               <th role="columnheader"
                   scope="col"
                   aria-sort="descending"
-                  class="table-component__th--sort-desc"
+                  class="table-component__th table-component__th--sort-desc"
               >
                 First name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 Last name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-disabled="true"
+                  class="table-component__th"
               >
                 Songs
               </th>
@@ -329,20 +331,21 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 First name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-sort="descending"
-                  class="table-component__th--sort-"
+                  class="table-component__th table-component__th--sort-"
               >
                 Last name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-disabled="true"
+                  class="table-component__th"
               >
                 Songs
               </th>
@@ -437,20 +440,21 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
               <th role="columnheader"
                   scope="col"
                   aria-sort="ascending"
-                  class="table-component__th--sort-asc"
+                  class="table-component__th table-component__th--sort-asc"
               >
                 First name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 Last name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-disabled="true"
+                  class="table-component__th"
               >
                 Songs
               </th>
@@ -545,20 +549,21 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
               <th role="columnheader"
                   scope="col"
                   aria-sort="descending"
-                  class="table-component__th--sort-"
+                  class="table-component__th table-component__th--sort-"
               >
                 First name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 Last name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-disabled="true"
+                  class="table-component__th"
               >
                 Songs
               </th>
@@ -653,20 +658,21 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 First name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 Last name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-disabled="true"
+                  class="table-component__th"
               >
                 Songs
               </th>
@@ -761,20 +767,21 @@ exports[`Sortable tableComponent will sort the data ascendingly if the header of
               <th role="columnheader"
                   scope="col"
                   aria-sort="none"
-                  class="table-component__th--sort"
+                  class="table-component__th table-component__th--sort"
               >
                 First name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-sort="ascending"
-                  class="table-component__th--sort-asc"
+                  class="table-component__th table-component__th--sort-asc"
               >
                 Last name
               </th>
               <th role="columnheader"
                   scope="col"
                   aria-disabled="true"
+                  class="table-component__th"
               >
                 Songs
               </th>
