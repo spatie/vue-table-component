@@ -1,5 +1,7 @@
 <template>
-    <div>
+    <!-- Never render the contents -->
+    <!-- The scoped slot won't have the required data -->
+    <div v-if="false">
         <slot></slot>
     </div>
 </template>
