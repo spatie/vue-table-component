@@ -76,10 +76,8 @@ exports[`Sortable tableComponent can sort on another column 1`] = `
       </div>
       <!---->
       <div style="display: none;">
-        <div>
-        </div>
-        <div>
-        </div>
+        <!---->
+        <!---->
       </div>
       <!---->
     </div>
@@ -183,12 +181,9 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
       </div>
       <!---->
       <div style="display: none;">
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+        <!---->
+        <!---->
+        <!---->
       </div>
       <!---->
     </div>
@@ -292,12 +287,9 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
       </div>
       <!---->
       <div style="display: none;">
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+        <!---->
+        <!---->
+        <!---->
       </div>
       <!---->
     </div>
@@ -401,12 +393,9 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
       </div>
       <!---->
       <div style="display: none;">
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+        <!---->
+        <!---->
+        <!---->
       </div>
       <!---->
     </div>
@@ -510,12 +499,9 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
       </div>
       <!---->
       <div style="display: none;">
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+        <!---->
+        <!---->
+        <!---->
       </div>
       <!---->
     </div>
@@ -619,12 +605,9 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
       </div>
       <!---->
       <div style="display: none;">
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+        <!---->
+        <!---->
+        <!---->
       </div>
       <!---->
     </div>
@@ -728,12 +711,9 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
       </div>
       <!---->
       <div style="display: none;">
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+        <!---->
+        <!---->
+        <!---->
       </div>
       <!---->
     </div>
@@ -837,12 +817,9 @@ exports[`Sortable tableComponent will sort the data ascendingly if the header of
       </div>
       <!---->
       <div style="display: none;">
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+        <!---->
+        <!---->
+        <!---->
       </div>
       <!---->
     </div>
