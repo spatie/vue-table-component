@@ -199,8 +199,6 @@
                 await this.mapDataToRows();
             },
 
-
-
             async mapDataToRows() {
                 const data = this.usesLocalData
                     ? this.prepareLocalData()
@@ -235,6 +233,10 @@
                 this.pagination = response.pagination;
 
                 return response.data;
+            },
+
+            async refresh() {
+                await this.mapDataToRows();
             },
 
             changeSorting(column) {
