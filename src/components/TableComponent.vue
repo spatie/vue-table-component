@@ -2,15 +2,15 @@
     <div class="table-component">
         <div v-if="showFilter" class="table-component__filter">
             <input
-                :class="fullFilterInputClass"
-                type="text"
-                v-model="filter"
-                :placeholder="filterPlaceholder"
+                    :class="fullFilterInputClass"
+                    type="text"
+                    v-model="filter"
+                    :placeholder="filterPlaceholder"
             >
             <a
-                v-if="filter"
-                @click="filter = ''"
-                class="table-component__filter__clear"
+                    v-if="filter"
+                    @click="filter = ''"
+                    class="table-component__filter__clear"
             >×</a>
         </div>
 
@@ -22,20 +22,20 @@
                 <thead>
                 <tr>
                     <table-column-header
-                        @click="changeSorting"
-                        v-for="column in columns"
-                        :key="column.show"
-                        :sort="sort"
-                        :column="column"
+                            @click="changeSorting"
+                            v-for="column in columns"
+                            :key="column.show"
+                            :sort="sort"
+                            :column="column"
                     ></table-column-header>
                 </tr>
                 </thead>
                 <tbody>
                 <table-row
-                    v-for="row in displayedRows"
-                    :key="row.vueTableComponentInternalRowId"
-                    :row="row"
-                    :columns="columns"
+                        v-for="row in displayedRows"
+                        :key="row.vueTableComponentInternalRowId"
+                        :row="row"
+                        :columns="columns"
                 ></table-row>
                 </tbody>
             </table>
@@ -64,7 +64,7 @@
     import isArray from 'lodash/isArray';
     import pick from 'lodash/pick';
     import Pagination from './Pagination';
-    import { classList } from '../helpers';
+    import {classList} from '../helpers';
 
     export default {
         components: {
@@ -74,21 +74,21 @@
         },
 
         props: {
-            data: { default: () => [], type: [Array, Function] },
+            data: {default: () => [], type: [Array, Function]},
 
-            showFilter: { default: true },
-            showCaption: { default: true },
+            showFilter: {default: true},
+            showCaption: {default: true},
 
-            sortBy: { default: '', type: String },
-            sortOrder: { default: '', type: String },
+            sortBy: {default: '', type: String},
+            sortOrder: {default: '', type: String},
 
-            cacheId: { default: '' },
-            cacheLifetime: { default: 5 },
+            cacheId: {default: ''},
+            cacheLifetime: {default: 5},
 
-            tableClass: { default: settings.tableClass },
-            filterInputClass: { default: settings.filterInputClass },
-            filterPlaceholder: { default: settings.filterPlaceholder },
-            filterNoResults: { default: settings.filterNoResults },
+            tableClass: {default: settings.tableClass},
+            filterInputClass: {default: settings.filterInputClass},
+            filterPlaceholder: {default: settings.filterPlaceholder},
+            filterNoResults: {default: settings.filterNoResults},
         },
 
         data: () => ({
@@ -121,7 +121,7 @@
 
         watch: {
             filter() {
-                if (! this.usesLocalData) {
+                if (!this.usesLocalData) {
                     this.mapDataToRows();
                 }
 
@@ -158,7 +158,7 @@
             },
 
             displayedRows() {
-                if (! this.usesLocalData) {
+                if (!this.usesLocalData) {
                     return this.sortedRows;
                 }
 
@@ -166,7 +166,7 @@
             },
 
             sortedRows() {
-                if (! this.usesLocalData) {
+                if (!this.usesLocalData) {
                     return this.rows;
                 }
 
@@ -180,7 +180,7 @@
 
                 const sortColumn = this.getColumn(this.sort.fieldName);
 
-                if (! sortColumn) {
+                if (!sortColumn) {
                     return this.rows;
                 }
 
@@ -229,8 +229,9 @@
                     page: page,
                 });
 
-
-                this.pagination = response.meta.pagination;
+                if (response.meta) {
+                    this.pagination = response.meta.pagination;
+                }
 
                 return response.data;
             },
@@ -247,7 +248,7 @@
                     this.sort.order = (this.sort.order === 'asc' ? 'desc' : 'asc');
                 }
 
-                if (! this.usesLocalData) {
+                if (!this.usesLocalData) {
                     this.mapDataToRows();
                 }
 
