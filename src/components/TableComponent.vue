@@ -230,7 +230,7 @@
                 });
 
 
-                this.pagination = response.pagination;
+                this.pagination = response.meta.pagination;
 
                 return response.data;
             },
