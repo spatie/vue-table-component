@@ -15,5 +15,6 @@ module.exports = merge(require('./webpack.base'), {
 
     externals: {
         vue: 'vue',
+        moment: 'moment',
     },
 });

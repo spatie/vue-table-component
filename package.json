@@ -1,6 +1,6 @@
 {
   "name": "vue-table-component",
-  "version": "1.4.0-rc.5",
+  "version": "1.4.0-rc.6",
   "description": "A straightforward Vue component to filter and sort tables",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/spatie/vue-table-component",
   "peerDependencies": {
+    "moment": "^2.18.1",
     "vue": "^2.3.0"
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "moment": "^2.18.1",
     "striptags": "^3.0.1"
   },
   "devDependencies": {
@@ -46,6 +46,7 @@
     "jest": "^19.0.0",
     "jest-serializer-html": "^4.0.0",
     "jest-vue-preprocessor": "^0.2.0",
+    "moment": "^2.18.1",
     "simulant": "^0.2.2",
     "vue": "^2.3.0",
     "vue-loader": "^12.0.3",
