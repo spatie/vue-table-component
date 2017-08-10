@@ -229,9 +229,7 @@
                     page: page,
                 });
 
-                if (response.meta) {
-                    this.pagination = response.meta.pagination;
-                }
+                this.pagination = response.pagination;
 
                 return response.data;
             },

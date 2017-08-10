@@ -159,7 +159,8 @@ describe('TableComponent', () => {
 
         table.filter = 'this returns nothing';
 
-        await Vue.nextTick(() => {});
+        await Vue.nextTick(() => {
+        });
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
@@ -179,7 +180,8 @@ describe('TableComponent', () => {
 
         table.filter = 'this returns nothing';
 
-        await Vue.nextTick(() => {});
+        await Vue.nextTick(() => {
+        });
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
@@ -187,7 +189,7 @@ describe('TableComponent', () => {
     it('can accept a function to fetch the data', async () => {
         const serverResponse = () => {
             return {
-                data: [{ firstName: 'John' },{ id: 2, firstName: 'Paul' }],
+                data: [{firstName: 'John'}, {id: 2, firstName: 'Paul'}],
             };
         };
 
@@ -202,7 +204,8 @@ describe('TableComponent', () => {
 
         await createVm();
 
-        await Vue.nextTick(() => {});
+        await Vue.nextTick(() => {
+        });
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
@@ -210,12 +213,11 @@ describe('TableComponent', () => {
     it('can render pagination when the server responds with pagination data', async () => {
         const serverResponse = () => {
             return {
-                data: [{ firstName: 'John' },{ id: 2, firstName: 'Paul' }],
-                meta: {
-                    pagination: {
-                        totalPages: 4,
-                        currentPage: 2,
-                    },
+                data: [{firstName: 'John'}, {id: 2, firstName: 'Paul'}],
+
+                pagination: {
+                    totalPages: 4,
+                    currentPage: 2,
                 },
             };
         };
@@ -231,21 +233,22 @@ describe('TableComponent', () => {
 
         await createVm();
 
-        await Vue.nextTick(() => {});
+        await Vue.nextTick(() => {
+        });
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
     it('clicking a link in the pagination will rerender the table', async () => {
-        const serverResponse = ({ page }) => {
+        const serverResponse = ({page}) => {
             return {
-                data: [{ firstName: `John ${page}` },{ id: 2, firstName: `Paul ${page}` }],
-                meta: {
-                    pagination: {
-                        totalPages: 4,
-                        currentPage: page,
-                    },
+                data: [{firstName: `John ${page}`}, {id: 2, firstName: `Paul ${page}`}],
+
+                pagination: {
+                    totalPages: 4,
+                    currentPage: page,
                 },
+
             };
         };
 
@@ -260,7 +263,8 @@ describe('TableComponent', () => {
 
         await createVm();
 
-        await Vue.nextTick(() => {});
+        await Vue.nextTick(() => {
+        });
 
         expect(document.body.innerHTML).toMatchSnapshot();
 
@@ -303,7 +307,8 @@ async function createVm(options = {}) {
         ...options,
     });
 
-    await Vue.nextTick(() => {});
+    await Vue.nextTick(() => {
+    });
 
     const table = vm.$children[0];
 
