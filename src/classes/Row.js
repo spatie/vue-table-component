@@ -1,5 +1,4 @@
 import moment from 'moment';
-import striptags from 'striptags';
 import get from 'lodash/get';
 
 export default class Row {
@@ -23,9 +22,7 @@ export default class Row {
             return '';
         }
 
-        return striptags(
-            value.toString().toLowerCase()
-        );
+        return value.toString().toLowerCase();
     }
 
     getSortableValue(columnName) {
