@@ -228,7 +228,8 @@
                     sort: this.sort,
                     page: page,
                 });
-
+                
+                response = response.data;
                 this.pagination = response.pagination;
 
                 return response.data;
