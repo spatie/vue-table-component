@@ -24,7 +24,8 @@ describe('Pagination', () => {
                 <pagination
                 :pagination="{
                     currentPage: 1,
-                    totalPages: 1,
+                    lastPage: 1,
+                    total: 1,
                 }">
 
                 </pagination>
@@ -43,7 +44,9 @@ describe('Pagination', () => {
                 <pagination
                 :pagination="{
                     currentPage: 1,
-                    totalPages: 3,
+                    lastPage: 3,
+                    perPage: 10,
+                    total: 30,
                 }">
 
                 </pagination>
@@ -62,7 +65,9 @@ describe('Pagination', () => {
                 <pagination
                 :pagination="{
                     currentPage: 2,
-                    totalPages: 3,
+                    lastPage: 3,
+                    perPage: 10,
+                    total: 30,
                 }">
 
                 </pagination>

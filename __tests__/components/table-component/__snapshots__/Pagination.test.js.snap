@@ -13,19 +13,58 @@ exports[`Pagination can set the active page 1`] = `
 <div id="app">
   <nav>
     <ul class="pagination justify-content-center">
+      <li class>
+        <a href="javascript:;"
+           aria-label="First"
+        >
+          <span aria-hidden="true">
+            ««
+          </span>
+        </a>
+      </li>
+      <li class>
+        <a href="javascript:;"
+           aria-label="Previous"
+        >
+          <span aria-hidden="true">
+            «
+          </span>
+        </a>
+      </li>
       <li class="page-item">
-        <a class="page-link">
+        <a href="javascript:;">
           1
         </a>
       </li>
       <li class="page-item active">
-        <a class="page-link">
+        <a href="javascript:;">
           2
         </a>
       </li>
       <li class="page-item">
-        <a class="page-link">
+        <a href="javascript:;">
           3
+        </a>
+      </li>
+      <!---->
+      <!---->
+      <!---->
+      <li class>
+        <a href="javascript:;"
+           aria-label="Next"
+        >
+          <span aria-hidden="true">
+            »
+          </span>
+        </a>
+      </li>
+      <li class>
+        <a href="javascript:;"
+           aria-label="Last"
+        >
+          <span aria-hidden="true">
+            »»
+          </span>
         </a>
       </li>
     </ul>
@@ -47,19 +86,58 @@ exports[`Pagination will render links when there is more than one page 1`] = `
 <div id="app">
   <nav>
     <ul class="pagination justify-content-center">
+      <li class="disabled">
+        <a href="javascript:;"
+           aria-label="First"
+        >
+          <span aria-hidden="true">
+            ««
+          </span>
+        </a>
+      </li>
+      <li class="disabled">
+        <a href="javascript:;"
+           aria-label="Previous"
+        >
+          <span aria-hidden="true">
+            «
+          </span>
+        </a>
+      </li>
       <li class="page-item active">
-        <a class="page-link">
+        <a href="javascript:;">
           1
         </a>
       </li>
       <li class="page-item">
-        <a class="page-link">
+        <a href="javascript:;">
           2
         </a>
       </li>
       <li class="page-item">
-        <a class="page-link">
+        <a href="javascript:;">
           3
+        </a>
+      </li>
+      <!---->
+      <!---->
+      <!---->
+      <li class>
+        <a href="javascript:;"
+           aria-label="Next"
+        >
+          <span aria-hidden="true">
+            »
+          </span>
+        </a>
+      </li>
+      <li class>
+        <a href="javascript:;"
+           aria-label="Last"
+        >
+          <span aria-hidden="true">
+            »»
+          </span>
         </a>
       </li>
     </ul>

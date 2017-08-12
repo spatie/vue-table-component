@@ -420,24 +420,63 @@ exports[`TableComponent can render pagination when the server responds with pagi
     </div>
     <nav>
       <ul class="pagination justify-content-center">
+        <li class>
+          <a href="javascript:;"
+             aria-label="First"
+          >
+            <span aria-hidden="true">
+              ««
+            </span>
+          </a>
+        </li>
+        <li class>
+          <a href="javascript:;"
+             aria-label="Previous"
+          >
+            <span aria-hidden="true">
+              «
+            </span>
+          </a>
+        </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             1
           </a>
         </li>
         <li class="page-item active">
-          <a class="page-link">
+          <a href="javascript:;">
             2
           </a>
         </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             3
           </a>
         </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             4
+          </a>
+        </li>
+        <!---->
+        <!---->
+        <!---->
+        <li class>
+          <a href="javascript:;"
+             aria-label="Next"
+          >
+            <span aria-hidden="true">
+              »
+            </span>
+          </a>
+        </li>
+        <li class>
+          <a href="javascript:;"
+             aria-label="Last"
+          >
+            <span aria-hidden="true">
+              »»
+            </span>
           </a>
         </li>
       </ul>
@@ -497,24 +536,63 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
     </div>
     <nav>
       <ul class="pagination justify-content-center">
+        <li class="disabled">
+          <a href="javascript:;"
+             aria-label="First"
+          >
+            <span aria-hidden="true">
+              ««
+            </span>
+          </a>
+        </li>
+        <li class="disabled">
+          <a href="javascript:;"
+             aria-label="Previous"
+          >
+            <span aria-hidden="true">
+              «
+            </span>
+          </a>
+        </li>
         <li class="page-item active">
-          <a class="page-link">
+          <a href="javascript:;">
             1
           </a>
         </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             2
           </a>
         </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             3
           </a>
         </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             4
+          </a>
+        </li>
+        <!---->
+        <!---->
+        <!---->
+        <li class>
+          <a href="javascript:;"
+             aria-label="Next"
+          >
+            <span aria-hidden="true">
+              »
+            </span>
+          </a>
+        </li>
+        <li class>
+          <a href="javascript:;"
+             aria-label="Last"
+          >
+            <span aria-hidden="true">
+              »»
+            </span>
           </a>
         </li>
       </ul>
@@ -574,24 +652,63 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
     </div>
     <nav>
       <ul class="pagination justify-content-center">
+        <li class>
+          <a href="javascript:;"
+             aria-label="First"
+          >
+            <span aria-hidden="true">
+              ««
+            </span>
+          </a>
+        </li>
+        <li class>
+          <a href="javascript:;"
+             aria-label="Previous"
+          >
+            <span aria-hidden="true">
+              «
+            </span>
+          </a>
+        </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             1
           </a>
         </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             2
           </a>
         </li>
         <li class="page-item active">
-          <a class="page-link">
+          <a href="javascript:;">
             3
           </a>
         </li>
         <li class="page-item">
-          <a class="page-link">
+          <a href="javascript:;">
             4
+          </a>
+        </li>
+        <!---->
+        <!---->
+        <!---->
+        <li class>
+          <a href="javascript:;"
+             aria-label="Next"
+          >
+            <span aria-hidden="true">
+              »
+            </span>
+          </a>
+        </li>
+        <li class>
+          <a href="javascript:;"
+             aria-label="Last"
+          >
+            <span aria-hidden="true">
+              »»
+            </span>
           </a>
         </li>
       </ul>
