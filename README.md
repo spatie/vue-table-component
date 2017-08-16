@@ -12,10 +12,10 @@ Here's an example of how you can use it:
 ```html
 <table-component
      :data="[
-          { firstName: 'John', lastName: 'Lennon', instrument: 'Guitar', editUrl: '<a href='#john'>Edit</a>', birthday: '04/10/1940', songs: 72 },
-          { firstName: 'Paul', lastName: 'McCartney', instrument: 'Bass', editUrl: '<a href='#paul'>Edit</a>', birthday: '18/06/1942', songs: 70 },
-          { firstName: 'George', lastName: 'Harrison', instrument: 'Guitar', editUrl: '<a href='#george'>Edit</a>', birthday: '25/02/1943', songs: 22 },
-          { firstName: 'Ringo', lastName: 'Starr', instrument: 'Drums', editUrl: '<a href='#ringo'>Edit</a>', birthday: '07/07/1940', songs: 2 },
+          { firstName: 'John', lastName: 'Lennon', instrument: 'Guitar', birthday: '04/10/1940', songs: 72 },
+          { firstName: 'Paul', lastName: 'McCartney', instrument: 'Bass', birthday: '18/06/1942', songs: 70 },
+          { firstName: 'George', lastName: 'Harrison', instrument: 'Guitar', birthday: '25/02/1943', songs: 22 },
+          { firstName: 'Ringo', lastName: 'Starr', instrument: 'Drums', birthday: '07/07/1940', songs: 2 },
      ]"
      sort-by="songs"
      sort-order="asc"
@@ -25,7 +25,11 @@ Here's an example of how you can use it:
      <table-column show="instrument" label="Instrument"></table-column>
      <table-column show="songs" label="Songs" data-type="numeric"></table-column>
      <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
-     <table-column show="editUrl" label="" :sortable="false" :filterable="false"></table-column>
+     <table-column label="" :sortable="false" :filterable="false">
+         <template scope="row">
+            <a :href=`#${row.firstName}`>Edit</a>
+         </template>
+     </table-column>
  </table-component>
 ```
 
@@ -179,7 +183,27 @@ Here's an example:
 
 ## Formatting values
 
-You can format the values before they get displayed by passing a function to the `formatter` prop. Here's an example Vue component that uses the feature.
+You can format values before they get displayed by using scoped slots. Here's a quick example:
+
+```html
+<table-component
+     :data="[
+          { firstName: 'John', songs: 72 },
+          { firstName: 'Paul', songs: 70 },
+          { firstName: 'George', songs: 22 },
+          { firstName: 'Ringo', songs: 2 },
+     ]"
+>
+
+     <table-column label="My custom column" :sortable="false" :filterable="false">
+         <template scope="row">
+            {{ row.firstName }} wrote {{ row.songs }} songs.
+         </template>
+     </table-column>
+ </table-component>
+```
+
+Alternatively you can pass a function to the `formatter` prop. Here's an example Vue component that uses the feature.
 
 ```vue
 <template>
