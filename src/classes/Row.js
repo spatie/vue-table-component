@@ -35,8 +35,7 @@ export default class Row {
         }
 
         if (dataType.startsWith('date')) {
-            // eslint-disable-next-line no-unused-vars
-            const [_, format]  = dataType.split(':');
+            const format  = dataType.replace('date:', '');
 
             return moment(value, format).format('YYYYMMDDHHmmss');
         }
