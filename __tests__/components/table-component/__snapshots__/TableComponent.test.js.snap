@@ -33,12 +33,18 @@ exports[`TableComponent accepts a function to format values 1`] = `
         <tbody>
           <tr>
             <td>
-              Formatted: John
+              Formatted:
+              <strong>
+                John
+              </strong>
             </td>
           </tr>
           <tr>
             <td>
-              Formatted: Paul
+              Formatted:
+              <strong>
+                Paul
+              </strong>
             </td>
           </tr>
         </tbody>

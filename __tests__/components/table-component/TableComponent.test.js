@@ -57,7 +57,7 @@ describe('TableComponent', () => {
         await createVm({
             methods: {
                 formatter(value, properties) {
-                    return `Formatted: ${value}`;
+                    return `Formatted: <strong>${value}</strong>`;
                 },
             },
         });
