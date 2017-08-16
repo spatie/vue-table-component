@@ -216,8 +216,10 @@ describe('TableComponent', () => {
                 data: [{firstName: 'John'}, {id: 2, firstName: 'Paul'}],
 
                 pagination: {
-                    totalPages: 4,
+                    lastPage: 4,
                     currentPage: 2,
+                    total: 40,
+                    perPage: 10,
                 },
             };
         };
@@ -245,8 +247,10 @@ describe('TableComponent', () => {
                 data: [{firstName: `John ${page}`}, {id: 2, firstName: `Paul ${page}`}],
 
                 pagination: {
-                    totalPages: 4,
+                    lastPage: 4,
                     currentPage: page,
+                    total: 40,
+                    perPage: 10,
                 },
 
             };
@@ -268,7 +272,7 @@ describe('TableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
 
-        const thirdPageLink = document.getElementsByClassName('page-link')[2];
+        const thirdPageLink = document.getElementsByClassName('page-item')[2].firstChild;
 
         await simulant.fire(thirdPageLink, 'click');
 

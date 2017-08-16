@@ -148,7 +148,7 @@ The component can fetch data in an asynchronous manner. The most common use case
 To use the feature you should pass a function to the `data` prop. The function will receive an object with `filters`, `sort` and `page`. You can use these parameters to fetch the right data. The function should return an object with there properties:
 
 - `data`: (required) the data that should be displayed in the table. 
-- `pagination`: (optional) this should be an object with keys `currentPage` and `totalPages`. If `totalPages` is higher than 1 pagination links will be displayed.
+- `pagination`: (optional) this should be an object with keys `currentPage`, `lastPage`, `perPage` and `total`. If `lastPage` is higher than 1 pagination links will be displayed.
 
 Here's an example:
 
