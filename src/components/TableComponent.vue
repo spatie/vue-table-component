@@ -162,6 +162,14 @@
                     return this.sortedRows;
                 }
 
+                if (!this.showFilter) {
+                    return this.sortedRows;
+                }
+
+                if (!this.columns.filter(column => column.isFilterable()).length) {
+                    return this.sortedRows;
+                }
+
                 return this.sortedRows.filter(row => row.passesFilter(this.filter));
             },
 
