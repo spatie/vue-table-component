@@ -19,6 +19,7 @@ describe('Caching tableComponent', () => {
             <div id="app">
                 <div>
                     <table-component
+                        cache-id="#test"
                         :data="[{ id: 1, firstName: 'John', lastName: 'Lennon' },
                                 { id: 2, firstName: 'Paul', lastName: 'McCartney' }]"
                     >
@@ -46,7 +47,7 @@ describe('Caching tableComponent', () => {
             },
         };
 
-        expiringStorage.set('vue-table-component.blank', cacheContent, 5);
+        expiringStorage.set('vue-table-component.blank#test', cacheContent, 5);
 
         progressTime(4);
 
@@ -66,7 +67,7 @@ describe('Caching tableComponent', () => {
             },
         };
 
-        expiringStorage.set('vue-table-component.blank', cacheContent, 5);
+        expiringStorage.set('vue-table-component.blank#test', cacheContent, 5);
 
         progressTime(6);
 
@@ -92,6 +93,7 @@ describe('Caching tableComponent', () => {
             <div id="app">
                 <div>
                     <table-component
+                        cache-id="#test"
                         :data="[{ firstName: 'John', songs: 30 },
                                 { firstName: 'Paul', songs: 20 },
                                 { firstName: 'George', songs: 420 },
