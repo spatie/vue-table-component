@@ -66,8 +66,6 @@
     import Pagination from './Pagination';
     import {classList} from '../helpers';
 
-    let instanceCount = 0;
-
     export default {
         components: {
             TableColumnHeader,
@@ -78,19 +76,19 @@
         props: {
             data: {default: () => [], type: [Array, Function]},
 
-            showFilter: {default: true},
-            showCaption: {default: true},
+            showFilter: { default: true },
+            showCaption: { default: true },
 
-            sortBy: {default: '', type: String},
-            sortOrder: {default: '', type: String},
+            sortBy: { default: '', type: String },
+            sortOrder: { default: '', type: String },
 
-            cacheId: {default: ''},
-            cacheLifetime: {default: 5},
+            cacheKey: { default: null },
+            cacheLifetime: { default: 5 },
 
-            tableClass: {default: settings.tableClass},
-            filterInputClass: {default: settings.filterInputClass},
-            filterPlaceholder: {default: settings.filterPlaceholder},
-            filterNoResults: {default: settings.filterNoResults},
+            tableClass: { default: settings.tableClass },
+            filterInputClass: { default: settings.filterInputClass },
+            filterPlaceholder: { default: settings.filterPlaceholder },
+            filterNoResults: { default: settings.filterNoResults },
         },
 
         data: () => ({
@@ -103,17 +101,12 @@
             },
             pagination: null,
 
-            cacheKey: '',
-
             localSettings: {},
         }),
 
         created() {
             this.sort.fieldName = this.sortBy;
             this.sort.order = this.sortOrder;
-
-            this.cacheKey = this.cacheId ? this.cacheId : '#' + instanceCount;
-            instanceCount += 1;
 
             this.restoreState();
         },
@@ -203,7 +196,9 @@
             },
 
             storageKey() {
-                return `vue-table-component.${window.location.host}${window.location.pathname}${this.cacheKey}`;
+                return this.cacheKey
+                    ? `vue-table-component.${this.cacheKey}`
+                    : `vue-table-component.${window.location.host}${window.location.pathname}${this.cacheKey}`;
             },
         },
 
