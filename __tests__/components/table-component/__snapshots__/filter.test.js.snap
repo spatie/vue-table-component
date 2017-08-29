@@ -183,6 +183,66 @@ exports[`Filterable tableComponent can filter on another property 1`] = `
 
 `;
 
+exports[`Filterable tableComponent hides the filter when no columns are filterable 1`] = `
+
+<div id="app">
+  <div>
+    <div class="table-component">
+      <!---->
+      <div class="table-component__table-wrapper">
+        <table class="table-component__table">
+          <caption role="alert"
+                   aria-live="polite"
+                   class="table-component__table__caption"
+          >
+            Table sorted by lastName (descending)
+          </caption>
+          <thead>
+            <tr>
+              <th role="columnheader"
+                  scope="col"
+                  aria-sort="none"
+                  class="table-component__th table-component__th--sort"
+              >
+                First name
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                John
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Paul
+              </td>
+            </tr>
+            <tr>
+              <td>
+                George
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Ringo
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!---->
+      <div style="display: none;">
+        <!---->
+      </div>
+      <!---->
+    </div>
+  </div>
+</div>
+
+`;
+
 exports[`Filterable tableComponent will display a message if there are no matching rows 1`] = `
 
 <div id="app">

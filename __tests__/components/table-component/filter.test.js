@@ -121,6 +121,29 @@ describe('Filterable tableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('hides the filter when no columns are filterable', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <div>
+                    <table-component
+                        :data="[{ firstName: 'John', songs: 72 },
+                                { firstName: 'Paul', songs: 70 },
+                                { firstName: 'George', songs: 22 },
+                                { firstName: 'Ringo', songs: 2 }]"
+                        sort-by="lastName"
+                        sort-order="desc"
+                    >
+                        <table-column show="firstName" label="First name" :filterable="false"></table-column>
+                    </table-component>
+                </div>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 async function createVm() {

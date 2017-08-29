@@ -1,6 +1,6 @@
 <template>
     <div class="table-component">
-        <div v-if="showFilter" class="table-component__filter">
+        <div v-if="showFilter && filterableColumnExists" class="table-component__filter">
             <input
                     :class="fullFilterInputClass"
                     type="text"
@@ -64,7 +64,7 @@
     import isArray from 'lodash/isArray';
     import pick from 'lodash/pick';
     import Pagination from './Pagination';
-    import {classList} from '../helpers';
+    import { classList } from '../helpers';
 
     export default {
         components: {
@@ -193,6 +193,10 @@
                 }
 
                 return this.rows.sort(sortColumn.getSortPredicate(this.sort.order, this.columns));
+            },
+
+            filterableColumnExists() {
+                return this.columns.filter(c => c.isFilterable()).length > 0;
             },
 
             storageKey() {
