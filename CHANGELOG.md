@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.4.1 - 2017-08-29
+- Fixed `regeneratorRuntime` issues
+
 ## 1.4.0 - 2017-08-16
 - Fixed cell rendering: HTML is now escaped by default. If you want raw html, use the new scoped slots feature
 - Added scoped slot support to `table-columns` for custom column contents

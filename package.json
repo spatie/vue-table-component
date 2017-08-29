@@ -30,6 +30,7 @@
     "vue": "^2.3.0"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
