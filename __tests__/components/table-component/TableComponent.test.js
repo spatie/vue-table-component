@@ -299,6 +299,33 @@ describe('TableComponent', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('can update columns', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
+                    <table-column show="firstName" :label="label"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                label: 'First name',
+            },
+        });
+
+        await Vue.nextTick();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+
+        vm.label = 'Something else';
+
+        await Vue.nextTick();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 async function createVm(options = {}) {

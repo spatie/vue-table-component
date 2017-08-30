@@ -112,9 +112,7 @@
         },
 
         async mounted() {
-            this.columns = this.$slots.default
-                .filter(column => column.componentInstance)
-                .map(column => new Column(column.componentInstance));
+            this.mapColumns();
 
             await this.mapDataToRows();
         },
@@ -226,6 +224,22 @@
                         return rowData;
                     })
                     .map(rowData => new Row(rowData, this.columns));
+            },
+
+            mapColumns() {
+                const columnComponents = this.$slots.default.filter(
+                    column => column.componentInstance
+                );
+
+                this.columns = columnComponents.map(
+                    column => new Column(column.componentInstance)
+                );
+
+                columnComponents.forEach(column => {
+                    Object.keys(this.$options.props).forEach(
+                         prop => this.$watch(prop, () => this.mapColumns())
+                    );
+                });
             },
 
             prepareLocalData() {
