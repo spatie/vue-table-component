@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.4.3 - 2017-08-30
+- Fixed a bug that didn't rerender the table when a column was changed
+
 ## 1.4.2 - 2017-08-29
 - Added `cache-key` prop to manually set a cache key for local storage state
 - The filter input is now hidden when there are no filterable rows
