@@ -181,6 +181,18 @@ Here's an example:
 </script>
 ```
 
+If you for some reason need to manually refresh the table data, you can call the `refresh` method on the component.
+
+```html
+<table-component :data="fetchData" ref="table">
+    <!-- Columns... -->
+</table-component>
+```
+
+```js
+this.$refs.table.refresh();
+```
+
 ## Formatting values
 
 You can format values before they get displayed by using scoped slots. Here's a quick example:
