@@ -82,6 +82,33 @@ describe('Sortable tableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
+    it('wont break if a sortable column has no data', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <div>
+                    <table-component
+                        :data="[{ firstName: 'John', songs: 30 },
+                                { firstName: 'Paul', songs: 20 },
+                                { firstName: 'George', songs: 420 },
+                                { firstName: 'Ringo', songs: 210 }]"
+                    >
+                        <table-column show="firstName" label="First name" sort-by="songs"></table-column>
+                        <table-column show="lastName" label="Last name"></table-column>
+                        <table-column show="songs" data-type="numeric" label="Songs" sort-by="songs"></table-column>
+                    </table-component>
+                </div>
+            </div>
+        `;
+
+        await createVm();
+
+        const secondColumnHeader = document.getElementsByTagName('th')[1];
+
+        await simulant.fire(secondColumnHeader, 'click');
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
     it('can sort on another column', async () => {
         document.body.innerHTML = `
             <div id="app">

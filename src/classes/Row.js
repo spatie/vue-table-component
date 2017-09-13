@@ -30,6 +30,10 @@ export default class Row {
 
         let value = this.getValue(columnName);
 
+        if (value === undefined) {
+            return '';
+        }
+
         if (value instanceof String) {
             value = value.toLowerCase();
         }
