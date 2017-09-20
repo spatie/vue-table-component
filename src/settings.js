@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 
 const settings = {
     tableClass: '',
+    theadClass: '',
     headerClass: '',
     cellClass: '',
     filterInputClass: '',
