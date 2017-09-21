@@ -284,6 +284,7 @@ describe('TableComponent', () => {
                 <table-component
                     :data="[{ firstName: 'John' },{ firstName: 'Paul' }]"
                     table-class="my-table"
+                    thead-class="my-thead"
                 >
                     <table-column
                         show="firstName"

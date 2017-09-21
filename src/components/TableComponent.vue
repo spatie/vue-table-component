@@ -19,7 +19,7 @@
                 <caption v-if="showCaption" class="table-component__table__caption" role="alert" aria-live="polite">
                     {{ ariaCaption }}
                 </caption>
-                <thead>
+                <thead :class="fullTableHeadClass">
                 <tr>
                     <table-column-header
                             @click="changeSorting"
@@ -86,6 +86,7 @@
             cacheLifetime: { default: 5 },
 
             tableClass: { default: settings.tableClass },
+            theadClass: { default: settings.theadClass },
             filterInputClass: { default: settings.filterInputClass },
             filterPlaceholder: { default: settings.filterPlaceholder },
             filterNoResults: { default: settings.filterNoResults },
@@ -136,6 +137,10 @@
         computed: {
             fullTableClass() {
                 return classList('table-component__table', this.tableClass);
+            },
+
+            fullTableHeadClass() {
+                return classList('table-component__table__head', this.theadClass);
             },
 
             fullFilterInputClass() {

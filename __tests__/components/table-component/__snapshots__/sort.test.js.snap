@@ -20,7 +20,7 @@ exports[`Sortable tableComponent can sort on another column 1`] = `
           >
             Table sorted by firstName (ascending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -106,7 +106,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
           >
             Table sorted by firstName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -212,7 +212,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
           >
             Table sorted by firstName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -318,7 +318,7 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
           >
             Table sorted by lastName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -424,7 +424,7 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
           >
             Table sorted by firstName (ascending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -530,7 +530,7 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
           >
             Table sorted by firstName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -636,7 +636,7 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
           >
             Table sorted by songs (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -742,7 +742,7 @@ exports[`Sortable tableComponent will sort the data ascendingly if the header of
           >
             Table sorted by lastName (ascending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -848,7 +848,7 @@ exports[`Sortable tableComponent wont break if a sortable column has no data 1`]
           >
             Table sorted by lastName (ascending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"

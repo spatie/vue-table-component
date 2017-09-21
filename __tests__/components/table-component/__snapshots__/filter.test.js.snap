@@ -20,7 +20,7 @@ exports[`Filterable tableComponent can add a custom html class on the filter inp
           >
             Table sorted by lastName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -88,7 +88,7 @@ exports[`Filterable tableComponent can filter data 1`] = `
           >
             Table sorted by lastName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -152,7 +152,7 @@ exports[`Filterable tableComponent can filter on another property 1`] = `
           >
             Table sorted by lastName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -197,7 +197,7 @@ exports[`Filterable tableComponent hides the filter when no columns are filterab
           >
             Table sorted by lastName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -265,7 +265,7 @@ exports[`Filterable tableComponent will display a message if there are no matchi
           >
             Table sorted by lastName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -323,7 +323,7 @@ exports[`Filterable tableComponent will filter data in a case-insensitive way 1`
           >
             Table sorted by lastName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
@@ -387,7 +387,7 @@ exports[`Filterable tableComponent will not use columns that are not filterable 
           >
             Table sorted by lastName (descending)
           </caption>
-          <thead>
+          <thead class="table-component__table__head">
             <tr>
               <th role="columnheader"
                   scope="col"
