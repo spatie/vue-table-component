@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.5.0 - 2017-09-21
+- Added `thead-class` prop
+
 ## 1.4.3 - 2017-08-30
 - Fixed a bug that didn't rerender the table when a column was changed
 
