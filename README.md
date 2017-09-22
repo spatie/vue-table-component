@@ -115,6 +115,7 @@ You can pass these props to `table-component`:
 - `cache-id`: if you use multiple instances of `table-component` on the same page you must set this to a unique value per instance.
 - `table-class`: the passed value will be added to the `class` attribute of the rendered table
 - `thead-class`: the passed value will be added to the `class` attribute of the rendered table head.
+- `tbody-class`: the passed value will be added to the `class` attribute of the rendered table body.
 - `filter-placeholder`: the text used as a placeholder in the filter field
 - `filter-input-class`: additional classes that you will be applied to the filter text input
 - `filter-no-results`: the text displayed when the filtering returns no results
@@ -142,6 +143,7 @@ import TableComponent from 'vue-table-component';
 TableComponent.settings({
     tableClass: '',
     theadClass: '',
+    tbodyClass: '',
     filterPlaceholder: 'Filter table…',
     filterNoResults: 'There are no matching rows',
 });

@@ -30,7 +30,7 @@
                     ></table-column-header>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody :class="fullTableBodyClass">
                 <table-row
                         v-for="row in displayedRows"
                         :key="row.vueTableComponentInternalRowId"
@@ -87,6 +87,7 @@
 
             tableClass: { default: settings.tableClass },
             theadClass: { default: settings.theadClass },
+            tbodyClass: { default: settings.tbodyClass },
             filterInputClass: { default: settings.filterInputClass },
             filterPlaceholder: { default: settings.filterPlaceholder },
             filterNoResults: { default: settings.filterNoResults },
@@ -141,6 +142,10 @@
 
             fullTableHeadClass() {
                 return classList('table-component__table__head', this.theadClass);
+            },
+
+            fullTableBodyClass() {
+                return classList('table-component__table__body', this.tbodyClass);
             },
 
             fullFilterInputClass() {

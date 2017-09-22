@@ -38,7 +38,7 @@ exports[`Sortable tableComponent can sort on another column 1`] = `
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 Paul
@@ -131,7 +131,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 George
@@ -237,7 +237,7 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 Ringo
@@ -343,7 +343,7 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 George
@@ -449,7 +449,7 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 George
@@ -555,7 +555,7 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 George
@@ -661,7 +661,7 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 John
@@ -767,7 +767,7 @@ exports[`Sortable tableComponent will sort the data ascendingly if the header of
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 George
@@ -873,7 +873,7 @@ exports[`Sortable tableComponent wont break if a sortable column has no data 1`]
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 John

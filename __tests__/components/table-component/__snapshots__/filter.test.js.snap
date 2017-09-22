@@ -31,7 +31,7 @@ exports[`Filterable tableComponent can add a custom html class on the filter inp
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 John
@@ -106,7 +106,7 @@ exports[`Filterable tableComponent can filter data 1`] = `
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 Paul
@@ -163,7 +163,7 @@ exports[`Filterable tableComponent can filter on another property 1`] = `
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 Paul
@@ -208,7 +208,7 @@ exports[`Filterable tableComponent hides the filter when no columns are filterab
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 John
@@ -283,7 +283,7 @@ exports[`Filterable tableComponent will display a message if there are no matchi
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
           </tbody>
         </table>
       </div>
@@ -341,7 +341,7 @@ exports[`Filterable tableComponent will filter data in a case-insensitive way 1`
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
             <tr>
               <td>
                 Paul
@@ -405,7 +405,7 @@ exports[`Filterable tableComponent will not use columns that are not filterable 
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-component__table__body">
           </tbody>
         </table>
       </div>

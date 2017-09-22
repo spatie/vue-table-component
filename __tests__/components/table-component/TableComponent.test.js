@@ -285,6 +285,7 @@ describe('TableComponent', () => {
                     :data="[{ firstName: 'John' },{ firstName: 'Paul' }]"
                     table-class="my-table"
                     thead-class="my-thead"
+                    tbody-class="my-tbody"
                 >
                     <table-column
                         show="firstName"
