@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
+## 1.6.0 - 2017-09-29
+- Added `tbody-class` prop
+
 ## 1.5.0 - 2017-09-21
 - Added `thead-class` prop
 
