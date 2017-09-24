@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 const settings = {
     tableClass: '',
     theadClass: '',
+    tbodyClass: '',
     headerClass: '',
     cellClass: '',
     filterInputClass: '',
