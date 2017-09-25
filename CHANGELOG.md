@@ -2,7 +2,10 @@
 
 All notable changes to `vue-table-component` will be documented in this file
 
-## 1.6.0 - 2017-09-29
+## 1.6.1 - 2017-09-25
+- Fixed a bug that didn't rerender the table when a column was changed
+
+## 1.6.0 - 2017-09-24
 - Added `tbody-class` prop
 
 ## 1.5.0 - 2017-09-21
