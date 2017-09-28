@@ -133,9 +133,10 @@ For each `table-column` a column will be rendered. It can have these props:
 - `header-class`: the passed value will be added to the `class` attribute of the columns `th` element.
 - `cell-class`: the passed value will be added to the `class` attribute of the columns `td` element.
 
-### Modifying the used texts and classes
+### Modifying the used texts and CSS classes
 
-If you want to modify the built in text or classes you can pass settings globally
+If you want to modify the built in text or classes you can pass settings globally.
+You can use the [CSS](docs/table-component.css) from the docs as a starting point for your own styling.
 
 ```js
 import TableComponent from 'vue-table-component';
