@@ -27,7 +27,7 @@ Here's an example of how you can use it:
      <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
      <table-column label="" :sortable="false" :filterable="false">
          <template scope="row">
-            <a :href=`#${row.firstName}`>Edit</a>
+            <a :href="`#${row.firstName}`">Edit</a>
          </template>
      </table-column>
  </table-component>
