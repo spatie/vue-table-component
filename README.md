@@ -233,7 +233,7 @@ Alternatively you can pass a function to the `formatter` prop. Here's an example
 <script>
 export default {
     methods: {
-        formatter(value, columnProperties) {
+        formatter(value, rowProperties) {
             return `Hi, I am ${value}`;    
         },
     },
