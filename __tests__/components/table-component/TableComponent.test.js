@@ -90,10 +90,10 @@ describe('TableComponent', () => {
                 <table-component
                     :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
-                    <template slot="tfoot">
+                    <template slot="tfoot" scope="{ rows }">
                         <tr>
                             <td>Name count:</td>
-                            <td>2</td>
+                            <td>{{ rows.length }}</td>
                         </tr>
                     </template>
                 </table-component>

@@ -153,13 +153,13 @@
                     </a>
                 </template>
             </table-column>
-            <template slot="tfoot">
+            <template slot="tfoot" scope="{ rows }">
                 <tr>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
+                    <th>Total Songs:</th>
+                    <th>{{ rows.reduce((sum, value) => { return sum + value.data.songs; }, 0) }}</th>
                     <th>&nbsp;</th>
-                    <th>Total:</th>
-                    <th>166</th>
                     <th>&nbsp;</th>
                 </tr>
             </template>
