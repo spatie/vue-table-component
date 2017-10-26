@@ -84,6 +84,27 @@ describe('TableComponent', () => {
         expect(document.body.innerHTML).toMatchSnapshot();
     });
 
+    it('supports a named slot to display a tfoot section', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
+                    <table-column show="firstName" label="First name"></table-column>
+                    <template slot="tfoot">
+                        <tr>
+                            <td>Name count:</td>
+                            <td>2</td>
+                        </tr>
+                    </template>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
     it('has an prop to disable the filter', async () => {
         document.body.innerHTML = `
             <div id="app">
@@ -189,7 +210,7 @@ describe('TableComponent', () => {
     it('can accept a function to fetch the data', async () => {
         const serverResponse = () => {
             return {
-                data: [{firstName: 'John'}, {id: 2, firstName: 'Paul'}],
+                data: [{ firstName: 'John' }, { id: 2, firstName: 'Paul' }],
             };
         };
 
@@ -213,7 +234,7 @@ describe('TableComponent', () => {
     it('can render pagination when the server responds with pagination data', async () => {
         const serverResponse = () => {
             return {
-                data: [{firstName: 'John'}, {id: 2, firstName: 'Paul'}],
+                data: [{ firstName: 'John' }, { id: 2, firstName: 'Paul' }],
 
                 pagination: {
                     totalPages: 4,
@@ -240,9 +261,9 @@ describe('TableComponent', () => {
     });
 
     it('clicking a link in the pagination will rerender the table', async () => {
-        const serverResponse = ({page}) => {
+        const serverResponse = ({ page }) => {
             return {
-                data: [{firstName: `John ${page}`}, {id: 2, firstName: `Paul ${page}`}],
+                data: [{ firstName: `John ${page}` }, { id: 2, firstName: `Paul ${page}` }],
 
                 pagination: {
                     totalPages: 4,

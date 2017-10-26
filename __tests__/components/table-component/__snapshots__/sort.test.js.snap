@@ -72,6 +72,8 @@ exports[`Sortable tableComponent can sort on another column 1`] = `
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->
@@ -177,6 +179,8 @@ exports[`Sortable tableComponent can sort the data with by a specific column 1`]
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->
@@ -283,6 +287,8 @@ exports[`Sortable tableComponent can sort the data with by a specific column in 
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->
@@ -389,6 +395,8 @@ exports[`Sortable tableComponent can sort the data with by another specific colu
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->
@@ -495,6 +503,8 @@ exports[`Sortable tableComponent it will change the sort order when clicking the
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->
@@ -601,6 +611,8 @@ exports[`Sortable tableComponent will not sort data when clicking a non-sortable
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->
@@ -707,6 +719,8 @@ exports[`Sortable tableComponent will not sort on a column that is not sortable 
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->
@@ -813,6 +827,8 @@ exports[`Sortable tableComponent will sort the data ascendingly if the header of
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->
@@ -915,6 +931,8 @@ exports[`Sortable tableComponent wont break if a sortable column has no data 1`]
               </td>
             </tr>
           </tbody>
+          <tfoot>
+          </tfoot>
         </table>
       </div>
       <!---->

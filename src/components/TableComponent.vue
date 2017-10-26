@@ -38,6 +38,9 @@
                         :columns="columns"
                 ></table-row>
                 </tbody>
+                <tfoot>
+                    <slot name="tfoot"></slot>
+                </tfoot>
             </table>
         </div>
 
@@ -74,7 +77,7 @@
         },
 
         props: {
-            data: {default: () => [], type: [Array, Function]},
+            data: { default: () => [], type: [Array, Function] },
 
             showFilter: { default: true },
             showCaption: { default: true },
