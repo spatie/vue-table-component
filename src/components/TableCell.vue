@@ -1,3 +1,4 @@
+<script>
 export default {
     functional: true,
 
@@ -20,3 +21,4 @@ export default {
         return createElement('td', data);
     },
 };
+</script>
