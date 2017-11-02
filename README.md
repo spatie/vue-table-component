@@ -226,7 +226,7 @@ Alternatively you can pass a function to the `formatter` prop. Here's an example
 export default {
     methods: {
         formatter(value, rowProperties) {
-            return `Hi, I am ${value}`;    
+            return `Hi, I am ${value}`;
         },
     },
 }
@@ -234,6 +234,63 @@ export default {
 ```
 
 This will display values `Hi, I am John` and `Hi, I am Paul`.
+
+## Adding table footer `<tfoot>` information
+
+Sometimes it can be useful to add information to the bottom of the table like summary data.
+A slot named `tfoot` is available and it receives all of the `rows` data to do calculations on the fly or you can show data directly from whatever is available in the parent scope.
+
+```html
+<table-component
+    :data="[{ firstName: 'John', songs: 72 },{ firstName: 'Paul', songs: 70 }]">
+    <table-column show="firstName" label="First name"></table-column>
+    <table-column show="songs" label="Songs" data-type="numeric"></table-column>
+    <template slot="tfoot" scope="{ rows }">
+        <tr>
+            <th>Total Songs:</th>
+            <th>{{ rows.reduce((sum, value) => { return sum + value.data.songs; }, 0) }}</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+    </template>
+</table-component>
+```
+
+OR  
+
+```vue
+<template>
+    <table-component
+        :data="tableData">
+        <table-column show="firstName" label="First name"></table-column>
+        <table-column show="songs" label="Songs" data-type="numeric"></table-column>
+        <template slot="tfoot">
+            <tr>
+                <th>Total Songs:</th>
+                <th>{{ totalSongs }}</th>
+            </tr>
+        </template>
+    </table-component>
+</template>
+<script>
+export default {
+    computed: {
+        totalSongs () {
+            return this.tableData.reduce(sum, value => {
+                return sum + value.songs;
+            }, 0);
+        }
+    },
+    data () {
+        return {
+            tableData: [{ firstName: 'John', songs: 72 },{ firstName: 'Paul', songs: 70 }]
+        }
+    }
+}
+</script>
+```
+
+Note: `rows` slot scope data includes more information gathered by the Table Component (e.g. `columns`) and `rows.data` is where the original `data` information is located.
 
 ## Changelog
 
