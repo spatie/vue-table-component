@@ -8,6 +8,52 @@ exports[`Pagination can mount without pagination data 1`] = `
 
 `;
 
+exports[`Pagination can render large pagination 1`] = `
+
+<div id="app">
+  <nav>
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link">
+          1
+        </a>
+      </li>
+      <li class="page-item active">
+        <a class="page-link">
+          2
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link">
+          3
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link">
+          4
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link">
+          5
+        </a>
+      </li>
+      <li class="page-item disabled">
+        <a class="page-link">
+          ...
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link">
+          100
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+`;
+
 exports[`Pagination can set the active page 1`] = `
 
 <div id="app">
