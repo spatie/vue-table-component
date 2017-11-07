@@ -72,6 +72,25 @@ describe('Pagination', () => {
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
+
+    it('can render large pagination', async () => {
+
+        document.body.innerHTML = `
+            <div id="app">
+                <pagination
+                :pagination="{
+                    currentPage: 2,
+                    totalPages: 100,
+                }">
+
+                </pagination>
+            </div>
+            `;
+
+    await createVm();
+
+    expect(document.body.innerHTML).toMatchSnapshot();
+    });
 });
 
 async function createVm() {
