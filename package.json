@@ -29,10 +29,6 @@
     "moment": "^2.18.1",
     "vue": "^2.3.0"
   },
-  "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "lodash": "^4.17.4"
-  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
