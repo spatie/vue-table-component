@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `vue-table-component` will be documented in this file
+All notable changes to `vue-table-component` will be documented in this file.
 
 ## 1.7.0 - 2017-11-02
 - Added named slot `tfoot` to display table footer information, receives row data as scoped properties
