@@ -57,8 +57,11 @@
       "js",
       "vue"
     ],
+    "setupFiles": [
+      "<rootDir>/tests/bootstrap"
+    ],
     "snapshotSerializers": [
-      "<rootDir>/__tests__/html-serializer"
+      "<rootDir>/tests/html-serializer"
     ],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
