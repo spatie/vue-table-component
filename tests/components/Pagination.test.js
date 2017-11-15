@@ -1,6 +1,5 @@
-import Pagination from '../../../src';
+import Pagination from '../../src';
 import Vue from 'vue/dist/vue.js';
-
 
 describe('Pagination', () => {
     Vue.use(Pagination);

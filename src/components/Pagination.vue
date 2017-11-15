@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import range from 'lodash/range';
+    import { range } from '../helpers';
 
     export default {
         props: {

@@ -65,10 +65,8 @@
     import TableColumnHeader from './TableColumnHeader';
     import TableRow from './TableRow';
     import settings from '../settings';
-    import isArray from 'lodash/isArray';
-    import pick from 'lodash/pick';
     import Pagination from './Pagination';
-    import { classList } from '../helpers';
+    import { classList, pick } from '../helpers';
 
     export default {
         components: {
@@ -182,7 +180,7 @@
             },
 
             usesLocalData() {
-                return isArray(this.data);
+                return Array.isArray(this.data);
             },
 
             displayedRows() {

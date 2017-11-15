@@ -1,5 +1,5 @@
-import TableComponent from '../src/';
-import settings from '../src/settings';
+import TableComponent from '../../src/';
+import settings from '../../src/settings';
 
 describe('settings', () => {
     it('can update settings', () => {
