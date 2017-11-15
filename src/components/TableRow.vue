@@ -4,6 +4,7 @@
             v-for="column in visibleColumns"
             :row="row"
             :column="column"
+            :key="column.id"
         ></table-cell>
     </tr>
 </template>
