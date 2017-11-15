@@ -3,6 +3,7 @@
 All notable changes to `vue-table-component` will be documented in this file.
 
 ## 1.7.1 - 2017-11-15
+- Added a per-row click listener `<table-component @rowClick="handle">`
 - Removed lodash dependency for a leaner build size
 - Republished package due to build issues
 
