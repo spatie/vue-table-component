@@ -1,6 +1,6 @@
 {
   "name": "vue-table-component",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "A straightforward Vue component to filter and sort tables",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
@@ -57,8 +57,11 @@
       "js",
       "vue"
     ],
+    "setupFiles": [
+      "<rootDir>/tests/bootstrap"
+    ],
     "snapshotSerializers": [
-      "<rootDir>/__tests__/html-serializer"
+      "<rootDir>/tests/html-serializer"
     ],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",

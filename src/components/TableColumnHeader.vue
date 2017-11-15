@@ -3,7 +3,7 @@
         @click="clicked"
         :class="headerClass"
         role="columnheader"
-        scope="col"
+        slot-scope="col"
         :aria-sort="ariaSort"
         :aria-disabled="ariaDisabled"
         v-if="this.isVisible"

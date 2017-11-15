@@ -1,9 +1,4 @@
-import expiringStorage from '../src/expiring-storage';
-import LocalStorageMock from './helpers/LocalStorageMock';
-
-const localStorage = new LocalStorageMock();
-
-window.localStorage = localStorage;
+import expiringStorage from '../../src/expiring-storage';
 
 describe('expiringStorage', () => {
     beforeEach(() => {
@@ -20,7 +15,10 @@ describe('expiringStorage', () => {
     it('sets keys in the local storage', () => {
         expiringStorage.set('my-key', 'my-value', 5);
 
-        expect(localStorage.getAll()).toMatchSnapshot();
+        const localStorageContents = JSON.parse(localStorage.getItem('my-key'));
+
+        expect(localStorageContents.value).toBe('my-value');
+        expect(localStorageContents.expires).toBe('2017-01-01T00:05:00.000Z');
     });
 
     it('remembers values by key', () => {
