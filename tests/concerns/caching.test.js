@@ -1,17 +1,8 @@
-import TableComponent from '../../../src';
-import Vue from 'vue/dist/vue.js';
-import expiringStorage from '../../../src/expiring-storage';
+import expiringStorage from '../../src/expiring-storage';
 import simulant from 'simulant';
+import createVm from '../createVm';
 
-import LocalStorageMock from '../../helpers/LocalStorageMock';
-
-const localStorage = new LocalStorageMock();
-
-window.localStorage = localStorage;
-
-describe('Caching tableComponent', () => {
-    Vue.use(TableComponent);
-
+describe('Caching', () => {
     beforeEach(() => {
         localStorage.clear();
 
@@ -20,11 +11,14 @@ describe('Caching tableComponent', () => {
                 <div>
                     <table-component
                         cache-key="test"
-                        :data="[{ id: 1, firstName: 'John', lastName: 'Lennon' },
-                                { id: 2, firstName: 'Paul', lastName: 'McCartney' }]"
+                        :data="[{ firstName: 'John', lastName: 'Lennon', songs: 30 },
+                                { firstName: 'Paul', lastName: 'McCartney', songs: 20 },
+                                { firstName: 'George', lastName: 'Harrison', songs: 420 },
+                                { firstName: 'Ringo', lastName: 'Starr', songs: 210 }]"
                     >
                         <table-column show="firstName" label="First name"></table-column>
                         <table-column show="lastName" label="Last name"></table-column>
+                        <table-column show="songs" data-type="numeric" label="Songs" sort-by="songs"></table-column>
                     </table-component>
                 </div>
             </div>
@@ -79,54 +73,26 @@ describe('Caching tableComponent', () => {
     });
 
     it('will cache the filter', async () => {
-        const table = await createVm();
+        await createVm(table => {
+            table.filter = 'cache this';
+        });
 
-        table.filter = 'cache this';
+        const localStorageContents = JSON.parse(localStorage.getItem('vue-table-component.test'));
 
-        await Vue.nextTick(() => {});
-
-        expect(localStorage.getAll()).toMatchSnapshot();
+        expect(localStorageContents.value.filter).toBe('cache this');
     });
 
     it('will cache a the sort column', async () => {
-        document.body.innerHTML = `
-            <div id="app">
-                <div>
-                    <table-component
-                        cache-key="test"
-                        :data="[{ firstName: 'John', songs: 30 },
-                                { firstName: 'Paul', songs: 20 },
-                                { firstName: 'George', songs: 420 },
-                                { firstName: 'Ringo', songs: 210 }]"
-                    >
-                        <table-column show="firstName" label="First name" sort-by="songs"></table-column>
-                        <table-column show="songs" data-type="numeric" label="Songs" sort-by="songs"></table-column>
-                    </table-component>
-                </div>
-            </div>
-        `;
-
         await createVm();
 
-        const secondColumnHeader = document.getElementsByTagName('th')[1];
+        const songsColumnHeader = document.getElementsByTagName('th')[2];
+        await simulant.fire(songsColumnHeader, 'click');
 
-        await simulant.fire(secondColumnHeader, 'click');
+        const localStorageContents = JSON.parse(localStorage.getItem('vue-table-component.test'));
 
-        expect(localStorage.getAll()).toMatchSnapshot();
+        expect(localStorageContents.value.sort.fieldName).toBe('songs');
     });
 });
-
-async function createVm() {
-    const vm = new Vue({
-        el: '#app',
-    });
-
-    await Vue.nextTick(() => {});
-
-    const table = vm.$children[0];
-
-    return table;
-}
 
 function progressTime(minutes) {
     const currentTime = (new Date()).getTime();

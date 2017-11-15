@@ -2,6 +2,8 @@ import createVm from '../createVm';
 
 describe('Filtering', () => {
     beforeEach(() => {
+        window.localStorage.clear();
+
         document.body.innerHTML = `
             <div id="app">
                 <table-component
