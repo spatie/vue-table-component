@@ -1,8 +1,22 @@
 <template>
     <nav v-if="shouldShowPagination">
         <ul class="pagination justify-content-center">
+            <li :class="{ disabled: pagination.currentPage === 1 }">
+                <a
+                    :class="{ disabled: pagination.currentPage === 1 }"
+                    @click="pageClicked( pagination.currentPage - 1 )">
+                    <i class="left chevron icon">«</i>
+                </a>
+            </li>
             <li class="page-item" :class="{ active: isActive(page), disabled: page === '...' }" v-for="page in pages">
                 <a class="page-link" @click="pageClicked(page)">{{ page }}</a>
+            </li>
+            <li>
+                <a
+                    :class="{ disabled: pagination.currentPage === this.pagination.totalPages }"
+                    @click="pageClicked( pagination.currentPage + 1 )">
+                    <i class="right chevron icon">»</i>
+                </a>
             </li>
         </ul>
     </nav>
