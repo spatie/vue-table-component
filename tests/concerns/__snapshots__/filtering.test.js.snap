@@ -30,22 +30,22 @@ exports[`Filtering can add a custom html class on the filter input 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               George
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Ringo
             </td>
@@ -89,22 +89,22 @@ exports[`Filtering hides the filter when no columns are filterable 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               George
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Ringo
             </td>

@@ -30,7 +30,7 @@ exports[`TableComponent accepts a function to format values 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Formatted:
               <strong>
@@ -38,7 +38,7 @@ exports[`TableComponent accepts a function to format values 1`] = `
               </strong>
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Formatted:
               <strong>
@@ -91,12 +91,12 @@ exports[`TableComponent can accept a function to fetch the data 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -146,12 +146,12 @@ exports[`TableComponent can add extra classes to the table, the cells and the he
           </tr>
         </thead>
         <tbody class="table-component__table__body my-tbody">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td class="my-cell">
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td class="my-cell">
               Paul
             </td>
@@ -303,12 +303,12 @@ exports[`TableComponent can display nested properties 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -358,12 +358,12 @@ exports[`TableComponent can mount 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -413,12 +413,12 @@ exports[`TableComponent can render pagination when the server responds with pagi
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -491,12 +491,12 @@ exports[`TableComponent can update columns 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -546,12 +546,12 @@ exports[`TableComponent can update columns 2`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -601,12 +601,12 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John 1
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul 1
             </td>
@@ -679,12 +679,12 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John 3
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul 3
             </td>
@@ -752,12 +752,12 @@ exports[`TableComponent has an prop to disable the caption 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -801,12 +801,12 @@ exports[`TableComponent has an prop to disable the filter 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -856,12 +856,12 @@ exports[`TableComponent supports a named slot to display a tfoot section 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -919,12 +919,12 @@ exports[`TableComponent supports a scoped slot inside the table column 1`] = `
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John slot
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul slot
             </td>
@@ -968,12 +968,12 @@ exports[`TableComponent will use the property name as a column heading if label 
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
@@ -1016,12 +1016,12 @@ exports[`TableComponent won't use the property name as a column heading if label
           </tr>
         </thead>
         <tbody class="table-component__table__body">
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               John
             </td>
           </tr>
-          <tr>
+          <tr class="table-component__table__body__row">
             <td>
               Paul
             </td>
