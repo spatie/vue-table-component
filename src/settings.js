@@ -2,6 +2,7 @@ const settings = {
     tableClass: '',
     theadClass: '',
     tbodyClass: '',
+    rowClass: '',
     headerClass: '',
     cellClass: '',
     filterInputClass: '',
