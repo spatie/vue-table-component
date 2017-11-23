@@ -30,7 +30,7 @@ export default class Row {
 
         let value = this.getValue(columnName);
 
-        if (value === undefined) {
+        if (value === undefined || value === null) {
             return '';
         }
 
@@ -39,9 +39,9 @@ export default class Row {
         }
 
         if (dataType.startsWith('date')) {
-            const format  = dataType.replace('date:', '');
-
-            return moment(value, format).format('YYYYMMDDHHmmss');
+            let format = dataType.startsWith('date:') ? dataType.replace('date:', '') : undefined;
+            if (format === 'null' || format === 'undefined') format = undefined;
+            return moment.utc(value, format).format('YYYYMMDDHHmmssSSS');
         }
 
         if (dataType === 'numeric') {
