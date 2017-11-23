@@ -156,7 +156,7 @@ The component can fetch data in an asynchronous manner. The most common use case
 
 To use the feature you should pass a function to the `data` prop. The function will receive an object with `filter`, `sort` and `page`. You can use these parameters to fetch the right data. The function should return an object with the following properties:
 
-- `data`: (required) the data that should be displayed in the table. 
+- `data`: (required) the data that should be displayed in the table.
 - `pagination`: (optional) this should be an object with keys `currentPage` and `totalPages`. If `totalPages` is higher than 1 pagination links will be displayed.
 
 Here's an example:
@@ -177,7 +177,7 @@ Here's an example:
         methods: {
             async fetchData({ page, filter, sort }) {
                 const response = await axios.get('/my-endpoint', { page });
-                
+
                 // An object that has a `data` and an optional `pagination` property
                 return response;
             }
@@ -243,7 +243,34 @@ export default {
 
 This will display values `Hi, I am John` and `Hi, I am Paul`.
 
-## Adding table footer `<tfoot>` information
+## Using the row index number
+
+```html
+<table-component
+	:data="[
+		{ firstName: 'John', lastName: 'Lennon' },
+		{ firstName: 'Paul', lastName: 'McCartney'},
+		{ firstName: 'George', lastName: 'Harrison'},
+		{ firstName: 'Ringo', lastName: 'Starr'},
+	]"
+	sort-by="songs"
+	sort-order="asc"
+>
+	<table-column show="index" label="#"></table-column>
+	<table-column show="firstName" label="First name"></table-column>
+	<table-column show="lastName" label="Last name"></table-column>
+	<table-column label="#" :sortable="false" :filterable="false">
+		<template scope="row">
+			{{ row.index }}
+		</template>
+</table-column>
+</table-component>
+```
+
+This is an example how to create a column which shows the index number of the row. The `show` prop must be set to `index`, while the `label` prop can be anything. The `index` is an internal variable holding the rows index number, which will recalculated on sorting and filtering. Sorting and filtering is disabled for this special row.
+Beside this, you can also access the `index` of the row in a template as shown in the example as well. It does not make sense to filter or sort on the index, therefore it is disabled, but you are free to turn it on.
+
+ ## Adding table footer `<tfoot>` information
 
 Sometimes it can be useful to add information to the bottom of the table like summary data.
 A slot named `tfoot` is available and it receives all of the `rows` data to do calculations on the fly or you can show data directly from whatever is available in the parent scope.
@@ -264,7 +291,7 @@ A slot named `tfoot` is available and it receives all of the `rows` data to do c
 </table-component>
 ```
 
-OR  
+OR
 
 ```vue
 <template>
@@ -338,7 +365,7 @@ The Pagination component was inspired by [this lesson on Laracasts.com](https://
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie). 
+Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie).
 All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
 
 ## License
