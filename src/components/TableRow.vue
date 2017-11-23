@@ -2,6 +2,7 @@
     <tr @click="$emit('rowClick', row)">
         <table-cell
             v-for="column in visibleColumns"
+			:index="index"
             :row="row"
             :column="column"
             :key="column.id"
@@ -13,7 +14,7 @@
     import TableCell from './TableCell';
 
     export default {
-        props: ['columns', 'row'],
+        props: ['columns', 'row', 'index'],
 
         components: {
             TableCell,
