@@ -1,5 +1,5 @@
 import moment from 'moment';
-import get from 'lodash/get';
+import { get } from '../helpers';
 
 export default class Row {
     constructor(data, columns) {

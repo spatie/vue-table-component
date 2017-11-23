@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filtering can add a custom html class on the filter input 1`] = `
+
+<div id="app">
+  <div class="table-component">
+    <div class="table-component__filter">
+      <input type="text"
+             placeholder="Filter table…"
+             class="table-component__filter__field my-filter-class"
+      >
+      <!---->
+    </div>
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <caption role="alert"
+                 aria-live="polite"
+                 class="table-component__table__caption"
+        >
+          Table sorted by lastName (descending)
+        </caption>
+        <thead class="table-component__table__head">
+          <tr>
+            <th role="columnheader"
+                aria-sort="none"
+                class="table-component__th table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody class="table-component__table__body">
+          <tr>
+            <td>
+              John
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Paul
+            </td>
+          </tr>
+          <tr>
+            <td>
+              George
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Ringo
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+    <!---->
+    <div style="display: none;">
+      <!---->
+    </div>
+    <!---->
+  </div>
+</div>
+
+`;
+
+exports[`Filtering hides the filter when no columns are filterable 1`] = `
+
+<div id="app">
+  <div class="table-component">
+    <!---->
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <caption role="alert"
+                 aria-live="polite"
+                 class="table-component__table__caption"
+        >
+          Table sorted by lastName (descending)
+        </caption>
+        <thead class="table-component__table__head">
+          <tr>
+            <th role="columnheader"
+                aria-sort="none"
+                class="table-component__th table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody class="table-component__table__body">
+          <tr>
+            <td>
+              John
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Paul
+            </td>
+          </tr>
+          <tr>
+            <td>
+              George
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Ringo
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+    <!---->
+    <div style="display: none;">
+      <!---->
+    </div>
+    <!---->
+  </div>
+</div>
+
+`;

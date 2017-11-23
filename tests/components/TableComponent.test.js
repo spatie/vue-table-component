@@ -1,15 +1,7 @@
-import TableComponent from '../../../src';
 import Vue from 'vue/dist/vue.js';
-import LocalStorageMock from '../../helpers/LocalStorageMock';
 import simulant from 'simulant';
 
-const localStorage = new LocalStorageMock();
-
-window.localStorage = localStorage;
-
 describe('TableComponent', () => {
-    Vue.use(TableComponent);
-
     beforeEach(() => {
         localStorage.clear();
     });
@@ -71,7 +63,7 @@ describe('TableComponent', () => {
                 <table-component
                     :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
                     <table-column label="First name">
-                        <template scope="row">
+                        <template slot-scope="row">
                            {{ row.firstName }} slot
                         </template>
                     </table-column>
@@ -90,7 +82,7 @@ describe('TableComponent', () => {
                 <table-component
                     :data="[{ firstName: 'John' },{ firstName: 'Paul' }]">
                     <table-column show="firstName" label="First name"></table-column>
-                    <template slot="tfoot" scope="{ rows }">
+                    <template slot="tfoot" slot-scope="{ rows }">
                         <tr>
                             <td>Name count:</td>
                             <td>{{ rows.length }}</td>
@@ -180,8 +172,7 @@ describe('TableComponent', () => {
 
         table.filter = 'this returns nothing';
 
-        await Vue.nextTick(() => {
-        });
+        await Vue.nextTick();
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
@@ -201,8 +192,7 @@ describe('TableComponent', () => {
 
         table.filter = 'this returns nothing';
 
-        await Vue.nextTick(() => {
-        });
+        await Vue.nextTick();
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
@@ -225,8 +215,7 @@ describe('TableComponent', () => {
 
         await createVm();
 
-        await Vue.nextTick(() => {
-        });
+        await Vue.nextTick();
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
@@ -254,8 +243,7 @@ describe('TableComponent', () => {
 
         await createVm();
 
-        await Vue.nextTick(() => {
-        });
+        await Vue.nextTick();
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
@@ -269,7 +257,6 @@ describe('TableComponent', () => {
                     totalPages: 4,
                     currentPage: page,
                 },
-
             };
         };
 
@@ -284,8 +271,7 @@ describe('TableComponent', () => {
 
         await createVm();
 
-        await Vue.nextTick(() => {
-        });
+        await Vue.nextTick();
 
         expect(document.body.innerHTML).toMatchSnapshot();
 

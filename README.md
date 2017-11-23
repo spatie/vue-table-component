@@ -98,6 +98,7 @@ This will render a table that is both filterable and sortable. A filter field wi
 ### Props
 
 You can pass these props to `table-component`:
+
 - `data`: (required) the data the component will operate on. This can either be an array or [a function](#retrieving-data-asynchronously)
 - `show-filter`: set this to `false` to not display the `filter` field.
 - `show-caption`: set this to `false` to not display the `caption` field which shows the current active filter.
@@ -113,6 +114,7 @@ You can pass these props to `table-component`:
 - `filter-no-results`: the text displayed when the filtering returns no results
 
 For each `table-column` a column will be rendered. It can have these props:
+
 - `show`: (required) the property name in the data that needs to be shown in this column.
 - `formatter`: a function the will receive the value that will be displayed and all column properties. The return value of this function will be displayed. Here's [an example](#formatting-values)
 - `label`: the label that will be shown on top of the column. Set this to an empty string to display nothing. If this property is not present, the string passed to `show` will be used.
@@ -124,6 +126,12 @@ For each `table-column` a column will be rendered. It can have these props:
 - `hidden`: if you set this to `true` then the column will be hidden. This is useful when you want to sort by a field but don't want it to be visible.
 - `header-class`: the passed value will be added to the `class` attribute of the columns `th` element.
 - `cell-class`: the passed value will be added to the `class` attribute of the columns `td` element.
+
+## Listeners
+
+The `table-component` currently emits one custom event:
+
+- `@rowClick`: is fired when a row is clicked. Receives the row data as it's event payload.
 
 ### Modifying the used texts and CSS classes
 

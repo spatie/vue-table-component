@@ -1,4 +1,4 @@
-import pick from 'lodash/pick';
+import { pick } from '../helpers';
 
 export default class Column {
     constructor(columnComponent) {
