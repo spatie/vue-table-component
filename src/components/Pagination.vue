@@ -2,19 +2,26 @@
     <nav v-if="shouldShowPagination">
         <ul class="pagination justify-content-center">
             <li :class="{ disabled: pagination.currentPage === 1 }">
-                <a
-                    :class="{ disabled: pagination.currentPage === 1 }"
-                    @click="pageClicked( pagination.currentPage - 1 )">
+                <a :class="{ disabled: pagination.currentPage === 1 }"
+                   @click="pageClicked( pagination.currentPage - 1 )">
                     <i class="left chevron icon">«</i>
                 </a>
             </li>
+            <li v-if="hasFirst" class="page-item" :class="{ active: isActive(1) }">
+                <a class="page-link" @click="pageClicked(1)">1</a>
+            </li>
+            <li v-if="hasFirstEllipsis"><span class="pagination-ellipsis">&hellip;</span></li>
             <li class="page-item" :class="{ active: isActive(page), disabled: page === '...' }" v-for="page in pages">
                 <a class="page-link" @click="pageClicked(page)">{{ page }}</a>
             </li>
+            <li v-if="hasLastEllipsis"><span class="pagination-ellipsis">&hellip;</span></li>
+            <li v-if="hasLast" class="page-item"
+                :class="{ active: isActive(this.pagination.totalPages) }">
+                <a class="page-link" @click="pageClicked(pagination.totalPages)">{{pagination.totalPages}}</a>
+            </li>
             <li>
-                <a
-                    :class="{ disabled: pagination.currentPage === this.pagination.totalPages }"
-                    @click="pageClicked( pagination.currentPage + 1 )">
+                <a :class="{ disabled: pagination.currentPage === pagination.totalPages }"
+                   @click="pageClicked( pagination.currentPage + 1 )">
                     <i class="right chevron icon">»</i>
                 </a>
             </li>
@@ -39,16 +46,22 @@
                     : this.pageLinks();
             },
 
-            shouldShowPagination() {
-                if (this.pagination.totalPages === undefined) {
-                    return false;
-                }
+            hasFirst() {
+                return this.pagination.currentPage >= 4 || this.pagination.totalPages < 10
+            },
 
-                if (this.pagination.count === 0) {
-                    return false;
-                }
+            hasLast() {
+                return this.pagination.currentPage <= this.pagination.totalPages - 3 || this.pagination.totalPages < 10
+            },
 
-                return this.pagination.totalPages > 1;
+            hasFirstEllipsis() {
+                return this.pagination.currentPage >= 4 && this.pagination.totalPages >= 10
+            },
+
+            hasLastEllipsis() {
+                return (this.pagination.currentPage < this.pagination.totalPages - 2 &&
+                    this.pagination.currentPage <= this.pagination.totalPages - 3) &&
+                    this.pagination.totalPages >= 10
             },
 
             shouldShowPagination() {
@@ -62,6 +75,7 @@
 
                 return this.pagination.totalPages > 1;
             },
+
         },
 
         methods: {
@@ -84,46 +98,17 @@
 
             pageLinks() {
                 const pages = [];
-                let preDots = false;
-                let postDots = false;
 
-                for (let i = 1; i <= this.pagination.totalPages; i++) {
+                let left = 2;
+                let right = this.pagination.totalPages - 1;
 
-                    if (this.pagination.totalPages <= 10) {
-                        pages.push(i);
-                    } else {
-                        if (i === 1) {
-                            pages.push(i);
-                            continue;
-                        }
+                if (this.pagination.totalPages >= 10) {
+                    left = Math.max(1, this.pagination.currentPage - 2);
+                    right = Math.min(this.pagination.currentPage + 2, this.pagination.totalPages);
+                }
 
-                        if (i === this.pagination.totalPages) {
-                            pages.push(i);
-                            continue;
-                        }
-
-                        if (
-                            // link is within 4 of current
-                        (i > this.pagination.currentPage - 4 && i < this.pagination.currentPage + 4) ||
-                        // current and link less than 4
-                        (i < 4 && this.pagination.currentPage < 4) ||
-                        // current and link within 4 of end
-                        (i > this.pagination.totalPages - 4 && this.pagination.currentPage > this.pagination.totalPages - 4)) {
-                            pages.push(i);
-                            continue;
-                        }
-
-                        if (i < this.pagination.currentPage && !preDots) {
-                            pages.push('...');
-                            preDots = true;
-                            continue;
-                        }
-
-                        if (i > this.pagination.currentPage && !postDots) {
-                            pages.push('...');
-                            postDots = true;
-                        }
-                    }
+                for (let i = left; i <= right; i++) {
+                    pages.push(i);
                 }
 
                 return pages;

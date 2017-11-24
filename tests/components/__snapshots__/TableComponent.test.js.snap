@@ -446,6 +446,7 @@ exports[`TableComponent can render pagination when the server responds with pagi
             1
           </a>
         </li>
+        <!---->
         <li class="page-item active">
           <a class="page-link">
             2
@@ -456,6 +457,7 @@ exports[`TableComponent can render pagination when the server responds with pagi
             3
           </a>
         </li>
+        <!---->
         <li class="page-item">
           <a class="page-link">
             4
@@ -648,6 +650,7 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
             1
           </a>
         </li>
+        <!---->
         <li class="page-item">
           <a class="page-link">
             2
@@ -658,6 +661,7 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
             3
           </a>
         </li>
+        <!---->
         <li class="page-item">
           <a class="page-link">
             4
@@ -740,6 +744,7 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
             1
           </a>
         </li>
+        <!---->
         <li class="page-item">
           <a class="page-link">
             2
@@ -750,6 +755,7 @@ exports[`TableComponent clicking a link in the pagination will rerender the tabl
             3
           </a>
         </li>
+        <!---->
         <li class="page-item">
           <a class="page-link">
             4

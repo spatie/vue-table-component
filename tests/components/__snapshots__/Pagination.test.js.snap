@@ -20,6 +20,8 @@ exports[`Pagination can render large pagination 1`] = `
           </i>
         </a>
       </li>
+      <!---->
+      <!---->
       <li class="page-item">
         <a class="page-link">
           1
@@ -40,15 +42,10 @@ exports[`Pagination can render large pagination 1`] = `
           4
         </a>
       </li>
-      <li class="page-item">
-        <a class="page-link">
-          5
-        </a>
-      </li>
-      <li class="page-item disabled">
-        <a class="page-link">
-          ...
-        </a>
+      <li>
+        <span class="pagination-ellipsis">
+          …
+        </span>
       </li>
       <li class="page-item">
         <a class="page-link">
@@ -85,11 +82,13 @@ exports[`Pagination can set the active page 1`] = `
           1
         </a>
       </li>
+      <!---->
       <li class="page-item active">
         <a class="page-link">
           2
         </a>
       </li>
+      <!---->
       <li class="page-item">
         <a class="page-link">
           3
@@ -133,11 +132,13 @@ exports[`Pagination will render links when there is more than one page 1`] = `
           1
         </a>
       </li>
+      <!---->
       <li class="page-item">
         <a class="page-link">
           2
         </a>
       </li>
+      <!---->
       <li class="page-item">
         <a class="page-link">
           3
