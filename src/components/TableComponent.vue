@@ -24,7 +24,7 @@
                     <table-column-header
                             @click="changeSorting"
                             v-for="column in columns"
-                            :key="column.show"
+                            :key="column.show || column.show"
                             :sort="sort"
                             :column="column"
                     ></table-column-header>
@@ -279,8 +279,8 @@
             },
 
             changeSorting(column) {
-                if (this.sort.fieldName !== column.show) {
-                    this.sort.fieldName = column.show;
+                if (this.sort.fieldName !== (column.sortAs || column.show)) {
+                    this.sort.fieldName = (column.sortAs || column.show);
                     this.sort.order = 'asc';
                 } else {
                     this.sort.order = (this.sort.order === 'asc' ? 'desc' : 'asc');
@@ -294,7 +294,7 @@
             },
 
             getColumn(columnName) {
-                return this.columns.find(column => column.show === columnName);
+                return this.columns.find(column => (column.show === columnName || column.sortAs === columnName));
             },
 
             saveState() {

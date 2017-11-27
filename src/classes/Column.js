@@ -4,7 +4,7 @@ export default class Column {
     constructor(columnComponent) {
         const properties = pick(columnComponent, [
             'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable',
-            'filterOn', 'hidden', 'formatter', 'cellClass', 'headerClass',
+            'filterOn', 'hidden', 'formatter', 'cellClass', 'headerClass', 'sortAs',
         ]);
 
         for (const property in properties) {
@@ -30,7 +30,7 @@ export default class Column {
     getSortPredicate(sortOrder, allColumns) {
         const sortFieldName = this.getSortFieldName();
 
-        const sortColumn = allColumns.find(column => column.show === sortFieldName);
+        const sortColumn = allColumns.find(column => (column.sortAs === sortFieldName || column.show === sortFieldName));
 
         const dataType = sortColumn.dataType;
 
@@ -61,6 +61,6 @@ export default class Column {
     }
 
     getSortFieldName() {
-        return this.sortBy || this.show;
+        return this.sortBy || this.sortAs || this.show;
     }
 }

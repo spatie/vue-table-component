@@ -17,6 +17,7 @@
 
             sortable: { default: true, type: Boolean },
             sortBy: { default: null },
+            sortAs: { default: null },
 
             filterable: { default: true, type: Boolean },
             filterOn: { default: null },

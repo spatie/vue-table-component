@@ -12,7 +12,7 @@ export default class Row {
     }
 
     getColumn(columnName) {
-        return this.columns.find(column => column.show === columnName);
+        return this.columns.find(column => (column.show === columnName || column.sortAs === columnName));
     }
 
     getFilterableValue(columnName) {
