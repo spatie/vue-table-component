@@ -13,7 +13,7 @@ export function get(object, path) {
         return object;
     }
 
-    const [pathHead, pathTail] = path.split('.', 2);;
+    const [pathHead, pathTail] = path.split(/\.(.+)/);
 
     return get(object[pathHead], pathTail);
 }
