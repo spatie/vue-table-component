@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file.
 
+## 1.8.1 - 2018-01-02
+- Fixed column contents with properties retrieved with dot notation
+
 ## 1.8.0 - 2017-11-15
 - Added a per-row click listener `<table-component @rowClick="handle">`
 - Removed lodash dependency for a leaner build size
