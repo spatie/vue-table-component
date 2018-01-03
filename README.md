@@ -72,6 +72,10 @@ import TableComponent from 'vue-table-component';
 Vue.use(TableComponent);
 ```
 
+## Browser Support
+
+`vue-table-component` has the same browser support as Vue (see https://github.com/vuejs/vue). However, you might need to polyfill the [`Array.prototype.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#Polyfill) method for IE support.
+
 ## Usage
 
 Here's a simple example on how to use the component.
@@ -156,7 +160,7 @@ The component can fetch data in an asynchronous manner. The most common use case
 
 To use the feature you should pass a function to the `data` prop. The function will receive an object with `filter`, `sort` and `page`. You can use these parameters to fetch the right data. The function should return an object with the following properties:
 
-- `data`: (required) the data that should be displayed in the table. 
+- `data`: (required) the data that should be displayed in the table.
 - `pagination`: (optional) this should be an object with keys `currentPage` and `totalPages`. If `totalPages` is higher than 1 pagination links will be displayed.
 
 Here's an example:
@@ -177,7 +181,7 @@ Here's an example:
         methods: {
             async fetchData({ page, filter, sort }) {
                 const response = await axios.get('/my-endpoint', { page });
-                
+
                 // An object that has a `data` and an optional `pagination` property
                 return response;
             }
@@ -264,7 +268,7 @@ A slot named `tfoot` is available and it receives all of the `rows` data to do c
 </table-component>
 ```
 
-OR  
+OR
 
 ```vue
 <template>
@@ -338,7 +342,7 @@ The Pagination component was inspired by [this lesson on Laracasts.com](https://
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie). 
+Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie).
 All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
 
 ## License
