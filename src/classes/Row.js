@@ -30,7 +30,7 @@ export default class Row {
 
         let value = this.getValue(columnName);
 
-        if (value === undefined) {
+        if (value === undefined || value === null) {
             return '';
         }
 
