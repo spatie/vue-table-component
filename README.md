@@ -26,7 +26,7 @@ Here's an example of how you can use it:
      <table-column show="songs" label="Songs" data-type="numeric"></table-column>
      <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
      <table-column label="" :sortable="false" :filterable="false">
-         <template scope="row">
+         <template slot-scope="row">
             <a :href="`#${row.firstName}`">Edit</a>
          </template>
      </table-column>
@@ -217,7 +217,7 @@ You can format values before they get displayed by using scoped slots. Here's a 
 >
 
      <table-column label="My custom column" :sortable="false" :filterable="false">
-         <template scope="row">
+         <template slot-scope="row">
             {{ row.firstName }} wrote {{ row.songs }} songs.
          </template>
      </table-column>
@@ -257,7 +257,7 @@ A slot named `tfoot` is available and it receives all of the `rows` data to do c
     :data="[{ firstName: 'John', songs: 72 },{ firstName: 'Paul', songs: 70 }]">
     <table-column show="firstName" label="First name"></table-column>
     <table-column show="songs" label="Songs" data-type="numeric"></table-column>
-    <template slot="tfoot" scope="{ rows }">
+    <template slot="tfoot" slot-scope="{ rows }">
         <tr>
             <th>Total Songs:</th>
             <th>{{ rows.reduce((sum, value) => { return sum + value.data.songs; }, 0) }}</th>
