@@ -1,5 +1,6 @@
 import Vue from 'vue/dist/vue.js';
 import simulant from 'simulant';
+import TableComponent from '../../src/';
 
 describe('TableComponent', () => {
     beforeEach(() => {
@@ -173,6 +174,25 @@ describe('TableComponent', () => {
         table.filter = 'this returns nothing';
 
         await Vue.nextTick();
+
+        expect(document.body.innerHTML).toMatchSnapshot();
+    });
+
+    it('can display a custom message from global settings for no matching results', async () => {
+        TableComponent.settings({
+            filterNoResults: 'There are no matching results',
+        });
+
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="[]">
+                    <table-column show="firstName" label="First name"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        await createVm();
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });

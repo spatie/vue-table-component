@@ -171,6 +171,53 @@ exports[`TableComponent can add extra classes to the table, the cells and the he
 
 `;
 
+exports[`TableComponent can display a custom message from global settings for no matching results 1`] = `
+
+<div id="app">
+  <div class="table-component">
+    <div class="table-component__filter">
+      <input type="text"
+             placeholder="Filter table…"
+             class="table-component__filter__field"
+      >
+      <!---->
+    </div>
+    <div class="table-component__table-wrapper">
+      <table class="table-component__table">
+        <caption role="alert"
+                 aria-live="polite"
+                 class="table-component__table__caption"
+        >
+          Table not sorted
+        </caption>
+        <thead class="table-component__table__head">
+          <tr>
+            <th role="columnheader"
+                aria-sort="none"
+                class="table-component__th table-component__th--sort"
+            >
+              First name
+            </th>
+          </tr>
+        </thead>
+        <tbody class="table-component__table__body">
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+    <div class="table-component__message">
+      There are no matching results
+    </div>
+    <div style="display: none;">
+      <!---->
+    </div>
+    <!---->
+  </div>
+</div>
+
+`;
+
 exports[`TableComponent can display a custom message when filtering results in no results 1`] = `
 
 <div id="app">
