@@ -113,6 +113,7 @@ You can pass these props to `table-component`:
 - `table-class`: the passed value will be added to the `class` attribute of the rendered table
 - `thead-class`: the passed value will be added to the `class` attribute of the rendered table head.
 - `tbody-class`: the passed value will be added to the `class` attribute of the rendered table body.
+- `row-class`: the passed value will be added to the `class` attribute of each row. You can use a string or a function. The function takes one argument (`row`). Use a function to for example highlight rows based on some logic.
 - `filter-placeholder`: the text used as a placeholder in the filter field
 - `filter-input-class`: additional classes that you will be applied to the filter text input
 - `filter-no-results`: the text displayed when the filtering returns no results
@@ -152,6 +153,27 @@ TableComponent.settings({
     filterPlaceholder: 'Filter table…',
     filterNoResults: 'There are no matching rows',
 });
+```
+
+### Using a function in `row-class`
+
+If you want to add a class to each row based on some logic, you can pass a function into the `row-class` parameter of `<table-component>`.
+
+```html
+<table-component :data="data" :row-class="highlight"></table-component>
+```
+```javascript
+data() {
+	return {
+		highlightedRow: undefined,  // update this using click, checkbox, or whatever
+	};
+},
+methods: {
+	highlight(row) {
+		if (row.data) return this.highlightedRow === row.data.vueTableComponentInternalRowId ? 'highlight' : '';
+		return '';
+	},
+}
 ```
 
 ## Retrieving data asynchronously
