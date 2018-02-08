@@ -2,6 +2,11 @@
 
 All notable changes to `vue-table-component` will be documented in this file.
 
+## 1.9.0 - 2018-02-08
+- Better pagination component
+- Fixed global settings that weren't always applies
+- Fixed sorting with null values
+
 ## 1.8.1 - 2018-01-02
 - Fixed column contents with properties retrieved with dot notation
 
