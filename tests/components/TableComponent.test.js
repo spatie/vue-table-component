@@ -185,14 +185,18 @@ describe('TableComponent', () => {
 
         document.body.innerHTML = `
             <div id="app">
-                <table-component
-                    :data="[]">
+                <table-component :data="[]">
                     <table-column show="firstName" label="First name"></table-column>
                 </table-component>
             </div>
         `;
 
         await createVm();
+
+        // Revert for next tests (needs refactoring...)
+        TableComponent.settings({
+            filterNoResults: 'There are no matching rows',
+        });
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });

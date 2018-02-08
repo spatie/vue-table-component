@@ -87,12 +87,12 @@
             cacheKey: { default: null },
             cacheLifetime: { default: 5 },
 
-            tableClass: { default: settings.tableClass },
-            theadClass: { default: settings.theadClass },
-            tbodyClass: { default: settings.tbodyClass },
-            filterInputClass: { default: settings.filterInputClass },
-            filterPlaceholder: { default: settings.filterPlaceholder },
-            filterNoResults: { default: settings.filterNoResults },
+            tableClass: { default: () => settings.tableClass },
+            theadClass: { default: () => settings.theadClass },
+            tbodyClass: { default: () => settings.tbodyClass },
+            filterInputClass: { default: () => settings.filterInputClass },
+            filterPlaceholder: { default: () => settings.filterPlaceholder },
+            filterNoResults: { default: () => settings.filterNoResults },
         },
 
         data: () => ({
