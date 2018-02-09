@@ -154,6 +154,21 @@ TableComponent.settings({
 });
 ```
 
+You can also provide the custom settings on Vue plugin install hook:
+
+```js
+import Vue from 'vue';
+import TableComponent from 'vue-table-component';
+
+Vue.use(TableComponent, {
+    tableClass: '',
+    theadClass: '',
+    tbodyClass: '',
+    filterPlaceholder: 'Filter table…',
+    filterNoResults: 'There are no matching rows',
+});
+```
+
 ## Retrieving data asynchronously
 
 The component can fetch data in an asynchronous manner. The most common use case for this is fetching data from a server.
