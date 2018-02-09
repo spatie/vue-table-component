@@ -7,6 +7,12 @@ describe('TableComponent', () => {
         localStorage.clear();
     });
 
+    afterEach(() => {
+        TableComponent.settings({
+            filterNoResults: 'There are no matching rows',
+        });
+    });
+
     it('can mount', async () => {
         document.body.innerHTML = `
             <div id="app">
@@ -192,11 +198,6 @@ describe('TableComponent', () => {
         `;
 
         await createVm();
-
-        // Revert for next tests (needs refactoring...)
-        TableComponent.settings({
-            filterNoResults: 'There are no matching rows',
-        });
 
         expect(document.body.innerHTML).toMatchSnapshot();
     });
