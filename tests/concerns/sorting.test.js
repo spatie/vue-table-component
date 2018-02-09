@@ -36,7 +36,7 @@ describe('Sorting', () => {
         expect(table.displayedRows[3].data.firstName).toBe('Ringo');
     });
 
-    it('can sort the data with by a column in a different order', async () => {
+    it('can sort the data by a column in a different order', async () => {
         setDocumentInnerHtml({ sortBy: 'songs', sortOrder: 'desc' });
 
         const table = await createVm();
@@ -89,6 +89,32 @@ describe('Sorting', () => {
                             { firstName: 'Paul', songs: 20 },
                             { firstName: 'George', songs: 420 },
                             { firstName: 'Ringo', songs: 210 }]"
+                >
+                    <table-column show="firstName" label="First name" sort-by="songs"></table-column>
+                    <table-column show="lastName" label="Last name"></table-column>
+                    <table-column show="songs" data-type="numeric" label="Songs" sort-by="songs"></table-column>
+                </table-component>
+            </div>
+        `;
+
+        const table = await createVm();
+
+        const lastNameColumnHeader = document.getElementsByTagName('th')[1];
+        await simulant.fire(lastNameColumnHeader, 'click');
+
+        expect(table.sort.fieldName).toBe('lastName');
+    });
+
+    it('wont break if a sortable column has null data', async () => {
+        document.body.innerHTML = `
+            <div id="app">
+                <table-component
+                    :data="[{ firstName: 'John', lastName: null, songs: 30 },
+                            { firstName: 'Paul', lastName: null, songs: 20 },
+                            { firstName: 'George', lastName: null, songs: 420 },
+                            { firstName: 'Ringo', lastName: null, songs: 210 }]"
+                    sort-by="lastName"
+                    sort-order="desc"
                 >
                     <table-column show="firstName" label="First name" sort-by="songs"></table-column>
                     <table-column show="lastName" label="Last name"></table-column>
