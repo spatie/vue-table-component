@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/spatie/vue-table-component/master.svg?style=flat-square)](https://travis-ci.org/spatie/vue-table-component)
 [![npm](https://img.shields.io/npm/dt/vue-table-component.svg?style=flat-square)](https://www.npmjs.com/package/vue-table-component)
 
-This repo contains a Vue component that can render a filterable and sortable table. It aims to be very lightweight and easy to use. It has support for [retrieving data asynchounously and pagination](#retrieving-data-asynchronously).
+This repo contains a Vue component that can render a filterable and sortable table. It aims to be very lightweight and easy to use. It has support for [retrieving data asynchronously and pagination](#retrieving-data-asynchronously).
 
 Here's an example of how you can use it:
 
@@ -53,7 +53,7 @@ or npm:
 npm install vue-table-component --save
 ```
 
-Next you must register the component. The most common use case is to do that globally.
+Next, you must register the component. The most common use case is to do that globally.
 
 ```js
 //in your app.js or similar file
