@@ -133,27 +133,28 @@
         </h1>
         <table-component
             :data="[
-            { firstName: 'John', lastName: 'Lennon', instrument: 'Guitar', birthday: '04/10/1940', songs: 72 },
-            { firstName: 'Paul', lastName: 'McCartney', instrument: 'Bass', birthday: '18/06/1942', songs: 70 },
-            { firstName: 'George', lastName: 'Harrison', instrument: 'Guitar', birthday: '25/02/1943', songs: 22 },
-            { firstName: 'Ringo', lastName: 'Starr', instrument: 'Drums', birthday: '07/07/1940', songs: 2 },
+            { key: 1, firstName: 'John', lastName: 'Lennon', instrument: 'Guitar', birthday: '04/10/1940', songs: 72 },
+            { key: 2, firstName: 'Paul', lastName: 'McCartney', instrument: 'Bass', birthday: '18/06/1942', songs: 70 },
+            { key: 3, firstName: 'George', lastName: 'Harrison', instrument: 'Guitar', birthday: '25/02/1943', songs: 22 },
+            { key: 4, firstName: 'Ringo', lastName: 'Starr', instrument: 'Drums', birthday: '07/07/1940', songs: 2 },
             ]"
             sort-by="songs"
             sort-order="asc"
             >
+            <table-column show="key" label="id" :hidden=true></table-column>
             <table-column show="firstName" label="First name"></table-column>
             <table-column show="lastName" label="Last name"></table-column>
             <table-column show="instrument" label="Instrument"></table-column>
             <table-column show="songs" label="Songs" data-type="numeric"></table-column>
             <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
             <table-column :sortable="false" :filterable="false">
-                <template scope="artist">
+                <template slot-scope="artist">
                     <a :href="'#' + artist.firstName.toLowerCase()">
                         Edit
                     </a>
                 </template>
             </table-column>
-            <template slot="tfoot" scope="{ rows }">
+            <template slot="tfoot" slot-scope="{ rows }">
                 <tr>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
