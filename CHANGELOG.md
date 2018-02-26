@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file.
 
+## 1.9.1 - 2018-02-26
+- Better IE support
+
 ## 1.9.0 - 2018-02-08
 - Better pagination component
 - Fixed global settings that weren't always applies
