@@ -59,9 +59,7 @@
             },
 
             hasLastEllipsis() {
-                return (this.pagination.currentPage < this.pagination.totalPages - 2 &&
-                    this.pagination.currentPage <= this.pagination.totalPages - 3) &&
-                    this.pagination.totalPages >= 10
+                return this.pagination.currentPage <= this.pagination.totalPages - 3 && this.pagination.totalPages >= 10
             },
 
             shouldShowPagination() {
