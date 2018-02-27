@@ -11,12 +11,11 @@
                 <a class="page-link" @click="pageClicked(1)">1</a>
             </li>
             <li v-if="hasFirstEllipsis"><span class="pagination-ellipsis">&hellip;</span></li>
-            <li class="page-item" :class="{ active: isActive(page), disabled: page === '...' }" v-for="page in pages">
+            <li class="page-item" :class="{ active: isActive(page) }" v-for="page in pages" :key="page.id">
                 <a class="page-link" @click="pageClicked(page)">{{ page }}</a>
             </li>
             <li v-if="hasLastEllipsis"><span class="pagination-ellipsis">&hellip;</span></li>
-            <li v-if="hasLast" class="page-item"
-                :class="{ active: isActive(this.pagination.totalPages) }">
+            <li v-if="hasLast" class="page-item" :class="{ active: isActive(pagination.totalPages) }">
                 <a class="page-link" @click="pageClicked(pagination.totalPages)">{{pagination.totalPages}}</a>
             </li>
             <li>
@@ -84,8 +83,7 @@
             },
 
             pageClicked(page) {
-                if (page === '...' ||
-                    page === this.pagination.currentPage ||
+                if (page === this.pagination.currentPage ||
                     page > this.pagination.totalPages ||
                     page < 1) {
                     return;
