@@ -147,13 +147,13 @@
             <table-column show="songs" label="Songs" data-type="numeric"></table-column>
             <table-column show="birthday" label="Birthday" data-type="date:DD/MM/YYYY"></table-column>
             <table-column :sortable="false" :filterable="false">
-                <template scope="artist">
+                <template slot-scope="artist">
                     <a :href="'#' + artist.firstName.toLowerCase()">
                         Edit
                     </a>
                 </template>
             </table-column>
-            <template slot="tfoot" scope="{ rows }">
+            <template slot="tfoot" slot-scope="{ rows }">
                 <tr>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
