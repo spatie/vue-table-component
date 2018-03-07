@@ -11,7 +11,7 @@
                 <a class="page-link" @click="pageClicked(1)">1</a>
             </li>
             <li v-if="hasFirstEllipsis"><span class="pagination-ellipsis">&hellip;</span></li>
-            <li class="page-item" :class="{ active: isActive(page), disabled: page === '...' }" v-for="page in pages">
+            <li class="page-item" :class="{ active: isActive(page), disabled: page === '...' }" v-for="page in pages" :key="page">
                 <a class="page-link" @click="pageClicked(page)">{{ page }}</a>
             </li>
             <li v-if="hasLastEllipsis"><span class="pagination-ellipsis">&hellip;</span></li>
