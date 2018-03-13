@@ -1,5 +1,5 @@
 <template>
-    <tr @click="$emit('row-click', row)">
+    <tr @click="$emit('rowClick', row)">
         <table-cell
             v-for="column in visibleColumns"
             :row="row"

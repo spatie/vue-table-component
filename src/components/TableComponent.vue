@@ -36,7 +36,7 @@
                         :key="row.vueTableComponentInternalRowId"
                         :row="row"
                         :columns="columns"
-						@row-click="emitRowClick"
+						@rowClick="emitRowClick"
                 ></table-row>
                 </tbody>
                 <tfoot>
@@ -315,6 +315,7 @@
             },
 
 			emitRowClick(row) {
+				this.$emit('rowClick', row);
 				this.$emit('row-click', row);
 			}
         },
