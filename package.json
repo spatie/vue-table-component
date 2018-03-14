@@ -26,8 +26,7 @@
   },
   "homepage": "https://github.com/spatie/vue-table-component",
   "peerDependencies": {
-    "moment": "^2.18.1",
-    "vue": "^2.5.0"
+    "vue": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -42,9 +41,8 @@
     "jest": "^19.0.0",
     "jest-serializer-html": "^4.0.0",
     "jest-vue-preprocessor": "^0.2.0",
-    "moment": "^2.18.1",
     "simulant": "^0.2.2",
-    "vue": "^2.5.0",
+    "vue": "^2.3.0",
     "vue-loader": "^12.0.3",
     "vue-template-compiler": "^2.3.0",
     "webpack": "^2.3.3",
@@ -67,5 +65,8 @@
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
     }
+  },
+  "dependencies": {
+    "moment": "^2.21.0"
   }
 }
