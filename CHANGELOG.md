@@ -2,6 +2,9 @@
 
 All notable changes to `vue-table-component` will be documented in this file.
 
+## 1.9.2 - 2018-03-14
+- added `row-click` event
+
 ## 1.9.1 - 2018-02-26
 - Better IE support
 
