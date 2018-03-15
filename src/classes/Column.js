@@ -16,7 +16,7 @@ export default class Column {
 
 
     isFilterable() {
-        return this.filterable;
+        return this.filterable && this.show !== '$index';
     }
 
     getFilterFieldName() {
@@ -24,7 +24,7 @@ export default class Column {
     }
 
     isSortable() {
-        return this.sortable;
+        return this.sortable && this.show !== '$index';
     }
 
     getSortPredicate(sortOrder, allColumns) {

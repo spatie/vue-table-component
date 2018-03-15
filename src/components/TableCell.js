@@ -1,10 +1,12 @@
 export default {
     functional: true,
 
-    props: ['column', 'row'],
+    props: ['column', 'row', 'index'],
 
     render(createElement, { props }) {
         const data = {};
+
+		props.row.data.$index = props.index;
 
         if (props.column.cellClass) {
             data.class = props.column.cellClass;
