@@ -32,7 +32,7 @@
                     return false;
                 }
 
-                if (this.column.show !== this.sort.fieldName) {
+                if ((this.column.sortAs || this.column.show) !== this.sort.fieldName) {
                     return 'none';
                 }
 
@@ -44,7 +44,7 @@
                     return classList('table-component__th', this.column.headerClass);
                 }
 
-                if (this.column.show !== this.sort.fieldName) {
+                if ((this.column.sortAs || this.column.show) !== this.sort.fieldName) {
                     return classList('table-component__th table-component__th--sort', this.column.headerClass);
                 }
 
