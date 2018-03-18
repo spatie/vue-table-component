@@ -3,6 +3,7 @@
         <table-cell
             v-for="column in visibleColumns"
             :row="row"
+            :index="index"
             :column="column"
             :key="column.id"
         ></table-cell>
@@ -13,7 +14,7 @@
     import TableCell from './TableCell';
 
     export default {
-        props: ['columns', 'row'],
+        props: ['columns', 'row', 'index'],
 
         components: {
             TableCell,
