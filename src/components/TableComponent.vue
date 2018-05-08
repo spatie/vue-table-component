@@ -86,6 +86,8 @@
 
             cacheKey: { default: null },
             cacheLifetime: { default: 5 },
+            
+            minChars: { default: 1 },
 
             tableClass: { default: () => settings.tableClass },
             theadClass: { default: () => settings.theadClass },
@@ -138,8 +140,8 @@
         },
 
         watch: {
-            filter() {
-                if (!this.usesLocalData) {
+            filter(value) {
+                if (!this.usesLocalData && value.length >= this.minChars) {
                     this.mapDataToRows();
                 }
 
