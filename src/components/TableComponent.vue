@@ -140,6 +140,10 @@
         watch: {
             filter() {
                 if (!this.usesLocalData) {
+                    if(this.pagination) {
+                        this.pagination.currentPage = 1;
+                    }
+                    
                     this.mapDataToRows();
                 }
 
