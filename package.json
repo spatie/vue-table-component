@@ -1,16 +1,15 @@
 {
   "name": "vue-table-component",
-  "version": "1.9.1",
+  "version": "2.0.0-alpha",
   "description": "A straightforward Vue component to filter and sort tables",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config docs/webpack.config.js",
-    "demo": "NODE_ENV=production webpack --config docs/webpack.config.js",
-    "build": "rm -rf dist && NODE_ENV=production webpack",
-    "lint": "eslint src __tests__ --ext .js,.vue --fix; exit 0",
-    "prepublish": "npm run test; npm run build",
-    "test": "jest"
+    "dev": "babel src --watch --out-dir dist",
+    "build": "babel src --out-dir dist",
+    "prepublish": "npm run build",
+    "lint": "eslint src --fix",
+    "format": "prettier --write 'src/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -26,46 +25,23 @@
   },
   "homepage": "https://github.com/spatie/vue-table-component",
   "peerDependencies": {
-    "moment": "^2.18.1",
     "vue": "^2.5.0"
   },
   "devDependencies": {
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
-    "css-loader": "^0.28.1",
-    "diffable-html": "^2.1.0",
-    "eslint": "^4.0.0",
-    "eslint-config-spatie": "^2.0.0",
-    "jest": "^19.0.0",
-    "jest-serializer-html": "^4.0.0",
-    "jest-vue-preprocessor": "^0.2.0",
-    "moment": "^2.18.1",
-    "simulant": "^0.2.2",
-    "vue": "^2.5.0",
-    "vue-loader": "^12.0.3",
-    "vue-template-compiler": "^2.3.0",
-    "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2",
-    "webpack-merge": "^4.1.0"
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.0",
+    "eslint-config-prettier": "^2.9.0",
+    "prettier": "^1.13.0",
+    "vue": "^2.5.0"
   },
-  "jest": {
-    "testRegex": "test.js$",
-    "moduleFileExtensions": [
-      "js",
-      "vue"
-    ],
-    "setupFiles": [
-      "<rootDir>/tests/bootstrap"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/tests/html-serializer"
-    ],
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
-    }
+  "dependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
