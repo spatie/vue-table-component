@@ -1,17 +1,18 @@
 {
-  "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["last 2 versions", "safari >= 7"],
-        "uglify": true
-      }
-    }]
-  ],
-  "plugins": [
-    "transform-object-rest-spread",
-    ["transform-runtime", {
-      "polyfill": true,
-      "regenerator": true
-    }]
-  ]
+    "presets": [
+        ["env", {
+            "targets": {
+                "browsers": ["last 2 versions", "safari >= 7"],
+                "uglify": true
+            }
+        }]
+    ],
+    "plugins": [
+        "babel-plugin-transform-vue-jsx",
+        "transform-object-rest-spread",
+        ["transform-runtime", {
+            "polyfill": true,
+            "regenerator": true
+        }]
+    ]
 }
