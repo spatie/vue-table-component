@@ -1,5 +1,5 @@
-import Body from './Body';
-import Head from './Head';
+import Tbody from './Tbody';
+import Thead from './Thead';
 import { createCompareFunction, get } from '../util';
 
 function createColumnAccessor(column) {
@@ -15,20 +15,28 @@ function createColumnAccessor(column) {
 }
 
 export default {
+    name: 'TableComponent',
+
     props: {
         data: { required: true },
         columns: {
             validator: columns => Array.isArray(columns) && columns.every(column => !!column.name),
         },
+        sortable: { default: true },
         sortBy: {},
         sortOrder: {},
+        filterable: { default: true },
+        filterQuery: {},
     },
 
     data() {
         return {
-            state: {
-                sortBy: this.sortBy || null,
-                sortOrder: this.sortOrder || 'asc',
+            sortState: {
+                column: this.sortBy || null,
+                order: this.sortOrder || 'asc',
+            },
+            filterState: {
+                query: this.filterQuery || '',
             },
         };
     },
@@ -42,20 +50,17 @@ export default {
         },
 
         compareFunction() {
-            if (!this.state.sortBy) {
+            if (!this.sortState.column) {
                 return undefined;
             }
 
-            const column = this.columns.find(column => column.name === this.state.sortBy);
+            const column = this.columns.find(column => column.name === this.sortState.column);
 
             if (!column) {
-                throw new Error(`Can't sort by unknown column "${this.state.sortBy}"`);
+                throw new Error(`Can't sort by unknown column "${this.sortState.column}"`);
             }
 
-            return (
-                column.compareFunction ||
-                createCompareFunction(this.state.sortBy, this.state.sortOrder)
-            );
+            return column.compareFunction || createCompareFunction(this.sortState);
         },
 
         rows() {
@@ -66,25 +71,17 @@ export default {
         },
     },
 
-    methods: {
-        sort(sortBy, sortOrder) {
-            this.state.sortBy = sortBy;
-            this.state.sortOrder = sortOrder;
-        },
-    },
-
     render() {
         return (
             <table>
-                <Head
+                <Thead
                     renderTh={this.$scopedSlots.th}
                     renderThead={this.$scopedSlots.thead}
                     columns={this.columnsWithSanitizedSettings}
-                    sort={this.sort}
-                    sortBy={this.state.sortBy}
-                    sortOrder={this.state.sortOrder}
+                    sortState={this.sortState}
+                    onSort={sortState => (this.sortState = sortState)}
                 />
-                <Body rows={this.rows} columns={this.columnsWithSanitizedSettings} />
+                <Tbody rows={this.rows} columns={this.columnsWithSanitizedSettings} />
             </table>
         );
     },

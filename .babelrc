@@ -9,10 +9,6 @@
     ],
     "plugins": [
         "babel-plugin-transform-vue-jsx",
-        "transform-object-rest-spread",
-        ["transform-runtime", {
-            "polyfill": true,
-            "regenerator": true
-        }]
+        "transform-object-rest-spread"
     ]
 }

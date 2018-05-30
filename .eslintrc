@@ -1,17 +1,24 @@
 {
     "extends": [
         "eslint:recommended",
-        "plugin:vue/essential",
         "prettier"
     ],
     "parserOptions": {
-        "ecmaVersion": 2017
+        "ecmaVersion": 2017,
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        },
+        "sourceType": "module"
     },
+    "plugins": [
+        "react"
+    ],
     "env": {
         "browser": true,
         "node": true
     },
     "rules": {
-        "vue/html-indent": ["error", 4]
+        "react/jsx-uses-vars": 2
     }
 }

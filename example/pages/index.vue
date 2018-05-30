@@ -1,5 +1,5 @@
 <template>
-    <table-component
+    <TableComponent
         :data="members"
         :columns="[
             { name: 'firstName', label: 'First name' },
@@ -9,7 +9,8 @@
         ]"
         sort-by="lastName"
         sort-order="asc"
-    ></table-component>
+        filter=""
+    />
 </template>
 
 <script>

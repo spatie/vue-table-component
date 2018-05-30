@@ -1,4 +1,6 @@
 export default {
+    name: 'Tbody',
+
     props: {
         rows: { required: true, type: Array },
         columns: { required: true, type: Array },
