@@ -55,7 +55,7 @@ export default class Row {
         return this.columns
             .filter(column => column.isFilterable())
             .map(column => this.getFilterableValue(column.getFilterFieldName()))
-            .filter(filterableValue => filterableValue.indexOf(filter.toLowerCase()) >= 0)
+            .filter(filterableValue => filter.split('|').some(function(el) { return filterableValue.indexOf(el.toLowerCase()) >=0; }))
             .length;
     }
 }
