@@ -9,7 +9,6 @@
         ]"
         sort-by="lastName"
         sort-order="asc"
-        filter=""
     />
 </template>
 

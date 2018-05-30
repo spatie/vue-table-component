@@ -4,6 +4,7 @@
     },
     "dependencies": {
         "nuxt": "^1.4.0",
+        "vue": "^2.5.16",
         "vue-table-component": "2.*"
     }
 }
