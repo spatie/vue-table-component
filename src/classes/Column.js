@@ -2,6 +2,10 @@ import { pick } from '../helpers';
 
 export default class Column {
     constructor(columnComponent) {
+        if (columnComponent.$children[0] && columnComponent.$children[0].$options._componentTag === 'table-column') {
+            columnComponent = columnComponent.$children[0];
+        }
+
         const properties = pick(columnComponent, [
             'show', 'label', 'dataType', 'sortable', 'sortBy', 'filterable',
             'filterOn', 'hidden', 'formatter', 'cellClass', 'headerClass',
