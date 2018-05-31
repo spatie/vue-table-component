@@ -5,6 +5,14 @@
 [![Build Status](https://img.shields.io/travis/spatie/vue-table-component/master.svg?style=flat-square)](https://travis-ci.org/spatie/vue-table-component)
 [![npm](https://img.shields.io/npm/dt/vue-table-component.svg?style=flat-square)](https://www.npmjs.com/package/vue-table-component)
 
+---
+
+🚨 **WARNING: FEATURE FREEZE** 🚨
+
+Version 1 of this package has become very hard to maintain due to the way it's built up. We also have too many feature requests, which we can't all cater too. We're working on v2 of this package, and won't be adding any new features or accepting feature PR's for v1.
+
+---
+
 This repo contains a Vue component that can render a filterable and sortable table. It aims to be very lightweight and easy to use. It has support for [retrieving data asynchronously and pagination](#retrieving-data-asynchronously).
 
 Here's an example of how you can use it:
