@@ -56,7 +56,9 @@ export default {
 
             return new Promise(resolve => {
                 window.setTimeout(() => {
-                    const filteredMembers = members.filter(member => member.instrument.indexOf(filterQuery) !== -1);
+                    const filteredMembers = members.filter(
+                        member => member.instrument.indexOf(filterQuery) !== -1
+                    );
 
                     resolve({ data: filteredMembers });
                 }, 400);

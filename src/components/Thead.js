@@ -15,30 +15,36 @@ export default {
         },
     },
 
-    computed: {
-        columnsWithState() {
-            return this.columns.map(column => ({
-                ...column,
-                isActiveSortColumn: column.name === this.sortState.column,
-                sortOrder: this.sortState.order,
-            }));
-        },
-    },
-
     render() {
+        const columnsWithState = this.columns.map(column => ({
+            ...column,
+            isActiveSortColumn: column.name === this.sortState.column,
+            sortOrder: this.sortState.order,
+            toggleSort: () => {
+                this.$emit('sort', {
+                    column: column.name,
+                    order: column.name === this.sortState.column && this.sortState.order === 'asc'
+                        ? 'desc'
+                        : 'asc',
+                });
+            },
+        }));
+
         if (this.renderThead) {
-            return this.renderThead(keyBy(this.columnsWithState, 'name'));
+            return this.renderThead({ columns: keyBy(columnsWithState, 'name') })[0];
         }
 
         return (
             <thead>
                 <tr>
-                    {this.columnsWithState.map(column => (
+                    {columnsWithState.map(column => (
                         <Th
                             column={column}
                             key={column.name}
                             renderTh={this.renderTh}
-                            onSort={e => this.$emit('sort', e)}
+                            onSort={() => {
+                                column.toggleSort();
+                            }}
                         />
                     ))}
                 </tr>

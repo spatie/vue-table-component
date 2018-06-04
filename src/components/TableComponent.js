@@ -26,7 +26,6 @@ export default {
             visibleRows: [],
             visibleRowCount: 0,
             totalRowCount: 0,
-            usesExternalDataSource: typeof this.data === 'function',
             sortState: {
                 column: this.sortBy || null,
                 order: this.sortOrder || 'asc',
@@ -58,6 +57,10 @@ export default {
     },
 
     computed: {
+        usesExternalDataSource() {
+            return typeof this.data === 'function';
+        },
+
         compareFunction() {
             if (!this.sortState.column) {
                 return undefined;
@@ -70,6 +73,13 @@ export default {
             }
 
             return column.compareFunction || createCompareFunction(this.sortState);
+        },
+
+        renderTds() {
+            return this.columns.reduce((renderTds, column) => {
+                renderTds[column.name] = this.$scopedSlots[column] || this.$scopedSlots.td;
+                return renderTds;
+            }, {});
         },
     },
 
@@ -131,12 +141,14 @@ export default {
                         renderThead={this.$scopedSlots.thead}
                         columns={this.columns}
                         sortState={this.sortState}
-                        onSort={sortState => (this.sortState = sortState)}
+                        onSort={sortState => {
+                            this.sortState = sortState;
+                        }}
                     />
                     <Tbody
                         rows={this.visibleRows}
                         itemKey={this.itemKey}
-                        renderTds={this.$scopedSlots}
+                        renderTds={this.renderTds}
                         columns={this.columns}
                     />
                     <Tfoot

@@ -22,12 +22,8 @@ export default {
     },
 
     render() {
-        return (
-            <th onClick={this.toggleSort}>
-                {this.renderTh
-                    ? this.renderTh({ ...this.column, toggleSort: this.toggleSort })
-                    : this.column.label}
-            </th>
-        );
+        return this.renderTh
+            ? this.renderTh({ column: this.column, toggleSort: this.toggleSort })[0]
+            : <th onClick={this.toggleSort}>{this.column.label}</th>;
     },
 };

@@ -15,5 +15,16 @@
     "plugins": [
         "babel-plugin-transform-vue-jsx",
         "babel-plugin-transform-object-rest-spread"
-    ]
+    ],
+    "env": {
+        "test": {
+            "presets": [
+                ["env", {
+                    "targets": {
+                        "node": "current"
+                    }
+                }]
+            ]
+        }
+    }
 }

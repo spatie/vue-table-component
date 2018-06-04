@@ -22,5 +22,5 @@ export default {
                 Displaying {this.visibleRowCount} of {this.totalRowCount} results.
             </tfoot>
         );
-    }
-}
+    },
+};

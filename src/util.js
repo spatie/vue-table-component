@@ -46,13 +46,24 @@ export function defaultFilterCallback({ row, query, columns }) {
     );
 }
 
-export function get(object, key) {
-    return object[key];
+export function get(object, path) {
+    if (!path) {
+        return object;
+    }
+
+    if (object === null || typeof object !== 'object') {
+        return object;
+    }
+
+    const [pathHead, pathTail] = path.split(/\.(.+)/);
+
+    return get(object[pathHead], pathTail);
 }
 
 export function keyBy(collection, key) {
     return collection.reduce((keyedCollection, item) => {
         keyedCollection[get(item, key)] = item;
+        return keyedCollection;
     }, {});
 }
 

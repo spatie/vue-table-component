@@ -1,14 +1,4 @@
-function createColumnAccessor(column) {
-    if (column.accessor && typeof column.accessor === 'string') {
-        return row => get(row, column.accessor);
-    }
-
-    if (column.accessor && typeof column.accessor === 'function') {
-        return row => column.accessor(row);
-    }
-
-    return row => row[column.name];
-}
+import { get } from '../util';
 
 export default {
     name: 'Td',
@@ -21,7 +11,7 @@ export default {
 
     render() {
         if (this.renderTd) {
-            return <td>{this.renderTd(this.row)}</td>;
+            return <td>{this.renderTd({ row: this.row, column: this.column })}</td>;
         }
 
         if (this.column.accessor && typeof this.column.accessor === 'string') {
