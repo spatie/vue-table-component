@@ -1,24 +1,21 @@
-import Tbody from './Tbody';
-import Tfoot from './Tfoot';
-import Thead from './Thead';
-import { createCompareFunction, defaultFilterCallback, debounce } from '../util';
+import { defaultSortCallback, defaultFilterCallback, debounce } from '../util';
+
+export const stateProvider = Symbol();
 
 export default {
     name: 'TableComponent',
 
     props: {
         data: { required: true, type: [Array, Function] },
-        columns: {
-            validator: columns => Array.isArray(columns) && columns.every(column => !!column.name),
-        },
+        debounceMs: { default: 0 },
         itemKey: { default: 'id' },
-        sortable: { default: true },
+
         sortBy: {},
         sortOrder: {},
-        filterable: { default: true },
+        sortCallback: { default: defaultSortCallback, type: Function },
+
         filterQuery: {},
         filterCallback: { default: defaultFilterCallback, type: Function },
-        debounceMs: { default: 200 },
     },
 
     data() {
@@ -26,78 +23,38 @@ export default {
             visibleRows: [],
             visibleRowCount: 0,
             totalRowCount: 0,
-            sortState: {
-                column: this.sortBy || null,
-                order: this.sortOrder || 'asc',
-            },
-            filterState: {
-                query: this.filterQuery || '',
+
+            state: {
+                sortBy: this.sortBy || null,
+                sortOrder: this.sortOrder || 'asc',
+                filterQuery: this.filterQuery || ''
             },
         };
     },
 
-    created() {
-        const stateAttributes = ['sortState', 'filterState'];
-
-        if (this.usesExternalDataSource) {
-            const getVisibleRows = debounce(this.getVisibleRows, this.debounceMs);
-
-            getVisibleRows();
-
-            stateAttributes.forEach(attribute => {
-                this.$watch(attribute, getVisibleRows, { deep: true });
-            });
-        } else {
-            this.getVisibleRows();
-
-            stateAttributes.forEach(attribute => {
-                this.$watch(attribute, this.getVisibleRows, { deep: true });
-            });
+    provide() {
+        return {
+            [stateProvider]: this.state,
         }
     },
 
-    computed: {
-        usesExternalDataSource() {
-            return typeof this.data === 'function';
-        },
+    created() {
+        const getVisibleRows = typeof this.data === 'function'
+            ? this.getVisibleRowsFromDataSource
+            : this.getVisibleRowsFromLocalData;
 
-        compareFunction() {
-            if (!this.sortState.column) {
-                return undefined;
-            }
+        getVisibleRows();
 
-            const column = this.columns.find(column => column.name === this.sortState.column);
-
-            if (!column) {
-                throw new Error(`Can't sort by unknown column "${this.sortState.column}"`);
-            }
-
-            return column.compareFunction || createCompareFunction(this.sortState);
-        },
-
-        renderTds() {
-            return this.columns.reduce((renderTds, column) => {
-                renderTds[column.name] = this.$scopedSlots[column] || this.$scopedSlots.td;
-                return renderTds;
-            }, {});
-        },
+        this.$watch(
+            'state',
+            debounce(getVisibleRows, this.debounceMs),
+            { deep: true }
+        );
     },
 
     methods: {
-        getVisibleRows() {
-            if (this.usesExternalDataSource) {
-                this.getVisibleRowsFromDataSource();
-            } else {
-                this.getVisibleRowsFromLocalData();
-            }
-        },
-
         getVisibleRowsFromDataSource() {
-            this.data({
-                sortBy: this.sortState.column,
-                sortOrder: this.sortState.order,
-                filterQuery: this.filterState.query,
-            }).then(response => {
+            this.data(this.state).then(response => {
                 this.visibleRows = response.data;
                 this.visibleRowCount = response.data.length;
                 this.totalRowCount = response.data.length;
@@ -107,17 +64,11 @@ export default {
         getVisibleRowsFromLocalData() {
             let data = [...this.data];
 
-            if (this.filterable && this.filterState.query) {
-                data = data.filter(row => {
-                    return this.filterCallback({
-                        row,
-                        columns: this.columns,
-                        query: this.filterState.query,
-                    });
-                });
+            if (this.state.filterQuery) {
+                data = data.filter(this.filterCallback(this.state));
             }
 
-            data.sort(this.compareFunction);
+            data.sort(this.sortCallback(this.state));
 
             this.visibleRows = data;
             this.visibleRowCount = data.length;
@@ -126,37 +77,51 @@ export default {
     },
 
     render() {
+        const renderPrepend = this.$scopedSlots.prepend
+            ? this.$scopedSlots.prepend
+            : () => this.$slots.prepend;
+
+        const renderAppend = this.$scopedSlots.append
+            ? this.$scopedSlots.append
+            : () => this.$slots.append;
+
+        const renderThead = this.$scopedSlots.thead
+            ? this.$scopedSlots.thead
+            : () => this.$slots.thead;
+
+        const renderTfoot = this.$scopedSlots.tfoot
+            ? this.$scopedSlots.tfoot
+            : () => this.$slots.tfoot;
+
         return (
             <div>
-                <div>
-                    <input
-                        type="text"
-                        value={this.filterState.query}
-                        onInput={e => (this.filterState.query = e.target.value)}
-                    />
-                </div>
+                {renderPrepend({
+                    visibleRowCount: this.visibleRowCount,
+                    totalRowCount: this.totalRowCount,
+                })}
                 <table>
-                    <Thead
-                        renderTh={this.$scopedSlots.th}
-                        renderThead={this.$scopedSlots.thead}
-                        columns={this.columns}
-                        sortState={this.sortState}
-                        onSort={sortState => {
-                            this.sortState = sortState;
-                        }}
-                    />
-                    <Tbody
-                        rows={this.visibleRows}
-                        itemKey={this.itemKey}
-                        renderTds={this.renderTds}
-                        columns={this.columns}
-                    />
-                    <Tfoot
-                        totalRowCount={this.totalRowCount}
-                        visibleRowCount={this.visibleRowCount}
-                        renderTfoot={this.$scopedSlots.tfoot}
-                    />
+                    <thead>
+                        {renderThead()}
+                    </thead>
+                    <tbody>
+                        {this.visibleRows.map(row => (
+                            this.$scopedSlots.tbody({
+                                key: row[this.itemKey],
+                                row,
+                            })
+                        ))}
+                    </tbody>
+                    <tfoot>
+                        {renderTfoot({
+                            visibleRowCount: this.visibleRowCount,
+                            totalRowCount: this.totalRowCount,
+                        })}
+                    </tfoot>
                 </table>
+                {renderAppend({
+                    visibleRowCount: this.visibleRowCount,
+                    totalRowCount: this.totalRowCount,
+                })}
             </div>
         );
     },

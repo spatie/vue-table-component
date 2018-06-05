@@ -1,23 +1,35 @@
 <template>
     <TableComponent
         :data="members"
-        :columns="[
-            { name: 'firstName', label: 'First name' },
-            { name: 'lastName', label: 'Last name' },
-            { name: 'instrument', label: 'Instrument' },
-            { name: 'songs', label: 'Songs' },
-        ]"
         sort-by="lastName"
         sort-order="asc"
-    />
+    >
+        <template slot="thead">
+            <tr>
+                <table-header name="firstName">First name</table-header>
+                <table-header name="lastName">Last name</table-header>
+                <table-header name="instrument">Instrument</table-header>
+                <table-header name="songs">Songs</table-header>
+            </tr>
+        </template>
+        <template slot="tbody" slot-scope="{ row }">
+            <tr>
+                <td>{{ row.firstName }}</td>
+                <td>{{ row.lastName }}</td>
+                <td>{{ row.instrument }}</td>
+                <td>{{ row.songs }}</td>
+            </tr>
+        </template>
+    </TableComponent>
 </template>
 
 <script>
-import TableComponent from 'vue-table-component';
+import { TableComponent, TableHeader } from 'vue-table-component';
 
 export default {
     components: {
         TableComponent,
+        TableHeader,
     },
 
     data: () => ({

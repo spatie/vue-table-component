@@ -1,13 +1,3 @@
-// https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript/4760279#4760279
-export function createCompareFunction({ column, order }) {
-    let sortOrder = order === 'desc' ? -1 : 1;
-
-    return function(a, b) {
-        let result = a[column] < b[column] ? -1 : a[column] > b[column] ? 1 : 0;
-        return result * sortOrder;
-    };
-}
-
 // https://davidwalsh.name/javascript-debounce-function
 export function debounce(func, wait, immediate) {
     var timeout;
@@ -25,39 +15,34 @@ export function debounce(func, wait, immediate) {
     };
 }
 
-export function defaultFilterCallback({ row, query, columns }) {
+export function defaultFilterCallback({ query }) {
     const normalizedQuery = query.toLowerCase().replace(/[^A-Za-z0-9]*/g, '');
-    const filterableColumnNames = columns
-        .filter(column => column.filterable !== false)
-        .map(column => column.name);
 
-    return pipe(
-        row,
-        [
-            row => pick(row, filterableColumnNames),
-            row => Object.values(row),
-            values =>
-                values
-                    .join('')
-                    .toLowerCase()
-                    .replace(/[^A-Za-z0-9]*/g, ''),
-            matchString => matchString.indexOf(normalizedQuery) !== -1,
-        ]
-    );
+    return (row) => {
+        return pipe(
+            row,
+            [
+                row => Object.values(row),
+                values =>
+                    values
+                        .join('')
+                        .toLowerCase()
+                        .replace(/[^A-Za-z0-9]*/g, ''),
+                matchString => matchString.indexOf(normalizedQuery) !== -1,
+            ]
+        );
+    };
 }
 
-export function get(object, path) {
-    if (!path) {
-        return object;
-    }
+// https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript/4760279#4760279
+export function defaultSortCallback({ sortBy, sortOrder }) {
+    return (a, b) => {
+        let sortOrderIndex = sortOrder === 'desc' ? -1 : 1;
 
-    if (object === null || typeof object !== 'object') {
-        return object;
-    }
+        const result = a[sortBy] < b[sortBy] ? -1 : a[sortBy] > b[sortBy] ? 1 : 0;
 
-    const [pathHead, pathTail] = path.split(/\.(.+)/);
-
-    return get(object[pathHead], pathTail);
+        return result * sortOrderIndex;
+    };
 }
 
 export function keyBy(collection, key) {
@@ -65,15 +50,4 @@ export function keyBy(collection, key) {
         keyedCollection[get(item, key)] = item;
         return keyedCollection;
     }, {});
-}
-
-export function pick(object, values) {
-    return values.reduce((pickedObject, value) => {
-        pickedObject[value] = object[value];
-        return pickedObject;
-    }, {});
-}
-
-export function pipe(subject, fns) {
-    return fns.reduce((subject, fn) => fn(subject), subject);
 }
