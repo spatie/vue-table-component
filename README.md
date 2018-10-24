@@ -1,6 +1,6 @@
 🚨 **THIS PACKAGE HAS BEEN ABANDONED** 🚨
 
-We don't use this package anymore in our own projects and cannot justify the time needed to maintain it anymore. That's why we have chosen to abandon it. Feel free to fork our code and maintain your own copy are use one of the many alternatives.
+We don't use this package anymore in our own projects and cannot justify the time needed to maintain it anymore. That's why we have chosen to abandon it. Feel free to fork our code and maintain your own copy or use one of the many alternatives.
 
 # A straightforward Vue component to filter and sort tables
 
